@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LKQ India — Keeping you moving</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">
+      <img src="./logo.png" alt="LKQ India" class="nav-logo-img">
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" onclick="showPage('home'); scrollToSection('company-section')">Company <span class="dropdown-arrow">▼</span></a></li>
+      <li><a href="#" onclick="showPage('careers')">Careers <span class="dropdown-arrow">▼</span></a></li>
+      <li><a href="#" onclick="showPage('culture')">Our Culture</a></li>
+      <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="scrollToFooter()" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="showPage('home'); toggleMobile()">Company</a>
+  <a href="#" onclick="showPage('careers'); toggleMobile()">Careers</a>
+  <a href="#" onclick="showPage('culture'); toggleMobile()">Our Culture</a>
+  <a href="#" onclick="showPage('gallery'); toggleMobile()">Gallery</a>
+  <a href="#" onclick="scrollToFooter(); toggleMobile()">Contact Us</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     SERVICES OVERLAY PANEL
+══════════════════════════════════════ -->
+<div id="services-panel" class="svc-panel" role="dialog" aria-modal="true" aria-label="What We Do">
+  <div class="svc-panel__backdrop" onclick="closeServices()"></div>
+  <div class="svc-panel__sheet">
+    <div class="svc-panel__header">
+      <div class="svc-panel__header-text">
+        <span class="svc-panel__eyebrow">What We Do</span>
+        <h2 class="svc-panel__title">Enabling LKQ's Global Operations</h2>
+        <p class="svc-panel__desc">Six centres of excellence powering a Fortune 500 enterprise across North America, Europe and beyond.</p>
+      </div>
+      <button class="svc-panel__close" onclick="closeServices()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="svc-panel__grid">
+      <div class="svc-card"><div class="svc-card__icon">💻</div><div class="svc-card__title">Technology & Engineering</div><div class="svc-card__desc">Building and maintaining enterprise platforms that power LKQ's global operations — from ERP systems to cloud infrastructure and digital transformation.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">📊</div><div class="svc-card__title">Data & Analytics</div><div class="svc-card__desc">Turning complex data into actionable business intelligence through advanced analytics, BI dashboards, and AI-driven models across global markets.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">💼</div><div class="svc-card__title">Finance & Accounting</div><div class="svc-card__desc">Delivering financial excellence with end-to-end accounting, FP&A, compliance, and reporting for LKQ's North America and Europe operations.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">🤝</div><div class="svc-card__title">Shared Services</div><div class="svc-card__desc">Streamlining HR, procurement, and administrative operations to enable consistency and efficiency at global scale.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">🛡️</div><div class="svc-card__title">Cybersecurity</div><div class="svc-card__desc">Protecting LKQ's digital assets across 1,400+ global locations with proactive threat detection, compliance, and security operations.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">⚙️</div><div class="svc-card__title">Supply Chain & Operations</div><div class="svc-card__desc">Supporting logistics, supply chain analytics, and operational efficiency programmes that keep LKQ's parts moving globally.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════ -->
+<div id="home-page" class="page active">
+
+  <!-- HERO -->
+  <section id="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="./assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="hero-wrapper">
+      <div class="hero-inner">
+        <p class="hero-kicker">LKQ India · Bengaluru</p>
+        <h1 class="hero-title">
+          <span class="hero-line">LKQ India</span>
+          <span class="hero-line">DELIVERS through</span>
+          <span class="hero-line">Teamwork with <em>FUN</em></span>
+        </h1>
+        <p class="hero-sub">A Fortune 500 Global Capability Centre — 1600+ professionals driving excellence across 26+ countries.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-blue" onclick="scrollToSection('company-section'); return false;">Discover LKQ India</a>
+          <a href="#" class="btn-ghost" onclick="showPage('careers'); return false;">Explore Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-double-noodle" aria-hidden="true"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 732.26 1311.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #085cf0;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        fill: #5f9aff;
+      }
+    </style>
+    <clipPath id="clippath-1">
+      <rect class="cls-2" x="923.24" y="2395.07" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Brand_Pattern-2" data-name="Brand Pattern">
+    <g class="cls-3">
+      <path class="cls-4" d="M685.52,3219.37c-31.19,0-62.38-4.93-92.71-14.78-33.01-10.72-64.26-29.87-104.49-64.03-38.26-32.48-81.87-76.09-142.22-136.44l-451.32-451.32c-60.35-60.35-103.96-103.96-136.44-142.22-34.15-40.23-53.3-71.48-64.03-104.49-19.71-60.64-19.71-124.76,0-185.41,10.74-33.02,29.89-64.27,64.03-104.49,32.52-38.31,76.11-81.89,136.44-142.22l478.06-478.06c60.33-60.33,103.91-103.91,142.22-136.43,40.22-34.15,71.47-53.29,104.47-64.03,60.66-19.71,124.78-19.71,185.42,0,33,10.72,64.24,29.87,104.49,64.03,38.21,32.43,81.84,76.06,142.22,136.44l451.32,451.32c60.38,60.38,104.01,104.01,136.44,142.23,34.16,40.24,53.31,71.49,64.03,104.48,19.7,60.65,19.7,124.76,0,185.41-10.72,33.01-29.87,64.26-64.03,104.49-32.48,38.26-76.09,81.87-136.44,142.22l-478.06,478.06c-60.35,60.35-103.96,103.96-142.22,136.44-40.23,34.15-71.48,53.3-104.49,64.03-30.32,9.85-61.51,14.78-92.7,14.78ZM-41.57,1937.62c-58.82,58.82-101.32,101.32-131.47,136.83-25.74,30.32-40.25,53.16-47.05,74.06-13.79,42.44-13.79,87.33,0,129.78,6.79,20.89,21.29,43.73,47.04,74.05,30.1,35.46,72.62,77.98,131.47,136.82l451.32,451.32c58.84,58.84,101.36,101.36,136.82,131.47,30.33,25.75,53.17,40.26,74.05,47.04,42.46,13.79,87.33,13.79,129.79,0,20.89-6.79,43.73-21.29,74.05-47.04,35.46-30.1,77.98-72.62,136.83-131.47l478.06-478.06c58.85-58.85,101.36-101.36,131.47-136.82,25.75-30.33,40.26-53.17,47.04-74.05,13.79-42.46,13.79-87.34,0-129.79-6.78-20.87-21.29-43.71-47.05-74.05-30.06-35.41-72.59-77.95-131.46-136.83l-451.32-451.32c-58.87-58.87-101.41-101.4-136.82-131.46-30.34-25.76-53.18-40.27-74.05-47.05-42.46-13.79-87.34-13.79-129.8,0-20.88,6.79-43.72,21.3-74.05,47.05-35.51,30.15-78.01,72.65-136.83,131.47L-41.57,1937.62Z"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-1" d="M733.23,62.2c-37.33,32.14-79.96,74.77-138.19,133l-146.83,146.83c-60.32,60.33-103.91,103.91-136.43,142.22-34.15,40.22-53.3,71.46-64.03,104.47-9.85,30.33-14.78,61.53-14.78,92.72s4.92,62.38,14.78,92.71c10.71,32.99,29.86,64.24,64.03,104.48,17.84,21.02,39.07,43.68,64.61,69.87,18.69,19.16,39.69,40.22,63.37,63.9,2.78,2.78,5.6,5.6,8.45,8.45l146.84,146.83c58.26,58.26,100.92,100.93,138.18,132.99v-122.67c-21.75-21.17-46.27-45.68-74.54-73.96l-146.84-146.83c-2.86-2.86-5.67-5.67-8.45-8.45-23.82-23.83-44.86-44.91-63.37-63.9-23.85-24.48-43.54-45.5-59.64-64.47-25.76-30.34-40.27-53.18-47.05-74.05-13.79-42.46-13.79-87.34,0-129.8,6.79-20.88,21.3-43.72,47.05-74.04,30.14-35.51,72.64-78.01,131.46-136.83l146.83-146.83c28.28-28.28,52.78-52.78,74.55-73.95V62.2Z"/>
+    <path class="cls-4" d="M733.23,596.59c-36.84,31.91-79.03,74.1-136.28,131.35l-478.06,478.06c-39.93,39.93-72.53,72.53-99.43,101.1h125.67c11.66-11.72,24.12-24.18,37.4-37.46l257.23-257.24,63.64-63.64,157.19-157.18c27.46-27.45,51.36-51.35,72.64-72.1v-122.89Z"/>
+  </g>
+</svg></div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-num">1600+</div>
+        <div class="stat-label">Skilled Professionals</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num">2008</div>
+        <div class="stat-label">Established in Bengaluru</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num">26+</div>
+        <div class="stat-label">Countries Supported</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">LKQ Corporation Subsidiary</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPANY SECTION -->
+  <section class="photo-section" id="company-section">
+    <div class="photo-section-bg" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format');"></div>
+    <div class="photo-section-overlay"></div>
+    <div class="photo-section-wrapper"><div class="photo-section-content">
+      <span class="sec-eyebrow reveal">Overview</span>
+      <h2 class="sec-h2 sec-h2-white reveal">Who we are</h2>
+      <p class="sec-body sec-body-white reveal reveal-delay-1">
+        LKQ India Pvt. Ltd. operates as a fully owned subsidiary of Keystone Automotive Operations Inc., a proud member of the LKQ Corporation family. Established in 2008, our Bengaluru-based operations have grown to a team of 1600+ highly skilled professionals, driving innovation and delivering scalable solutions that support LKQ's global objectives.
+      </p>
+      <a href="#" class="btn-blue reveal reveal-delay-2" onclick="openServices(); return false;">Discover More</a>
+    </div></div>
+    <div class="noodle-bottom-left" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
+  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+</svg></div>
+  </section>
+
+  <!-- CULTURE SECTION -->
+  <section class="fullscreen-section" id="culture-section">
+    <div class="fullscreen-bg" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=80&auto=format'); filter: grayscale(60%);"></div>
+    <div class="fullscreen-overlay" style="background: rgba(20, 30, 90, 0.68);"></div>
+    <div class="fullscreen-wrapper"><div class="fullscreen-content">
+      <span class="sec-eyebrow reveal">Our Culture</span>
+      <h2 class="sec-h2 sec-h2-white reveal">Life at LKQI</h2>
+      <p class="sec-body sec-body-white reveal reveal-delay-1">
+        Culture is the glue that unites LKQ India, defined by a shared passion for our work and mutual trust across all levels. It is this culture that sets us apart and drives our pursuit of excellence as a leading GCC.
+      </p>
+      <a href="#" class="btn-blue reveal reveal-delay-2" onclick="showPage('culture')">Discover More Here</a>
+    </div></div>
+    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
+  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+</svg></div>
+  </section>
+
+  <!-- PROUD TO BE RECOGNISED — Home -->
+  <div class="culture-recog-section">
+    <div class="culture-recog-inner">
+      <div class="culture-sec-header" style="text-align:center; align-items:center;">
+        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition & Awards</p>
+        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to culture and people hasn't gone unnoticed. Here's what the world says about LKQ India.</p>
+      </div>
+      <div class="culture-recog-grid">
+        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end home-page -->
+
+<!-- ══════════════════════════════════════
+     GALLERY PAGE
+══════════════════════════════════════ -->
+<div id="gallery-page" class="page">
+
+  <!-- GALLERY HERO -->
+  <div class="page-hero" style="min-height:50vh; padding: 120px 0 80px;">
+    <div class="page-hero-bg" style="background-image: linear-gradient(135deg, #040e32 0%, #1A44F5 100%);"></div>
+    <div class="page-hero-wrapper">
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow reveal">Gallery</span>
+        <h1 class="page-hero-h1 reveal">Life at LKQ India</h1>
+        <p class="page-hero-desc reveal reveal-delay-1">A glimpse into our vibrant workplace — celebrations, collaboration, culture, and community.</p>
+      </div>
+    </div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
+  </div>
+
+  <!-- EXPANDABLE PANEL GALLERY -->
+  <div class="gal-panels-wrap">
+    <div class="gal-panels" id="gal-panels">
+
+      <!-- Panel 1: Culture & Events -->
+      <div class="gal-panel" data-cat="culture" onclick="openGalleryPanel('culture')">
+        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80&auto=format');"></div>
+        <div class="gal-panel__overlay"></div>
+        <div class="gal-panel__content">
+          <span class="gal-panel__label">Culture & Events</span>
+          <span class="gal-panel__count">15 Photos</span>
+          <span class="gal-panel__cta">Explore →</span>
+        </div>
+      </div>
+
+      <!-- Panel 2: Workspace -->
+      <div class="gal-panel" data-cat="workspace" onclick="openGalleryPanel('workspace')">
+        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format');"></div>
+        <div class="gal-panel__overlay"></div>
+        <div class="gal-panel__content">
+          <span class="gal-panel__label">Workspace</span>
+          <span class="gal-panel__count">15 Photos</span>
+          <span class="gal-panel__cta">Explore →</span>
+        </div>
+      </div>
+
+      <!-- Panel 3: CSR & Community -->
+      <div class="gal-panel" data-cat="csr" onclick="openGalleryPanel('csr')">
+        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80&auto=format');"></div>
+        <div class="gal-panel__overlay"></div>
+        <div class="gal-panel__content">
+          <span class="gal-panel__label">CSR & Community</span>
+          <span class="gal-panel__count">15 Photos</span>
+          <span class="gal-panel__cta">Explore →</span>
+        </div>
+      </div>
+
+      <!-- Panel 4: Milestones -->
+      <div class="gal-panel" data-cat="milestones" onclick="openGalleryPanel('milestones')">
+        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&auto=format');"></div>
+        <div class="gal-panel__overlay"></div>
+        <div class="gal-panel__content">
+          <span class="gal-panel__label">Milestones</span>
+          <span class="gal-panel__count">15 Photos</span>
+          <span class="gal-panel__cta">Explore →</span>
+        </div>
+      </div>
+
+      <!-- Panel 5: Sports & Fun -->
+      <div class="gal-panel" data-cat="sports" onclick="openGalleryPanel('sports')">
+        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80&auto=format');"></div>
+        <div class="gal-panel__overlay"></div>
+        <div class="gal-panel__content">
+          <span class="gal-panel__label">Sports & Fun</span>
+          <span class="gal-panel__count">15 Photos</span>
+          <span class="gal-panel__cta">Explore →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GALLERY CATEGORY OVERLAY PANEL -->
+  <div id="gallery-panel" class="svc-panel" role="dialog" aria-modal="true">
+    <div class="svc-panel__backdrop" onclick="closeGalleryPanel()"></div>
+    <div class="svc-panel__sheet gal-sheet">
+      <div class="svc-panel__header">
+        <div class="svc-panel__header-text">
+          <span class="svc-panel__eyebrow" id="gal-panel-eyebrow">Gallery</span>
+          <h2 class="svc-panel__title" id="gal-panel-title">Category</h2>
+          <p class="svc-panel__desc" id="gal-panel-desc">15 photos</p>
+        </div>
+        <button class="svc-panel__close" onclick="closeGalleryPanel()" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="gal-photo-grid" id="gal-photo-grid"></div>
+    </div>
+  </div>
+
+</div><!-- end gallery-page -->
+
+<!-- ══════════════════════════════════════
+     LIGHTBOX
+══════════════════════════════════════ -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox__close" onclick="closeLightbox()" aria-label="Close">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox__arrow lightbox__arrow--prev" onclick="lightboxNav(-1)" aria-label="Previous">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox__img-wrap">
+    <img id="lightbox-img" class="lightbox__img" src="" alt="">
+  </div>
+  <button class="lightbox__arrow lightbox__arrow--next" onclick="lightboxNav(1)" aria-label="Next">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox__footer">
+    <div id="lightbox-cap" class="lightbox__cap"></div>
+    <div id="lightbox-counter" class="lightbox__counter"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CAREERS PAGE
+══════════════════════════════════════ -->
+<div id="careers-page" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80&auto=format');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-wrapper">
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow reveal">Careers</span>
+        <h1 class="page-hero-h1 reveal">Build a Global<br>Career from India</h1>
+        <p class="page-hero-desc reveal reveal-delay-1">At LKQ India, you're shaping the future of a Fortune 500 global enterprise. Join 1600+ professionals who deliver world-class results every day.</p>
+        <a href="#jobs-list" class="btn-white reveal reveal-delay-2">Explore Open Roles</a>
+      </div>
+    </div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0043b8;
+      }
+
+      .cls-2 {
+        fill: #5f9aff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-2" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
+    <path class="cls-1" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+  </g>
+</svg></div>
+  </div>
+
+  <!-- WHY LKQ -->
+  <div class="careers-why">
+    <div class="careers-why-inner">
+      <div class="careers-why-header">
+        <div class="careers-why-eyebrow reveal">Why LKQ India</div>
+        <h2 class="careers-why-title reveal">A Place to Thrive</h2>
+      </div>
+      <div class="perks-grid">
+        <div class="perk-card reveal">
+          <div class="perk-icon">🌍</div>
+          <div class="perk-title">Global Exposure</div>
+          <div class="perk-desc">Work directly with teams across North America and Europe, gaining international experience without leaving home.</div>
+        </div>
+        <div class="perk-card reveal reveal-delay-1">
+          <div class="perk-icon">📚</div>
+          <div class="perk-title">Learning & Growth</div>
+          <div class="perk-desc">Structured L&D programmes, certification support, and clear career progression pathways at every level.</div>
+        </div>
+        <div class="perk-card reveal reveal-delay-2">
+          <div class="perk-icon">🏥</div>
+          <div class="perk-title">Health & Wellness</div>
+          <div class="perk-desc">Comprehensive medical cover for you and your family, mental wellness support, and employee assistance programmes.</div>
+        </div>
+        <div class="perk-card reveal reveal-delay-3">
+          <div class="perk-icon">⚡</div>
+          <div class="perk-title">Flexible Work</div>
+          <div class="perk-desc">Hybrid work models designed for modern productivity — balance your professional and personal life effectively.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPEN ROLES -->
+  <div class="jobs-section" id="jobs-list">
+    <div class="jobs-inner">
+      <div class="jobs-header">
+        <h2 class="jobs-title reveal">Open Positions</h2>
+        <a href="#" class="btn-blue" style="font-size:13px; padding:12px 24px;">All Departments</a>
+      </div>
+      <div class="jobs-list">
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">Senior Software Engineer — Java / Microservices</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 5–8 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Technology</span>
+          <span class="job-arrow">→</span>
+        </div>
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">Data Scientist — Supply Chain Analytics</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 3–6 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Analytics</span>
+          <span class="job-arrow">→</span>
+        </div>
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">Finance Manager — FP&A & Global Reporting</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 7–10 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Finance</span>
+          <span class="job-arrow">→</span>
+        </div>
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">Cloud Infrastructure Engineer — AWS/Azure</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 4–7 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Technology</span>
+          <span class="job-arrow">→</span>
+        </div>
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">HR Business Partner — GCC Operations</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 5–8 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Shared Services</span>
+          <span class="job-arrow">→</span>
+        </div>
+        <div class="job-card reveal">
+          <div class="job-info">
+            <div class="job-title">Cybersecurity Analyst — SOC Operations</div>
+            <div class="job-meta">
+              <span class="job-tag">📍 Bengaluru</span>
+              <span class="job-tag">🕐 Full-time</span>
+              <span class="job-tag">💼 3–5 years</span>
+            </div>
+          </div>
+          <span class="job-dept">Security</span>
+          <span class="job-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROUD TO BE RECOGNISED — Careers -->
+  <div class="culture-recog-section">
+    <div class="culture-recog-inner">
+      <div class="culture-sec-header" style="text-align:center; align-items:center;">
+        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition & Awards</p>
+        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to culture and people hasn't gone unnoticed. Here's what the world says about LKQ India.</p>
+      </div>
+      <div class="culture-recog-grid">
+        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end careers-page -->
+
+
+<!-- ══════════════════════════════════════
+     CULTURE PAGE
+══════════════════════════════════════ -->
+<div id="culture-page" class="page">
+
+  <!-- CULTURE HERO BANNER -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80&auto=format');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-wrapper">
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow reveal">Our Culture</span>
+        <h1 class="page-hero-h1 reveal">Life at LKQI</h1>
+        <p class="page-hero-desc reveal reveal-delay-1">Culture is the glue that unites LKQ India, defined by a shared passion for our work and mutual trust across all levels. It is this culture that sets us apart and drives our pursuit of excellence as a leading GCC.</p>
+      </div>
+    </div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0043b8;
+      }
+
+      .cls-2 {
+        fill: #5f9aff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-2" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
+    <path class="cls-1" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+  </g>
+</svg></div>
+  </div>
+
+  <!-- VALUES SECTION — 5×2 icon grid -->
+  <div class="culture-values-section">
+    <div class="culture-values-inner">
+      <div class="culture-sec-header">
+        <p class="culture-sec-eyebrow reveal">What Drives Us</p>
+        <h2 class="culture-sec-title reveal">Our Core Values</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">The principles that guide how we work, grow, and show up for each other every day.</p>
+      </div>
+      <div class="values-grid-5">
+
+        <div class="value-cell reveal">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14l2.5 7.5H34l-6 4.5 2.5 7.5L24 29l-6.5 4.5 2.5-7.5-6-4.5h7.5L24 14z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value One</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-1">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="24" cy="24" r="8" stroke="#1A44F5" stroke-width="1.5"/><path d="M24 16v-4M24 36v-4M16 24h-4M36 24h-4" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Two</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-2">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M17 24c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/><path d="M24 31v4M20 33h8" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Three</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-3">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M16 24l5.5 5.5L32 18" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Four</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-4">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14v20M14 24h20" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Five</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><rect x="15" y="15" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><rect x="25" y="25" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><path d="M23 19h2a4 4 0 014 4v2" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Six</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-1">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15c-5 0-9 4-9 9 0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8 0-5-4-9-9-9z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Seven</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-2">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M18 32V22M24 32V18M30 32V25" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Eight</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-3">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="19" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><circle cx="29" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><path d="M13 33c0-3.31 2.69-6 6-6h10c3.31 0 6 2.69 6 6" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Nine</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+        <div class="value-cell reveal reveal-delay-4">
+          <div class="value-cell__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15l1.8 5.4h5.7l-4.6 3.3 1.8 5.4L24 26l-4.7 3.1 1.8-5.4-4.6-3.3h5.7L24 15z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="value-cell__title">Value Ten</div>
+          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- LIFE AT LKQ SECTION (full-screen style matching home) -->
+  <!-- LIFE AT LKQ SECTION -->
+  <div class="culture-life-section">
+    <div class="culture-life-bg"></div>
+    <div class="culture-life-overlay"></div>
+    <div class="culture-life-wrapper">
+      <div class="culture-life-content">
+        <p class="section-eyebrow reveal">People & Community</p>
+        <h2 class="culture-life-title reveal">More than a Workplace</h2>
+        <p class="section-body-text reveal reveal-delay-1">At LKQ India, we celebrate every festival, milestone, and achievement together. From Diwali to Annual Days, cricket tournaments to hackathons — our people bring energy, creativity, and joy to everything they do.</p>
+        <a href="#" class="btn-blue reveal reveal-delay-2" onclick="showPage('gallery')">See the Gallery</a>
+      </div>
+    </div>
+    <div class="noodle-bottom-right" aria-hidden="true"><svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <defs>
+    <style>
+      .cls-1 { fill: #0043b8; }
+      .cls-2 { fill: #5f9aff; }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-2" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
+    <path class="cls-1" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+  </g>
+</svg></div>
+  </div>
+
+  <!-- EMPOWERED STRIP -->
+  <div class="blue-strip culture-strip">
+    <div class="blue-strip-inner">
+      <div class="culture-strip-left reveal">
+        <p class="culture-strip-label">Join the Team</p>
+        <h3 class="culture-strip-title">Be Part of <span>What's Next</span></h3>
+        <p class="culture-strip-desc">Our team is 1600+ strong — and growing. If you're driven, curious, and ready to make a global impact, there's a place for you at LKQ India.</p>
+      </div>
+      <div class="culture-strip-right reveal reveal-delay-2">
+        <a href="#" class="btn-white" onclick="showPage('careers')">Explore Careers →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end culture-page -->
+
+<!-- ══════════════════════════════════════
+     FOOTER (shown on all pages)
+══════════════════════════════════════ -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="./logo.png" alt="LKQ India" class="footer-logo-img">
+        <div class="footer-address">
+          7th Floor, Primeco Towers,<br>
+          Arekere Gate Junction,<br>
+          Bannerghatta Main Road,<br>
+          Bengaluru – 560 076<br>
+          Karnataka, India
+        </div>
+        <div class="footer-social">
+          <div class="social-icon" title="Twitter">𝕏</div>
+          <div class="social-icon" title="LinkedIn">in</div>
+          <div class="social-icon" title="YouTube">▶</div>
+          <div class="social-icon" title="Instagram">◎</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">LKQ Global</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">LKQ North America</a></li>
+          <li><a href="#">LKQ Europe</a></li>
+          <li><a href="#">LKQ Specialty</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Services & Details</div>
+        <ul class="footer-links">
+          <li><a href="#">Company History</a></li>
+          <li><a href="#">Cultural Engagement</a></li>
+          <li><a href="#">Code of Ethics</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Corporate Information</div>
+        <ul class="footer-links">
+          <li><a href="#">Quarterly Results</a></li>
+          <li><a href="#" onclick="showPage('careers')">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 LKQ Corporation. All rights reserved. LKQ India Pvt. Ltd.</div>
+      <div class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+    </div>
+  </div>
+</footer>
+
+<script src="./main.js"></script>
+</body>
+</html>
