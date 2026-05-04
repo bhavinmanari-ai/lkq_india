@@ -16,22 +16,22 @@
     </a>
     <ul class="nav-links" id="nav-links">
       <li class="nav-item-dropdown" id="nav-company">
-        <a href="#" onclick="toggleDropdown('nav-company'); return false;">Company <span class="dropdown-arrow">▼</span></a>
+        <a href="#" class="nav-split-text" onclick="navCompanyClick(); return false;">Company</a><button class="nav-split-arrow" onclick="toggleDropdown('nav-company'); return false;" aria-label="Company menu"><span class="dropdown-arrow">▼</span></button>
         <div class="nav-dropdown">
-          <a href="#" onclick="showPage('company'); scrollToSection('co-overview'); closeAllDropdowns(); return false;">Overview</a>
-          <a href="#" onclick="showPage('company'); scrollToSection('co-vmp'); closeAllDropdowns(); return false;">VMP &amp; Values</a>
-          <a href="#" onclick="showPage('company'); scrollToSection('co-global'); closeAllDropdowns(); return false;">Global Presence</a>
-          <a href="#" onclick="showPage('company'); scrollToSection('co-org'); closeAllDropdowns(); return false;">Organizational Structure</a>
+          <a href="#" onclick="smartNavigate('company','co-overview'); return false;">Overview</a>
+          <a href="#" onclick="smartNavigate('company','co-vmp'); return false;">VMP &amp; Values</a>
+          <a href="#" onclick="smartNavigate('company','co-global'); return false;">Global Presence</a>
+          <a href="#" onclick="smartNavigate('company','co-org'); return false;">Organizational Structure</a>
         </div>
       </li>
       <li><a href="#" onclick="showPage('careers'); return false;">Careers</a></li>
       <li class="nav-item-dropdown" id="nav-culture">
-        <a href="#" onclick="toggleDropdown('nav-culture'); return false;">Our Culture <span class="dropdown-arrow">▼</span></a>
+        <a href="#" class="nav-split-text" onclick="navCultureClick(); return false;">Our Culture</a><button class="nav-split-arrow" onclick="toggleDropdown('nav-culture'); return false;" aria-label="Our Culture menu"><span class="dropdown-arrow">▼</span></button>
         <div class="nav-dropdown">
-          <a href="#" onclick="showPage('culture'); scrollToSection('culture-wellbeing'); closeAllDropdowns(); return false;">Well-being</a>
-          <a href="#" onclick="showPage('culture'); scrollToSection('culture-fun'); closeAllDropdowns(); return false;">Fun at Work</a>
-          <a href="#" onclick="showPage('culture'); scrollToSection('culture-stories'); closeAllDropdowns(); return false;">Our Stories</a>
-          <a href="#" onclick="showPage('culture'); scrollToSection('culture-toastmasters'); closeAllDropdowns(); return false;">Toastmasters</a>
+          <a href="#" onclick="smartNavigate('culture','culture-wellbeing'); return false;">Well-being</a>
+          <a href="#" onclick="smartNavigate('culture','culture-fun'); return false;">Fun at Work</a>
+          <a href="#" onclick="smartNavigate('culture','culture-stories'); return false;">Our Stories</a>
+          <a href="#" onclick="smartNavigate('culture','culture-toastmasters'); return false;">Toastmasters</a>
         </div>
       </li>
       <li><a href="#" onclick="showPage('gallery'); return false;">Gallery</a></li>
@@ -190,7 +190,10 @@
       <p class="sec-body sec-body-white reveal reveal-delay-1">
         LKQ India Pvt. Ltd. operates as a fully owned subsidiary of Keystone Automotive Operations Inc., a proud member of the LKQ Corporation family. Established in 2008, our Bengaluru-based operations have grown to a team of 1600+ highly skilled professionals, driving innovation and delivering scalable solutions that support LKQ's global objectives.
       </p>
-      <a href="#" class="btn-blue reveal reveal-delay-2" onclick="openServices(); return false;">Discover More</a>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="#" class="btn-blue" onclick="showPage('company'); return false;">Discover More</a>
+        <a href="#" class="btn-outline-white" onclick="openServices(); return false;">What We Do</a>
+      </div>
     </div></div>
     <div class="noodle-bottom-left" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
   <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
