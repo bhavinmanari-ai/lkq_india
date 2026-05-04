@@ -1390,6 +1390,14 @@ footer {
   display: block;
 }
 .sec-eyebrow-yellow { color: var(--yellow) !important; }
+
+/* Eyebrows on dark/photo backgrounds always yellow */
+.photo-section .sec-eyebrow,
+.fullscreen-section .sec-eyebrow,
+.fullscreen-content .sec-eyebrow,
+.photo-section-content .sec-eyebrow {
+  color: #f3ff66 !important;
+}
 .sec-h2 {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
