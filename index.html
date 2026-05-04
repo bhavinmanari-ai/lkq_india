@@ -15,10 +15,26 @@
       <img src="./logo.png" alt="LKQ India" class="nav-logo-img">
     </a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#" onclick="showPage('home'); scrollToSection('company-section')">Company <span class="dropdown-arrow">▼</span></a></li>
-      <li><a href="#" onclick="showPage('careers')">Careers <span class="dropdown-arrow">▼</span></a></li>
-      <li><a href="#" onclick="showPage('culture')">Our Culture</a></li>
-      <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+      <li class="nav-item-dropdown" id="nav-company">
+        <a href="#" onclick="toggleDropdown('nav-company'); return false;">Company <span class="dropdown-arrow">▼</span></a>
+        <div class="nav-dropdown">
+          <a href="#" onclick="showPage('company'); scrollToSection('co-overview'); closeAllDropdowns(); return false;">Overview</a>
+          <a href="#" onclick="showPage('company'); scrollToSection('co-vmp'); closeAllDropdowns(); return false;">VMP &amp; Values</a>
+          <a href="#" onclick="showPage('company'); scrollToSection('co-global'); closeAllDropdowns(); return false;">Global Presence</a>
+          <a href="#" onclick="showPage('company'); scrollToSection('co-org'); closeAllDropdowns(); return false;">Organizational Structure</a>
+        </div>
+      </li>
+      <li><a href="#" onclick="showPage('careers'); return false;">Careers</a></li>
+      <li class="nav-item-dropdown" id="nav-culture">
+        <a href="#" onclick="toggleDropdown('nav-culture'); return false;">Our Culture <span class="dropdown-arrow">▼</span></a>
+        <div class="nav-dropdown">
+          <a href="#" onclick="showPage('culture'); scrollToSection('culture-wellbeing'); closeAllDropdowns(); return false;">Well-being</a>
+          <a href="#" onclick="showPage('culture'); scrollToSection('culture-fun'); closeAllDropdowns(); return false;">Fun at Work</a>
+          <a href="#" onclick="showPage('culture'); scrollToSection('culture-stories'); closeAllDropdowns(); return false;">Our Stories</a>
+          <a href="#" onclick="showPage('culture'); scrollToSection('culture-toastmasters'); closeAllDropdowns(); return false;">Toastmasters</a>
+        </div>
+      </li>
+      <li><a href="#" onclick="showPage('gallery'); return false;">Gallery</a></li>
       <li><a href="#" onclick="scrollToFooter()" class="nav-cta">Contact Us</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
@@ -29,9 +45,27 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#" onclick="showPage('home'); toggleMobile()">Company</a>
+  <!-- Company accordion -->
+  <button class="mob-accordion-btn" id="mob-company-btn" onclick="toggleMobAccordion('mob-company')">
+    Company <span class="mob-arrow">▼</span>
+  </button>
+  <div class="mob-sub-links" id="mob-company">
+    <a href="#" onclick="showPage('company'); scrollToSection('co-overview'); toggleMobile(); return false;">Overview</a>
+    <a href="#" onclick="showPage('company'); scrollToSection('co-vmp'); toggleMobile(); return false;">VMP &amp; Values</a>
+    <a href="#" onclick="showPage('company'); scrollToSection('co-global'); toggleMobile(); return false;">Global Presence</a>
+    <a href="#" onclick="showPage('company'); scrollToSection('co-org'); toggleMobile(); return false;">Organizational Structure</a>
+  </div>
   <a href="#" onclick="showPage('careers'); toggleMobile()">Careers</a>
-  <a href="#" onclick="showPage('culture'); toggleMobile()">Our Culture</a>
+  <!-- Our Culture accordion -->
+  <button class="mob-accordion-btn" id="mob-culture-btn" onclick="toggleMobAccordion('mob-culture')">
+    Our Culture <span class="mob-arrow">▼</span>
+  </button>
+  <div class="mob-sub-links" id="mob-culture">
+    <a href="#" onclick="showPage('culture'); scrollToSection('culture-wellbeing'); toggleMobile(); return false;">Well-being</a>
+    <a href="#" onclick="showPage('culture'); scrollToSection('culture-fun'); toggleMobile(); return false;">Fun at Work</a>
+    <a href="#" onclick="showPage('culture'); scrollToSection('culture-stories'); toggleMobile(); return false;">Our Stories</a>
+    <a href="#" onclick="showPage('culture'); scrollToSection('culture-toastmasters'); toggleMobile(); return false;">Toastmasters</a>
+  </div>
   <a href="#" onclick="showPage('gallery'); toggleMobile()">Gallery</a>
   <a href="#" onclick="scrollToFooter(); toggleMobile()">Contact Us</a>
 </div>
@@ -323,6 +357,236 @@
 </div>
 
 <!-- ══════════════════════════════════════
+     COMPANY PAGE
+══════════════════════════════════════ -->
+<div id="company-page" class="page">
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-wrapper">
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">Company</span>
+        <h1 class="page-hero-h1">Who We Are</h1>
+        <p class="page-hero-desc">A Fortune 500 Global Capability Centre powering LKQ Corporation's operations across 26+ countries from the heart of Bengaluru.</p>
+        <a href="#" class="btn-white" onclick="scrollToSection('co-overview'); return false;">Explore Our Story</a>
+      </div>
+    </div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="co-overview" id="co-overview">
+    <div class="co-overview-inner">
+      <div class="co-overview-text">
+        <span class="sec-eyebrow reveal">Overview</span>
+        <h2 class="sec-h2 reveal">About LKQ India</h2>
+        <p class="sec-body reveal reveal-delay-1">LKQ India Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
+        <p class="sec-body reveal reveal-delay-2" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
+        <div class="co-journey reveal reveal-delay-3">
+          <div class="co-journey-title">Our Journey</div>
+          <div class="co-timeline">
+            <div class="co-timeline-item">
+              <div class="co-timeline-year">2008</div>
+              <div class="co-timeline-text">LKQ India established in Bengaluru as a Global Capability Centre to support LKQ Corporation's growing international operations.</div>
+            </div>
+            <div class="co-timeline-item">
+              <div class="co-timeline-year">2012</div>
+              <div class="co-timeline-text">Expanded to 500+ employees across Technology, Finance, and Shared Services functions.</div>
+            </div>
+            <div class="co-timeline-item">
+              <div class="co-timeline-year">2018</div>
+              <div class="co-timeline-text">Crossed the 1000-employee milestone. Recognised as a Top GCC Employer in India.</div>
+            </div>
+            <div class="co-timeline-item">
+              <div class="co-timeline-year">2023–24</div>
+              <div class="co-timeline-text">Certified Great Place to Work® for two consecutive years. Team grows to 1600+ professionals.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="co-overview-img reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format" alt="LKQ India Office">
+      </div>
+    </div>
+  </div>
+
+  <!-- VMP & VALUES -->
+  <div class="culture-values-section" id="co-vmp" style="background:#f8f9ff;">
+    <div class="culture-values-inner">
+      <div class="culture-sec-header">
+        <p class="culture-sec-eyebrow reveal">VMP &amp; Values</p>
+        <h2 class="culture-sec-title reveal">Vision, Mission, Purpose &amp; Values</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">The principles that guide every decision we make, every solution we build, and every relationship we nurture.</p>
+      </div>
+
+      <!-- Vision / Mission / Purpose trio -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:56px;">
+        <div class="culture-recog-card reveal" style="border-top-color:#1A44F5;">
+          <div class="culture-recog-badge">🔭</div>
+          <div class="culture-recog-title">Vision</div>
+          <p class="culture-recog-desc">To be the most trusted and innovative Global Capability Centre, enabling LKQ Corporation to lead in every market it serves.</p>
+        </div>
+        <div class="culture-recog-card reveal reveal-delay-1" style="border-top-color:#1A44F5;">
+          <div class="culture-recog-badge">🎯</div>
+          <div class="culture-recog-title">Mission</div>
+          <p class="culture-recog-desc">To attract, develop and retain world-class talent that delivers scalable, high-impact solutions for LKQ's global operations.</p>
+        </div>
+        <div class="culture-recog-card reveal reveal-delay-2" style="border-top-color:#1A44F5;">
+          <div class="culture-recog-badge">💡</div>
+          <div class="culture-recog-title">Purpose</div>
+          <p class="culture-recog-desc">Keeping the world moving — by empowering our people to create exceptional value every single day.</p>
+        </div>
+      </div>
+
+      <!-- Values grid — migrated from culture page -->
+      <div class="culture-sec-header" style="margin-bottom:32px;">
+        <p class="culture-sec-eyebrow reveal" style="color:#1A44F5;">Our Values</p>
+        <h2 class="culture-sec-title reveal" style="font-size:clamp(22px,2.5vw,34px);">What Drives Us</h2>
+      </div>
+      <div class="values-grid-5">
+        <div class="value-cell reveal">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14l2.5 7.5H34l-6 4.5 2.5 7.5L24 29l-6.5 4.5 2.5-7.5-6-4.5h7.5L24 14z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="value-cell__title">Integrity</div>
+          <div class="value-cell__desc">We act with honesty and transparency in everything we do.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-1">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="24" cy="24" r="8" stroke="#1A44F5" stroke-width="1.5"/><path d="M24 16v-4M24 36v-4M16 24h-4M36 24h-4" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Innovation</div>
+          <div class="value-cell__desc">We challenge the status quo to create smarter solutions.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-2">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M17 24c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/><path d="M24 31v4M20 33h8" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Excellence</div>
+          <div class="value-cell__desc">We set high standards and consistently deliver beyond expectations.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-3">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M16 24l5.5 5.5L32 18" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="value-cell__title">Accountability</div>
+          <div class="value-cell__desc">We own our outcomes and take responsibility for our actions.</div>
+        </div>
+        <div class="value-cell reveal">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="19" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><circle cx="29" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><path d="M13 33c0-3.31 2.69-6 6-6h10c3.31 0 6 2.69 6 6" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Collaboration</div>
+          <div class="value-cell__desc">We win together, leveraging diverse talents as one team.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-1">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><rect x="15" y="15" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><rect x="25" y="25" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><path d="M23 19h2a4 4 0 014 4v2" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Agility</div>
+          <div class="value-cell__desc">We adapt swiftly to change and embrace new challenges.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-2">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15c-5 0-9 4-9 9 0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8 0-5-4-9-9-9z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="value-cell__title">Customer Focus</div>
+          <div class="value-cell__desc">We place our stakeholders at the centre of every decision.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-3">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M18 32V22M24 32V18M30 32V25" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Growth Mindset</div>
+          <div class="value-cell__desc">We invest in continuous learning and personal development.</div>
+        </div>
+        <div class="value-cell reveal">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14v20M14 24h20" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="value-cell__title">Inclusion</div>
+          <div class="value-cell__desc">We celebrate diversity and create a sense of belonging for all.</div>
+        </div>
+        <div class="value-cell reveal reveal-delay-1">
+          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15l1.8 5.4h5.7l-4.6 3.3 1.8 5.4L24 26l-4.7 3.1 1.8-5.4-4.6-3.3h5.7L24 15z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="value-cell__title">Impact</div>
+          <div class="value-cell__desc">We measure our success by the difference we make globally.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL PRESENCE -->
+  <div class="co-global" id="co-global">
+    <div class="co-global-inner">
+      <div class="co-global-header">
+        <span class="sec-eyebrow reveal">Global Presence</span>
+        <h2 class="sec-h2 reveal">LKQ Around the World</h2>
+        <p class="sec-body reveal reveal-delay-1">From Bengaluru, we support a global enterprise spanning North America, Europe and beyond — delivering excellence across every time zone.</p>
+      </div>
+      <div class="co-global-grid">
+        <div class="co-global-card reveal">
+          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&q=80&auto=format');"></div>
+          <div class="co-global-card-body">
+            <span class="co-global-tag">Headquarters</span>
+            <h3>LKQ Corporation</h3>
+            <p>Fortune 500 company headquartered in Nashville, Tennessee. A global leader in alternative and specialty automotive parts serving 1,400+ locations worldwide.</p>
+          </div>
+        </div>
+        <div class="co-global-card reveal reveal-delay-1">
+          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600&q=80&auto=format');"></div>
+          <div class="co-global-card-body">
+            <span class="co-global-tag">Europe</span>
+            <h3>LKQ Europe</h3>
+            <p>Europe's leading distributor of vehicle parts and accessories. Operating across 20+ European countries with a network of thousands of distribution points.</p>
+          </div>
+        </div>
+        <div class="co-global-card reveal reveal-delay-2">
+          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80&auto=format');"></div>
+          <div class="co-global-card-body">
+            <span class="co-global-tag">India · GCC</span>
+            <h3>LKQ India</h3>
+            <p>Our Bengaluru Global Capability Centre — 1600+ professionals powering LKQ's technology, finance, analytics, and operations across all global regions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORGANIZATIONAL STRUCTURE -->
+  <div class="co-org" id="co-org">
+    <div class="co-org-inner">
+      <div class="co-org-header">
+        <span class="sec-eyebrow reveal">Organizational Structure</span>
+        <h2 class="sec-h2 reveal">Leadership &amp; Structure</h2>
+        <p class="sec-body reveal reveal-delay-1">Guided by experienced leadership and built on a high-performance operating model that connects every function to LKQ's global strategy.</p>
+      </div>
+      <div class="co-org-body">
+        <div class="co-leader-card reveal">
+          <div class="co-leader-quote">
+            We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
+          </div>
+          <div class="co-leader-name">GCC Leader, LKQ India</div>
+          <div class="co-leader-role">Managing Director &amp; VP — Global Capability Centre</div>
+        </div>
+        <div class="co-pl-structure reveal reveal-delay-1">
+          <div class="co-pl-title">Practice Areas</div>
+          <ul class="co-pl-list">
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Technology &amp; Engineering</span><span class="co-pl-sub">320+ members</span></li>
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Data &amp; Analytics</span><span class="co-pl-sub">180+ members</span></li>
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Finance &amp; Accounting</span><span class="co-pl-sub">280+ members</span></li>
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Shared Services</span><span class="co-pl-sub">240+ members</span></li>
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Cybersecurity</span><span class="co-pl-sub">120+ members</span></li>
+            <li><span class="co-pl-dot"></span><span class="co-pl-label">Supply Chain &amp; Operations</span><span class="co-pl-sub">160+ members</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOGNITION STRIP (reused) -->
+  <div class="culture-recog-section">
+    <div class="culture-recog-inner">
+      <div class="culture-sec-header" style="text-align:center; align-items:center;">
+        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition &amp; Awards</p>
+        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to excellence hasn't gone unnoticed.</p>
+      </div>
+      <div class="culture-recog-grid">
+        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
+        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end company-page -->
+
+<!-- ══════════════════════════════════════
      CAREERS PAGE
 ══════════════════════════════════════ -->
 <div id="careers-page" class="page">
@@ -527,96 +791,242 @@
 </svg></div>
   </div>
 
-  <!-- VALUES SECTION — 5×2 icon grid -->
-  <div class="culture-values-section">
-    <div class="culture-values-inner">
-      <div class="culture-sec-header">
-        <p class="culture-sec-eyebrow reveal">What Drives Us</p>
-        <h2 class="culture-sec-title reveal">Our Core Values</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1">The principles that guide how we work, grow, and show up for each other every day.</p>
+  <!-- VALUES SECTION — removed from Culture, now lives in Company → VMP & Values -->
+
+  <!-- WELL-BEING -->
+  <div class="culture-sub" id="culture-wellbeing">
+    <div class="culture-sub-inner">
+      <div class="culture-sub-header">
+        <span class="culture-sec-eyebrow reveal">Well-being</span>
+        <h2 class="culture-sec-title reveal">Caring for Every Individual</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">At LKQ India, well-being isn't a policy — it's a practice. From mental wellness programmes to physical health initiatives, we invest deeply in our people.</p>
       </div>
-      <div class="values-grid-5">
-
-        <div class="value-cell reveal">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14l2.5 7.5H34l-6 4.5 2.5 7.5L24 29l-6.5 4.5 2.5-7.5-6-4.5h7.5L24 14z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value One</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+      <div class="wellbeing-grid">
+        <div class="wellbeing-card reveal">
+          <div class="wellbeing-icon">🧠</div>
+          <h3>Mental Wellness</h3>
+          <p>Access to confidential counselling, mindfulness workshops, and an Employee Assistance Programme available 24/7 for all team members and their families.</p>
         </div>
-
-        <div class="value-cell reveal reveal-delay-1">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="24" cy="24" r="8" stroke="#1A44F5" stroke-width="1.5"/><path d="M24 16v-4M24 36v-4M16 24h-4M36 24h-4" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value Two</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        <div class="wellbeing-card reveal reveal-delay-1">
+          <div class="wellbeing-icon">🏃</div>
+          <h3>Physical Health</h3>
+          <p>On-site fitness facilities, yoga sessions, running clubs, and annual health check-ups — because a healthy body powers a healthy mind.</p>
         </div>
-
-        <div class="value-cell reveal reveal-delay-2">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M17 24c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/><path d="M24 31v4M20 33h8" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value Three</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        <div class="wellbeing-card reveal reveal-delay-2">
+          <div class="wellbeing-icon">⚖️</div>
+          <h3>Work-Life Balance</h3>
+          <p>Flexible work hours, hybrid models, and generous leave policies designed to help our people thrive both at work and at home.</p>
         </div>
-
-        <div class="value-cell reveal reveal-delay-3">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M16 24l5.5 5.5L32 18" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value Four</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        <div class="wellbeing-card reveal">
+          <div class="wellbeing-icon">💊</div>
+          <h3>Medical Cover</h3>
+          <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
         </div>
-
-        <div class="value-cell reveal reveal-delay-4">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14v20M14 24h20" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value Five</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        <div class="wellbeing-card reveal reveal-delay-1">
+          <div class="wellbeing-icon">🌿</div>
+          <h3>Nutrition &amp; Wellness</h3>
+          <p>Healthy cafeteria options, nutrition workshops, and regular wellness days that encourage mindful eating and sustainable lifestyle habits.</p>
         </div>
-
-        <div class="value-cell reveal">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><rect x="15" y="15" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><rect x="25" y="25" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><path d="M23 19h2a4 4 0 014 4v2" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="value-cell__title">Value Six</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
+        <div class="wellbeing-card reveal reveal-delay-2">
+          <div class="wellbeing-icon">🤝</div>
+          <h3>Community Support</h3>
+          <p>Peer support networks, manager well-being training, and open-door policies that ensure no one navigates challenges alone.</p>
         </div>
+      </div>
+      <div class="wellbeing-impact reveal">
+        <div><div class="wi-num">95%</div><div class="wi-label">Employee Satisfaction with Well-being Programmes</div></div>
+        <div><div class="wi-num">3,200+</div><div class="wi-label">Wellness Sessions Conducted Annually</div></div>
+        <div><div class="wi-num">100%</div><div class="wi-label">Health Insurance Coverage</div></div>
+        <div><div class="wi-num">24/7</div><div class="wi-label">EAP Support Available</div></div>
+      </div>
+    </div>
+  </div>
 
-        <div class="value-cell reveal reveal-delay-1">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15c-5 0-9 4-9 9 0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8 0-5-4-9-9-9z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  <!-- FUN AT WORK -->
+  <div class="culture-sub culture-sub--alt" id="culture-fun">
+    <div class="culture-sub-inner">
+      <div class="culture-sub-header">
+        <span class="culture-sec-eyebrow reveal">Fun at Work</span>
+        <h2 class="culture-sec-title reveal">Work Hard, Celebrate Harder</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">From Funkey Fridays to Keyludus — we believe joy is a core part of the LKQ India experience. Here's how we keep the energy alive.</p>
+      </div>
+      <div class="fun-grid">
+        <div class="fun-card reveal">
+          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80&auto=format');"></div>
+          <div class="fun-card-overlay"></div>
+          <div class="fun-card-content">
+            <span class="fun-card-label">Monthly</span>
+            <div class="fun-card-title">Funkey Fridays</div>
+            <div class="fun-card-desc">Theme-based Fridays where teams come together for creative challenges, music, games, and team bonding activities that break the routine.</div>
           </div>
-          <div class="value-cell__title">Value Seven</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
         </div>
-
-        <div class="value-cell reveal reveal-delay-2">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M18 32V22M24 32V18M30 32V25" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="fun-card reveal reveal-delay-1">
+          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80&auto=format');"></div>
+          <div class="fun-card-overlay"></div>
+          <div class="fun-card-content">
+            <span class="fun-card-label">Annual</span>
+            <div class="fun-card-title">Keyludus Sports Festival</div>
+            <div class="fun-card-desc">Our signature inter-department sports extravaganza — cricket, football, badminton, chess and more. Healthy competition, team spirit, and unforgettable memories.</div>
           </div>
-          <div class="value-cell__title">Value Eight</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
         </div>
-
-        <div class="value-cell reveal reveal-delay-3">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="19" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><circle cx="29" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><path d="M13 33c0-3.31 2.69-6 6-6h10c3.31 0 6 2.69 6 6" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="fun-card reveal">
+          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80&auto=format');"></div>
+          <div class="fun-card-overlay"></div>
+          <div class="fun-card-content">
+            <span class="fun-card-label">Festivals</span>
+            <div class="fun-card-title">Festival Celebrations</div>
+            <div class="fun-card-desc">Diwali, Holi, Christmas, Eid, Onam — every festival is a reason to celebrate together. Decorations, food, music, and cultural performances make each one special.</div>
           </div>
-          <div class="value-cell__title">Value Nine</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
         </div>
-
-        <div class="value-cell reveal reveal-delay-4">
-          <div class="value-cell__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15l1.8 5.4h5.7l-4.6 3.3 1.8 5.4L24 26l-4.7 3.1 1.8-5.4-4.6-3.3h5.7L24 15z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <div class="fun-card reveal reveal-delay-1">
+          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1540479859555-17af45c78602?w=800&q=80&auto=format');"></div>
+          <div class="fun-card-overlay"></div>
+          <div class="fun-card-content">
+            <span class="fun-card-label">Innovation</span>
+            <div class="fun-card-title">Hackathons &amp; Ideathons</div>
+            <div class="fun-card-desc">24-hour innovation challenges where cross-functional teams solve real business problems — with prizes, recognition, and ideas that actually get implemented.</div>
           </div>
-          <div class="value-cell__title">Value Ten</div>
-          <div class="value-cell__desc">A short one-line description of this value goes here.</div>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- OUR STORIES -->
+  <div class="culture-sub" id="culture-stories">
+    <div class="culture-sub-inner">
+      <div class="culture-sub-header">
+        <span class="culture-sec-eyebrow reveal">Our Stories</span>
+        <h2 class="culture-sec-title reveal">Voices of LKQ India</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">Real stories from real people — the journeys, transformations, and moments that define what it means to be part of our team.</p>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card reveal">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">Joining LKQ India was a turning point in my career. The global exposure and the trust my managers placed in me helped me grow from a junior analyst to leading a team of 12 within three years.</p>
+          <div class="story-author">
+            <div class="story-avatar">RP</div>
+            <div>
+              <div class="story-name">Rahul Prakash</div>
+              <div class="story-role">Senior Analytics Manager · 6 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal reveal-delay-1">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">What I love most is that my work directly impacts LKQ's global operations. When I fix a critical system here in Bengaluru, thousands of customers across North America benefit. That sense of purpose keeps me going.</p>
+          <div class="story-author">
+            <div class="story-avatar">PK</div>
+            <div>
+              <div class="story-name">Priya Krishnan</div>
+              <div class="story-role">Lead Software Engineer · 4 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal reveal-delay-2">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">The culture here is unlike anything I've experienced before. Everyone genuinely cares — about the work, about each other, and about growing together. LKQ India feels like a family that challenges you to be your best.</p>
+          <div class="story-author">
+            <div class="story-avatar">AS</div>
+            <div>
+              <div class="story-name">Ananya Sharma</div>
+              <div class="story-role">Finance Business Partner · 5 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">I started as a fresher with limited experience. The structured L&amp;D programmes, mentoring from senior leaders, and the freedom to try new things gave me the confidence to grow into a cybersecurity specialist.</p>
+          <div class="story-author">
+            <div class="story-avatar">VN</div>
+            <div>
+              <div class="story-name">Vikram Nair</div>
+              <div class="story-role">Cybersecurity Analyst · 3 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal reveal-delay-1">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">Being recognised as a Great Place to Work isn't just an award for us — it's a reflection of the intentional culture-building our leadership and HR team do every single day. I'm proud to be part of that story.</p>
+          <div class="story-author">
+            <div class="story-avatar">SM</div>
+            <div>
+              <div class="story-name">Sunita Menon</div>
+              <div class="story-role">HR Business Partner · 7 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal reveal-delay-2">
+          <div class="story-quote-mark">"</div>
+          <p class="story-text">The hybrid work model at LKQ India gave me the flexibility to be present for my family during a difficult time, while still delivering high-impact work. That kind of trust and empathy is rare in the corporate world.</p>
+          <div class="story-author">
+            <div class="story-avatar">KR</div>
+            <div>
+              <div class="story-name">Karthik Rajan</div>
+              <div class="story-role">Supply Chain Analyst · 4 years at LKQI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOASTMASTERS -->
+  <div class="culture-sub culture-sub--alt" id="culture-toastmasters">
+    <div class="culture-sub-inner">
+      <div class="culture-sub-header">
+        <span class="culture-sec-eyebrow reveal">Toastmasters</span>
+        <h2 class="culture-sec-title reveal">Find Your Voice at LKQ India</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1">Our Toastmasters club empowers every employee to become a confident communicator and inspiring leader — one speech at a time.</p>
+      </div>
+      <div class="toast-hero-strip reveal">
+        <div class="toast-strip-left">
+          <h3>LKQ India Toastmasters Club</h3>
+          <p>Chartered in 2016, our club has grown into one of Bengaluru's most active corporate Toastmasters chapters — helping hundreds of members conquer the fear of public speaking, sharpen their leadership skills, and build lasting confidence.</p>
+        </div>
+        <div class="toast-why-grid">
+          <div class="toast-why-item">
+            <h4>What?</h4>
+            <p>A structured programme of prepared speeches, impromptu speaking (Table Topics), and evaluation that builds communication skills progressively.</p>
+          </div>
+          <div class="toast-why-item">
+            <h4>Why?</h4>
+            <p>Because strong communicators make stronger teams. Our members report greater confidence in meetings, presentations, and leadership roles.</p>
+          </div>
+          <div class="toast-why-item">
+            <h4>How?</h4>
+            <p>Weekly meetings every Wednesday, open to all LKQ India employees. No experience required — just the willingness to grow.</p>
+          </div>
+          <div class="toast-why-item">
+            <h4>Impact</h4>
+            <p>200+ members, 15+ District-level award winners, and countless personal breakthroughs since our founding in 2016.</p>
+          </div>
+        </div>
+      </div>
+      <div class="culture-sub-header" style="margin-top:56px; margin-bottom:32px;">
+        <p class="culture-sec-eyebrow reveal" style="color:#1A44F5;">The Team</p>
+        <h2 class="culture-sec-title reveal" style="font-size:clamp(22px,2.5vw,34px);">Club Leadership</h2>
+      </div>
+      <div class="toast-team-grid">
+        <div class="toast-team-card reveal">
+          <div class="toast-team-avatar">PD</div>
+          <div class="toast-team-name">Pavithra D.</div>
+          <div class="toast-team-role">Club President</div>
+        </div>
+        <div class="toast-team-card reveal reveal-delay-1">
+          <div class="toast-team-avatar">MK</div>
+          <div class="toast-team-name">Manoj Kumar</div>
+          <div class="toast-team-role">VP Education</div>
+        </div>
+        <div class="toast-team-card reveal reveal-delay-2">
+          <div class="toast-team-avatar">SR</div>
+          <div class="toast-team-name">Sneha Rao</div>
+          <div class="toast-team-role">VP Membership</div>
+        </div>
+        <div class="toast-team-card reveal reveal-delay-3">
+          <div class="toast-team-avatar">AJ</div>
+          <div class="toast-team-name">Arjun Joseph</div>
+          <div class="toast-team-role">Sergeant at Arms</div>
+        </div>
       </div>
     </div>
   </div>
