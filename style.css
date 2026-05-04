@@ -2600,18 +2600,7 @@ body.panel-open { overflow: hidden; }
   pointer-events: all;
   transform: translateX(-50%) translateY(0);
 }
-/* ── Hover trigger on desktop — arrow only ── */
-@media (min-width: 769px) {
-  .nav-item-dropdown:has(.nav-split-arrow:hover) .nav-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(0);
-  }
-  .nav-item-dropdown:has(.nav-split-arrow:hover) .nav-split-arrow .dropdown-arrow {
-    transform: rotate(180deg);
-  }
-}
+/* ── Hover trigger handled by JS for arrow-only precision ── */
 /* Arrow pointer on dropdown */
 .nav-dropdown::before {
   content: '';
