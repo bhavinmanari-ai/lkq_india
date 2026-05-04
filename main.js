@@ -100,6 +100,26 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ── ARROW-ONLY HOVER — desktop only ──
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth < 769) return;
+  document.querySelectorAll('.nav-item-dropdown').forEach(function(item) {
+    var arrow = item.querySelector('.nav-split-arrow');
+    if (!arrow) return;
+    // Open on arrow mouseenter
+    arrow.addEventListener('mouseenter', function() {
+      if (window.innerWidth < 769) return;
+      closeAllDropdowns();
+      item.classList.add('open');
+    });
+    // Close when mouse leaves the entire nav item (text + arrow + dropdown)
+    item.addEventListener('mouseleave', function() {
+      if (window.innerWidth < 769) return;
+      item.classList.remove('open');
+    });
+  });
+});
+
 // ── SPLIT NAV: Company text click ──
 function navCompanyClick() {
   closeAllDropdowns();
