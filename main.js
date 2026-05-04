@@ -77,6 +77,47 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeServices();
 });
 
+// ── NAV DROPDOWNS ──
+function toggleDropdown(id) {
+  var item = document.getElementById(id);
+  if (!item) return;
+  var isOpen = item.classList.contains('open');
+  // Close all first
+  closeAllDropdowns();
+  // If it wasn't open, open it
+  if (!isOpen) item.classList.add('open');
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.nav-item-dropdown.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+}
+
+// Close dropdowns when clicking outside navbar
+document.addEventListener('click', function(e) {
+  var navbar = document.getElementById('navbar');
+  if (navbar && !navbar.contains(e.target)) {
+    closeAllDropdowns();
+  }
+});
+
+// ── MOBILE ACCORDION ──
+function toggleMobAccordion(id) {
+  var panel = document.getElementById(id);
+  var btn = document.getElementById(id + '-btn');
+  if (!panel || !btn) return;
+  var isOpen = panel.classList.contains('open');
+  // Close all accordions first
+  document.querySelectorAll('.mob-sub-links').forEach(function(p) { p.classList.remove('open'); });
+  document.querySelectorAll('.mob-accordion-btn').forEach(function(b) { b.classList.remove('open'); });
+  // Toggle clicked one
+  if (!isOpen) {
+    panel.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
 // ── GALLERY FILTER ──
 function filterGallery(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
