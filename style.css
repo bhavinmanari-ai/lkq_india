@@ -1393,9 +1393,9 @@ footer {
 .sec-h2 {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(40px, 5.5vw, 72px);
   color: #0d1b3e;
-  line-height: 1.1;
+  line-height: 1.0;
   margin-bottom: 16px;
   letter-spacing: -0.3px;
 }
@@ -2635,7 +2635,7 @@ body.panel-open { overflow: hidden; }
   opacity: 1 !important;
 }
 .nav-dropdown a:hover {
-  background: rgba(200,240,0,0.08);
+  background: rgba(243,255,102,0.08);
   color: #f3ff66 !important;
   padding-left: 26px;
   opacity: 1 !important;
@@ -3328,7 +3328,7 @@ body.panel-open { overflow: hidden; }
 }
 /* Light timeline variant on dark bg */
 .co-timeline--light::before {
-  background: linear-gradient(to bottom, #f3ff66, rgba(200,240,0,0.1));
+  background: linear-gradient(to bottom, #f3ff66, rgba(243,255,102,0.1));
 }
 .co-timeline--light .co-timeline-item::before {
   background: #f3ff66;
@@ -3342,7 +3342,7 @@ body.panel-open { overflow: hidden; }
   box-shadow: 0 24px 64px rgba(0,0,0,0.5);
 }
 .co-overview--photo .co-overview-img::after {
-  border-color: rgba(200,240,0,0.25);
+  border-color: rgba(243,255,102,0.25);
 }
 
 /* ══════════════════════════════════════════════════
@@ -3498,9 +3498,9 @@ body.panel-open { overflow: hidden; }
 .sec-h2 {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(40px, 5.5vw, 72px);
   color: #0d1b3e;
-  line-height: 1.1;
+  line-height: 1.0;
   margin-bottom: 20px;
 }
 .sec-body {
