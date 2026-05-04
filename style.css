@@ -3275,3 +3275,102 @@ body.panel-open { overflow: hidden; }
   .toast-team-grid { grid-template-columns: repeat(2,1fr); }
   .toast-why-grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════════
+   SPLIT NAV ITEM — text link + arrow button separate
+══════════════════════════════════════════════════ */
+.nav-item-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-split-text {
+  font-family: 'Campton', sans-serif !important;
+  font-size: 14px !important;
+  color: rgba(255,255,255,0.88) !important;
+  letter-spacing: 0.2px;
+  padding: 6px 4px 6px 0 !important;
+  transition: color 0.2s !important;
+  white-space: nowrap;
+}
+.nav-split-text:hover {
+  color: #C8F000 !important;
+  opacity: 1 !important;
+}
+.nav-split-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px 6px 2px;
+  display: flex;
+  align-items: center;
+  color: rgba(255,255,255,0.88);
+  transition: color 0.2s;
+  line-height: 1;
+}
+.nav-split-arrow:hover {
+  color: #C8F000;
+}
+.nav-split-arrow .dropdown-arrow {
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.22s ease;
+}
+.nav-item-dropdown.open .nav-split-arrow .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ══════════════════════════════════════════════════
+   OUTLINE WHITE BUTTON (What We Do)
+══════════════════════════════════════════════════ */
+.btn-outline-white {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ══════════════════════════════════════════════════
+   SHARED UTILITY CLASSES (used in Company page)
+══════════════════════════════════════════════════ */
+.sec-eyebrow {
+  display: block;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #1A44F5;
+  margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: 'SharpGrotesk', sans-serif;
+  font-weight: 500;
+  font-size: clamp(28px, 3.5vw, 48px);
+  color: #0d1b3e;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.sec-body {
+  font-family: 'Campton', sans-serif;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.75;
+  max-width: 620px;
+}
