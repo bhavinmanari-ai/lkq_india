@@ -453,7 +453,7 @@ a { text-decoration: none; color: inherit; }
 .services-title {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: #111;
   line-height: 1.15;
   max-width: 540px;
@@ -733,7 +733,7 @@ a { text-decoration: none; color: inherit; }
 .careers-why-title {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: #111;
 }
 .perks-grid {
@@ -786,7 +786,7 @@ a { text-decoration: none; color: inherit; }
 .jobs-title {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: #111;
 }
 .jobs-list {
@@ -1273,7 +1273,7 @@ footer {
 .culture-strip-title {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: white;
   line-height: 1.1;
   margin-bottom: 12px;
@@ -3050,7 +3050,7 @@ body.panel-open { overflow: hidden; }
 }
 .wi-num {
   font-family: 'SharpGrotesk', sans-serif;
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: white;
   margin-bottom: 6px;
 }
