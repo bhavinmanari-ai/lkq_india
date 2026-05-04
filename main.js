@@ -103,12 +103,10 @@ document.addEventListener('click', function(e) {
 // ── SPLIT NAV: Company text click ──
 function navCompanyClick() {
   closeAllDropdowns();
-  var activePage = document.querySelector('.page.active');
-  if (activePage && activePage.id === 'home-page') {
-    // Already on home — just scroll to company section
+  var homePage = document.getElementById('home-page');
+  if (homePage && homePage.classList.contains('active')) {
     scrollToSection('company-section');
   } else {
-    // On another page — go home then scroll
     showPage('home');
     scrollToSection('company-section');
   }
@@ -117,12 +115,10 @@ function navCompanyClick() {
 // ── SPLIT NAV: Our Culture text click ──
 function navCultureClick() {
   closeAllDropdowns();
-  var activePage = document.querySelector('.page.active');
-  if (activePage && activePage.id === 'home-page') {
-    // Already on home — just scroll to culture section
+  var homePage = document.getElementById('home-page');
+  if (homePage && homePage.classList.contains('active')) {
     scrollToSection('culture-section');
   } else {
-    // On another page — go home then scroll
     showPage('home');
     scrollToSection('culture-section');
   }
