@@ -105,17 +105,37 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth < 769) return;
   document.querySelectorAll('.nav-item-dropdown').forEach(function(item) {
     var arrow = item.querySelector('.nav-split-arrow');
-    if (!arrow) return;
+    var dropdown = item.querySelector('.nav-dropdown');
+    var closeTimer = null;
+
+    if (!arrow || !dropdown) return;
+
     // Open on arrow mouseenter
     arrow.addEventListener('mouseenter', function() {
       if (window.innerWidth < 769) return;
+      clearTimeout(closeTimer);
       closeAllDropdowns();
       item.classList.add('open');
     });
-    // Close when mouse leaves the entire nav item (text + arrow + dropdown)
+
+    // Start close timer when leaving the nav item
     item.addEventListener('mouseleave', function() {
       if (window.innerWidth < 769) return;
-      item.classList.remove('open');
+      closeTimer = setTimeout(function() {
+        item.classList.remove('open');
+      }, 150);
+    });
+
+    // Cancel close if mouse enters the dropdown
+    dropdown.addEventListener('mouseenter', function() {
+      clearTimeout(closeTimer);
+    });
+
+    // Start close timer when leaving the dropdown
+    dropdown.addEventListener('mouseleave', function() {
+      closeTimer = setTimeout(function() {
+        item.classList.remove('open');
+      }, 150);
     });
   });
 });
