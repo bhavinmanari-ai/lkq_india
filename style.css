@@ -2600,6 +2600,18 @@ body.panel-open { overflow: hidden; }
   pointer-events: all;
   transform: translateX(-50%) translateY(0);
 }
+/* ── Hover trigger on desktop ── */
+@media (min-width: 769px) {
+  .nav-item-dropdown:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-item-dropdown:hover .nav-split-arrow .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
 /* Arrow pointer on dropdown */
 .nav-dropdown::before {
   content: '';
