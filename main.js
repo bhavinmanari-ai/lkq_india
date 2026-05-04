@@ -82,9 +82,7 @@ function toggleDropdown(id) {
   var item = document.getElementById(id);
   if (!item) return;
   var isOpen = item.classList.contains('open');
-  // Close all first
   closeAllDropdowns();
-  // If it wasn't open, open it
   if (!isOpen) item.classList.add('open');
 }
 
@@ -101,6 +99,49 @@ document.addEventListener('click', function(e) {
     closeAllDropdowns();
   }
 });
+
+// ── SPLIT NAV: Company text click ──
+function navCompanyClick() {
+  closeAllDropdowns();
+  var activePage = document.querySelector('.page.active');
+  if (activePage && activePage.id === 'home-page') {
+    // Already on home — just scroll to company section
+    scrollToSection('company-section');
+  } else {
+    // On another page — go home then scroll
+    showPage('home');
+    scrollToSection('company-section');
+  }
+}
+
+// ── SPLIT NAV: Our Culture text click ──
+function navCultureClick() {
+  closeAllDropdowns();
+  var activePage = document.querySelector('.page.active');
+  if (activePage && activePage.id === 'home-page') {
+    // Already on home — just scroll to culture section
+    scrollToSection('culture-section');
+  } else {
+    // On another page — go home then scroll
+    showPage('home');
+    scrollToSection('culture-section');
+  }
+}
+
+// ── SMART NAVIGATE: avoids scroll-to-top when already on target page ──
+function smartNavigate(page, sectionId) {
+  closeAllDropdowns();
+  var activePage = document.querySelector('.page.active');
+  var targetPageId = page + '-page';
+  if (activePage && activePage.id === targetPageId) {
+    // Already on the right page — just scroll, no page switch
+    scrollToSection(sectionId);
+  } else {
+    // Switch page first, then scroll
+    showPage(page);
+    scrollToSection(sectionId);
+  }
+}
 
 // ── MOBILE ACCORDION ──
 function toggleMobAccordion(id) {
