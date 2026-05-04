@@ -2815,7 +2815,7 @@ body.panel-open { overflow: hidden; }
 /* ── Global Presence ── */
 .co-global {
   background: #f8f9ff;
-  padding: 100px 0;
+  padding: 60px 0 100px;
 }
 .co-global-inner {
   max-width: 1320px;
