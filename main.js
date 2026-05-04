@@ -110,33 +110,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!arrow || !dropdown) return;
 
-    // Open on arrow mouseenter
-    arrow.addEventListener('mouseenter', function() {
-      if (window.innerWidth < 769) return;
+    function openDropdown() {
       clearTimeout(closeTimer);
       closeAllDropdowns();
       item.classList.add('open');
-    });
+    }
 
-    // Start close timer when leaving the nav item
-    item.addEventListener('mouseleave', function() {
-      if (window.innerWidth < 769) return;
+    function scheduleClose() {
       closeTimer = setTimeout(function() {
         item.classList.remove('open');
-      }, 150);
-    });
+      }, 300);
+    }
 
-    // Cancel close if mouse enters the dropdown
-    dropdown.addEventListener('mouseenter', function() {
+    function cancelClose() {
       clearTimeout(closeTimer);
+    }
+
+    // Open ONLY when hovering the arrow
+    arrow.addEventListener('mouseenter', function() {
+      if (window.innerWidth < 769) return;
+      openDropdown();
     });
 
-    // Start close timer when leaving the dropdown
-    dropdown.addEventListener('mouseleave', function() {
-      closeTimer = setTimeout(function() {
-        item.classList.remove('open');
-      }, 150);
-    });
+    // Keep open when mouse is over the dropdown
+    dropdown.addEventListener('mouseenter', cancelClose);
+    dropdown.addEventListener('mouseleave', scheduleClose);
+
+    // Close when leaving arrow (but dropdown mouseenter will cancel if mouse goes there)
+    arrow.addEventListener('mouseleave', scheduleClose);
   });
 });
 
