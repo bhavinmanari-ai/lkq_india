@@ -315,7 +315,7 @@ a { text-decoration: none; color: inherit; }
 .section-heading {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: white;
   line-height: 1.15;
   margin-bottom: 22px;
@@ -1102,7 +1102,7 @@ footer {
 .culture-sec-title {
   font-family: 'SharpGrotesk', sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(32px, 3.5vw, 52px);
   color: #111;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -1660,7 +1660,7 @@ footer {
 }
 .careers-why-title {
   font-family: 'SharpGrotesk', sans-serif; font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px); color: #0d1b3e;
+  font-size: clamp(32px, 3.5vw, 52px); color: #0d1b3e;
   line-height: 1.1; letter-spacing: -0.3px; margin: 0;
 }
 .perks-grid {
@@ -1679,7 +1679,7 @@ footer {
 .jobs-header { margin-bottom: 48px; }
 .jobs-title {
   font-family: 'SharpGrotesk', sans-serif; font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px); color: #0d1b3e;
+  font-size: clamp(32px, 3.5vw, 52px); color: #0d1b3e;
   line-height: 1.1; letter-spacing: -0.3px; margin: 0;
 }
 .job-card {
@@ -1710,7 +1710,7 @@ footer {
 }
 .culture-sec-title {
   font-family: 'SharpGrotesk', sans-serif; font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px); color: #0d1b3e;
+  font-size: clamp(32px, 3.5vw, 52px); color: #0d1b3e;
   line-height: 1.1; letter-spacing: -0.3px; margin: 0;
 }
 .culture-sec-desc {
@@ -1761,7 +1761,7 @@ footer {
 .culture-life-content { max-width: 580px; }
 .culture-life-title {
   font-family: 'SharpGrotesk', sans-serif; font-weight: 500;
-  font-size: clamp(28px, 3.5vw, 48px); color: white;
+  font-size: clamp(32px, 3.5vw, 52px); color: white;
   line-height: 1.1; letter-spacing: -0.3px; margin-bottom: 16px;
 }
 
