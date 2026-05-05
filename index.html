@@ -326,6 +326,12 @@
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    list-style: none;
+  }
+  .co-timeline-item::before,
+  .co-timeline-item::after {
+    display: none !important;
+    content: none !important;
   }
   /* Horizontal line behind all dots */
   .co-timeline::after {
@@ -338,17 +344,25 @@
     background: rgba(255,255,255,0.22);
     z-index: 0;
   }
-  /* Single yellow dot above each card */
+  /* Single yellow dot above each card — no border, no outline */
   .co-timeline-dot {
     width: 13px;
     height: 13px;
     border-radius: 50%;
     background: #f3ff66;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
     flex-shrink: 0;
     margin-bottom: 16px;
     position: relative;
     z-index: 2;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .co-timeline-dot::before,
+  .co-timeline-dot::after {
+    display: none !important;
+    content: none !important;
   }
   .co-timeline-card {
     background: rgba(255,255,255,0.06);
@@ -386,7 +400,7 @@
   }
   @media (max-width: 900px) {
     .co-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .co-timeline-dot::before { display: none; }
+
   }
   @media (max-width: 540px) {
     .co-timeline { grid-template-columns: 1fr; gap: 16px; }
