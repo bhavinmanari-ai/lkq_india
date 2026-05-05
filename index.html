@@ -25,148 +25,150 @@
   }
   .co-org-header { margin-bottom: 64px; }
 
-  /* ── Leader row: quote card + photo ── */
+  /* ── Leader card: photo + quote combined ── */
   .co-leader-row {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 56px;
+    margin-bottom: 64px;
   }
   .co-leader-card {
     background: #f8f9ff;
     border-left: 4px solid #1A44F5;
     border-radius: 0 12px 12px 0;
-    padding: 40px 44px;
-    position: relative;
+    padding: 0;
+    overflow: hidden;
   }
-  .co-leader-quote-mark {
-    font-family: Georgia, serif;
-    font-size: 72px;
-    line-height: 0.6;
-    color: #1A44F5;
-    opacity: 0.18;
-    margin-bottom: 16px;
-    display: block;
+  .co-leader-card-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 260px;
   }
-  .co-leader-quote {
-    font-family: 'SharpGrotesk', sans-serif;
-    font-weight: 500;
-    font-size: clamp(15px, 1.4vw, 19px);
-    color: #0d1b3e;
-    line-height: 1.65;
-    margin-bottom: 28px;
-  }
-  .co-leader-meta { border-top: 1px solid rgba(26,68,245,0.12); padding-top: 20px; }
-  .co-leader-name {
-    font-family: 'SharpGrotesk', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: #0d1b3e;
-    margin-bottom: 4px;
-  }
-  .co-leader-role {
-    font-family: 'Campton', sans-serif;
-    font-size: 13px;
-    color: #64748b;
-    letter-spacing: 0.3px;
-  }
-  .co-leader-photo-wrap {
+  .co-leader-photo-col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 14px;
+    padding: 40px 44px;
+    flex-shrink: 0;
+    width: 240px;
+    background: #eef2ff;
   }
   .co-leader-photo {
-    width: 160px;
-    height: 180px;
-    border-radius: 12px;
-    background: #eef1ff;
-    border: 1.5px solid rgba(26,68,245,0.12);
+    width: 120px;
+    height: 140px;
+    border-radius: 10px;
+    background: #dde4fb;
+    border: 1.5px solid rgba(26,68,245,0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
-  .co-leader-photo-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    opacity: 0.45;
-  }
+  .co-leader-photo svg { opacity: 0.45; }
   .co-leader-photo-name {
     font-family: 'SharpGrotesk', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #0d1b3e;
     text-align: center;
   }
   .co-leader-photo-role {
     font-family: 'Campton', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     color: #64748b;
     text-align: center;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+  }
+  .co-leader-divider {
+    width: 1px;
+    background: rgba(26,68,245,0.1);
+    flex-shrink: 0;
+  }
+  .co-leader-quote-col {
+    flex: 1;
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .co-leader-quote-mark {
+    font-family: Georgia, serif;
+    font-size: 96px;
+    line-height: 0.5;
+    color: #1A44F5;
+    opacity: 0.12;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .co-leader-quote {
+    font-family: 'SharpGrotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(20px, 2vw, 28px);
+    color: #0d1b3e;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
   }
 
   /* ── Flat structure note ── */
   .co-flat-note {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-bottom: 64px;
+    gap: 28px;
+    margin-bottom: 72px;
   }
   .co-flat-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(26,68,245,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(26,68,245,0.18), transparent);
   }
   .co-flat-text {
     font-family: 'Campton', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #64748b;
     text-align: center;
-    line-height: 1.7;
-    max-width: 560px;
+    line-height: 1.75;
+    max-width: 580px;
     flex-shrink: 0;
-    letter-spacing: 0.2px;
   }
 
   /* ── Org chart ── */
-  .co-chart { display: flex; flex-direction: column; align-items: center; }
-  .co-chart-top { display: flex; justify-content: center; }
+  .co-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Nodes */
   .co-chart-node {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     border-radius: 10px;
-    padding: 16px 28px;
+    padding: 18px 32px;
   }
   .co-chart-node--primary {
     background: #1A44F5;
-    box-shadow: 0 8px 32px rgba(26,68,245,0.22);
-    min-width: 280px;
+    box-shadow: 0 10px 36px rgba(26,68,245,0.25);
+    min-width: 300px;
   }
   .co-chart-node--primary .co-chart-node-title {
     font-family: 'SharpGrotesk', sans-serif;
     font-size: 15px;
     font-weight: 500;
     color: #fff;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .co-chart-node--primary .co-chart-node-sub {
     font-family: 'Campton', sans-serif;
-    font-size: 11px;
-    color: rgba(255,255,255,0.65);
+    font-size: 12px;
+    color: rgba(255,255,255,0.60);
     letter-spacing: 0.3px;
   }
   .co-chart-node-photo {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 8px;
     background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.22);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,68 +178,104 @@
     width: 40px;
     height: 40px;
     background: #eef1ff;
-    border: 1px solid rgba(26,68,245,0.12);
+    border: 1px solid rgba(26,68,245,0.15);
   }
   .co-chart-node--secondary {
     background: #fff;
     border: 1.5px solid rgba(26,68,245,0.15);
-    box-shadow: 0 4px 20px rgba(26,68,245,0.07);
-    min-width: 220px;
+    box-shadow: 0 4px 24px rgba(26,68,245,0.07);
+    min-width: 230px;
   }
   .co-chart-node--secondary .co-chart-node-title {
     font-family: 'SharpGrotesk', sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #0d1b3e;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .co-chart-node--secondary .co-chart-node-sub {
     font-family: 'Campton', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     color: #64748b;
     letter-spacing: 0.3px;
   }
-  .co-chart-connector { display: flex; flex-direction: column; align-items: center; width: 100%; }
-  .co-chart-vert { width: 2px; height: 32px; background: rgba(26,68,245,0.2); }
-  .co-chart-horiz {
-    position: relative;
-    width: 320px;
-    height: 2px;
-    background: rgba(26,68,245,0.2);
+
+  /* Connector: vertical line → horizontal bar → two drops */
+  .co-chart-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
-  .co-chart-branch {
+  .co-chart-vert {
     width: 2px;
-    height: 28px;
-    background: rgba(26,68,245,0.2);
-    position: absolute;
-    bottom: 0;
+    height: 36px;
+    background: rgba(26,68,245,0.22);
   }
-  .co-chart-branch--left { left: 0; }
-  .co-chart-branch--right { right: 0; }
-  .co-chart-children { display: flex; gap: 80px; align-items: flex-start; }
-  .co-chart-child { display: flex; flex-direction: column; align-items: center; }
-  .co-chart-child-vert { width: 2px; height: 28px; background: rgba(26,68,245,0.2); }
+  .co-chart-horiz-wrap {
+    position: relative;
+    width: 340px;
+    height: 36px;
+  }
+  .co-chart-horiz-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: rgba(26,68,245,0.22);
+  }
+  .co-chart-horiz-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; right: 50%;
+    width: 2px;
+    height: 0;
+  }
+  .co-chart-drop {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 36px;
+    background: rgba(26,68,245,0.22);
+  }
+  .co-chart-drop--left  { left: 0; }
+  .co-chart-drop--right { right: 0; }
+
+  /* Children */
+  .co-chart-children {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+  }
+  .co-chart-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
   .co-chart-tag {
     font-family: 'Campton', sans-serif;
     font-size: 12px;
     color: #1A44F5;
     font-weight: 600;
     letter-spacing: 0.3px;
-    margin-top: 10px;
-    opacity: 0.75;
+    opacity: 0.7;
   }
-  @media (max-width: 768px) {
-    .co-leader-row { grid-template-columns: 1fr; }
-    .co-leader-photo-wrap { flex-direction: row; justify-content: flex-start; }
-    .co-chart-horiz { width: 220px; }
-    .co-chart-children { gap: 32px; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .co-leader-card-inner { flex-direction: column; }
+    .co-leader-photo-col { width: 100%; flex-direction: row; padding: 28px 32px; }
+    .co-leader-quote-col { padding: 32px; }
+    .co-chart-horiz-wrap { width: 240px; }
+    .co-chart-children { gap: 40px; }
     .co-chart-node--primary, .co-chart-node--secondary { min-width: unset; }
-    .co-chart-node { padding: 12px 18px; }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     .co-chart-children { flex-direction: column; align-items: center; gap: 0; }
-    .co-chart-horiz { display: none; }
+    .co-chart-horiz-wrap { display: none; }
     .co-chart-vert { height: 20px; }
+    .co-chart-child { margin-top: 0; }
   }
 
   /* ── Values icon: enlarged to 64px ── */
@@ -782,26 +820,25 @@
       </div>
       <div class="co-org-body">
 
-        <!-- Leader quote + photo row -->
+        <!-- Leader quote + photo — combined card -->
         <div class="co-leader-row reveal visible">
           <div class="co-leader-card">
-            <div class="co-leader-quote-mark">"</div>
-            <div class="co-leader-quote">
-              We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
-            </div>
-            <div class="co-leader-meta">
-              <div class="co-leader-name">Kishore Kumar</div>
-              <div class="co-leader-role">Leader — Global Competency Centre</div>
-            </div>
-          </div>
-          <div class="co-leader-photo-wrap">
-            <div class="co-leader-photo">
-              <div class="co-leader-photo-inner">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" fill="#c8d4f8"/><ellipse cx="20" cy="34" rx="14" ry="8" fill="#c8d4f8"/></svg>
+            <div class="co-leader-card-inner">
+              <div class="co-leader-photo-col">
+                <div class="co-leader-photo">
+                  <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="9" fill="#c8d4f8"/><ellipse cx="20" cy="34" rx="14" ry="8" fill="#c8d4f8"/></svg>
+                </div>
+                <div class="co-leader-photo-name">Kishore Kumar</div>
+                <div class="co-leader-photo-role">Leader — Global Competency Centre</div>
+              </div>
+              <div class="co-leader-divider"></div>
+              <div class="co-leader-quote-col">
+                <div class="co-leader-quote-mark">"</div>
+                <div class="co-leader-quote">
+                  We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
+                </div>
               </div>
             </div>
-            <div class="co-leader-photo-name">Kishore Kumar</div>
-            <div class="co-leader-photo-role">Leader — GCC</div>
           </div>
         </div>
 
@@ -816,34 +853,32 @@
         <div class="co-chart reveal reveal-delay-2 visible">
 
           <!-- Top node -->
-          <div class="co-chart-top">
-            <div class="co-chart-node co-chart-node--primary">
-              <div class="co-chart-node-photo">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" fill="rgba(255,255,255,0.5)"/><ellipse cx="20" cy="34" rx="14" ry="8" fill="rgba(255,255,255,0.5)"/></svg>
-              </div>
-              <div>
-                <div class="co-chart-node-title">Leader — GCC</div>
-                <div class="co-chart-node-sub">Global Competency Centre</div>
-              </div>
+          <div class="co-chart-node co-chart-node--primary">
+            <div class="co-chart-node-photo">
+              <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" fill="rgba(255,255,255,0.55)"/><ellipse cx="20" cy="33" rx="13" ry="7" fill="rgba(255,255,255,0.55)"/></svg>
+            </div>
+            <div>
+              <div class="co-chart-node-title">Leader — GCC</div>
+              <div class="co-chart-node-sub">Global Competency Centre</div>
             </div>
           </div>
 
-          <!-- Connector -->
+          <!-- Connector: vertical drop → horizontal bar → two drops down -->
           <div class="co-chart-connector">
             <div class="co-chart-vert"></div>
-            <div class="co-chart-horiz">
-              <div class="co-chart-branch co-chart-branch--left"></div>
-              <div class="co-chart-branch co-chart-branch--right"></div>
+            <div class="co-chart-horiz-wrap">
+              <div class="co-chart-drop co-chart-drop--left"></div>
+              <div class="co-chart-drop co-chart-drop--right"></div>
             </div>
           </div>
 
           <!-- Child nodes -->
           <div class="co-chart-children">
+
             <div class="co-chart-child">
-              <div class="co-chart-child-vert"></div>
               <div class="co-chart-node co-chart-node--secondary">
                 <div class="co-chart-node-photo co-chart-node-photo--sm">
-                  <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" fill="#c8d4f8"/><ellipse cx="20" cy="33" rx="13" ry="7" fill="#c8d4f8"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" fill="#b3c3f0"/><ellipse cx="20" cy="33" rx="13" ry="7" fill="#b3c3f0"/></svg>
                 </div>
                 <div>
                   <div class="co-chart-node-title">Leader GCC</div>
@@ -854,10 +889,9 @@
             </div>
 
             <div class="co-chart-child">
-              <div class="co-chart-child-vert"></div>
               <div class="co-chart-node co-chart-node--secondary">
                 <div class="co-chart-node-photo co-chart-node-photo--sm">
-                  <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" fill="#c8d4f8"/><ellipse cx="20" cy="33" rx="13" ry="7" fill="#c8d4f8"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" fill="#b3c3f0"/><ellipse cx="20" cy="33" rx="13" ry="7" fill="#b3c3f0"/></svg>
                 </div>
                 <div>
                   <div class="co-chart-node-title">Leader GCC</div>
@@ -866,6 +900,7 @@
               </div>
               <div class="co-chart-tag">Darshan Dave</div>
             </div>
+
           </div>
 
         </div><!-- end co-chart -->
