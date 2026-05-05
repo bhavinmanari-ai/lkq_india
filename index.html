@@ -19,14 +19,25 @@
   ══════════════════════════════════════ */
   .co-org { background: #fff; padding: 100px 0; }
   .co-org-inner {
+    display: flex;
+    flex-direction: column;
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 clamp(24px, 5vw, 96px);
   }
   .co-org-header { margin-bottom: 64px; }
+  .co-org-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
 
   /* ── Leader card: full-width photo + quote combined ── */
   .co-leader-card {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
     background: #f8f9ff;
     border-left: 4px solid #1A44F5;
     border-radius: 0 12px 12px 0;
@@ -106,6 +117,8 @@
   /* ── Flat structure note ── */
   .co-flat-note {
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
     align-items: center;
     gap: 28px;
     margin-bottom: 72px;
@@ -128,6 +141,8 @@
   /* ── Org chart ── */
   .co-chart {
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
   }
