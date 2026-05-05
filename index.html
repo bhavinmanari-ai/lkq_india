@@ -289,8 +289,16 @@
   }
 
   /* ── Horizontal Journey Timeline ── */
+  .co-journey-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 clamp(24px, 5vw, 96px) 80px;
+    max-width: 1320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
   .co-journey {
-    margin-top: 56px;
     padding-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.15);
   }
@@ -303,9 +311,9 @@
   }
   .co-timeline {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     position: relative;
-    gap: 0;
+    gap: 20px;
   }
   /* Horizontal connecting line through dots */
   .co-timeline::before {
@@ -759,36 +767,38 @@
         <h2 class="sec-h2 sec-h2-white reveal visible">About LKQ GCC</h2>
         <p class="sec-body sec-body-white reveal reveal-delay-1 visible">LKQ GCC Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
         <p class="sec-body sec-body-white reveal reveal-delay-2 visible" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
-        <div class="co-journey reveal reveal-delay-3 visible">
-          <div class="co-journey-title">Our Journey</div>
-          <div class="co-timeline">
-            <div class="co-timeline-item">
-              <div class="co-timeline-dot"></div>
-              <div class="co-timeline-card">
-                <div class="co-timeline-year">2008</div>
-                <div class="co-timeline-text">LKQ GCC established in Bengaluru as a Global Capability Centre to support LKQ Corporation's growing international operations.</div>
-              </div>
+      </div>
+    </div>
+    <div class="co-journey-wrapper">
+      <div class="co-journey reveal reveal-delay-3 visible">
+        <div class="co-journey-title">Our Journey</div>
+        <div class="co-timeline">
+          <div class="co-timeline-item">
+            <div class="co-timeline-dot"></div>
+            <div class="co-timeline-card">
+              <div class="co-timeline-year">2008</div>
+              <div class="co-timeline-text">LKQ GCC established in Bengaluru as a Global Capability Centre to support LKQ Corporation's growing international operations.</div>
             </div>
-            <div class="co-timeline-item">
-              <div class="co-timeline-dot"></div>
-              <div class="co-timeline-card">
-                <div class="co-timeline-year">2012</div>
-                <div class="co-timeline-text">Expanded to 500+ employees across Technology, Finance, and Shared Services functions.</div>
-              </div>
+          </div>
+          <div class="co-timeline-item">
+            <div class="co-timeline-dot"></div>
+            <div class="co-timeline-card">
+              <div class="co-timeline-year">2012</div>
+              <div class="co-timeline-text">Expanded to 500+ employees across Technology, Finance, and Shared Services functions.</div>
             </div>
-            <div class="co-timeline-item">
-              <div class="co-timeline-dot"></div>
-              <div class="co-timeline-card">
-                <div class="co-timeline-year">2018</div>
-                <div class="co-timeline-text">Crossed the 1000-employee milestone. Recognised as a Top GCC Employer in India.</div>
-              </div>
+          </div>
+          <div class="co-timeline-item">
+            <div class="co-timeline-dot"></div>
+            <div class="co-timeline-card">
+              <div class="co-timeline-year">2018</div>
+              <div class="co-timeline-text">Crossed the 1000-employee milestone. Recognised as a Top GCC Employer in India.</div>
             </div>
-            <div class="co-timeline-item">
-              <div class="co-timeline-dot"></div>
-              <div class="co-timeline-card">
-                <div class="co-timeline-year">2023–24</div>
-                <div class="co-timeline-text">Certified Great Place to Work® for two consecutive years. Team grows to 1600+ professionals.</div>
-              </div>
+          </div>
+          <div class="co-timeline-item">
+            <div class="co-timeline-dot"></div>
+            <div class="co-timeline-card">
+              <div class="co-timeline-year">2023–24</div>
+              <div class="co-timeline-text">Certified Great Place to Work® for two consecutive years. Team grows to 1600+ professionals.</div>
             </div>
           </div>
         </div>
