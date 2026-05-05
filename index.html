@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LKQ GCC — Keeping you moving</title>
-<link rel="stylesheet" href="./style.css?v=7">
+<link rel="stylesheet" href="./index_files/style.css">
 <style>
   .culture-sec-title,
   .culture-life-title,
@@ -14,38 +13,64 @@
   .sec-h2 {
     font-size: clamp(32px, 3.5vw, 52px) !important;
   }
+
+  /* ── Values icon: enlarged to 64px ── */
+  .value-cell__icon {
+    width: 64px !important;
+    height: 64px !important;
+  }
+  .value-cell__icon svg {
+    width: 64px !important;
+    height: 64px !important;
+    display: block;
+  }
+
+  /* ── Values card hover: subtle scale + blue glow (no color inversion) ── */
+  .value-cell:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 48px rgba(26,68,245,0.13), 0 0 0 1.5px #1A44F5 !important;
+    border-color: #1A44F5 !important;
+  }
+  /* Remove old inversion effects */
+  .value-cell:hover .value-cell__icon rect,
+  .value-cell:hover .value-cell__icon path,
+  .value-cell:hover .value-cell__icon circle,
+  .value-cell:hover .value-cell__icon polygon {
+    fill: unset !important;
+    stroke: unset !important;
+  }
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav id="navbar">
+<nav id="navbar" class="scrolled">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="showPage('home')">
-      <img src="./logo.png" alt="LKQ GCC" class="nav-logo-img">
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="nav-logo" onclick="showPage(&#39;home&#39;)">
+      <img src="./index_files/logo.png" alt="LKQ GCC" class="nav-logo-img">
     </a>
     <ul class="nav-links" id="nav-links">
       <li class="nav-item-dropdown" id="nav-company">
-        <a href="#" class="nav-split-text" onclick="navCompanyClick(); return false;">Company</a><button class="nav-split-arrow" onclick="toggleDropdown('nav-company'); return false;" aria-label="Company menu"><span class="dropdown-arrow">▼</span></button>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="nav-split-text" onclick="navCompanyClick(); return false;">Company</a><button class="nav-split-arrow" onclick="toggleDropdown(&#39;nav-company&#39;); return false;" aria-label="Company menu"><span class="dropdown-arrow">▼</span></button>
         <div class="nav-dropdown">
-          <a href="#" onclick="smartNavigate('company','co-overview'); return false;">Overview</a>
-          <a href="#" onclick="smartNavigate('company','co-vmp'); return false;">VMP &amp; Values</a>
-          <a href="#" onclick="smartNavigate('company','co-global'); return false;">Global Presence</a>
-          <a href="#" onclick="smartNavigate('company','co-org'); return false;">Organizational Structure</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;company&#39;,&#39;co-overview&#39;); return false;">Overview</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;company&#39;,&#39;co-vmp&#39;); return false;">VMP &amp; Values</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;company&#39;,&#39;co-global&#39;); return false;">Global Presence</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;company&#39;,&#39;co-org&#39;); return false;">Organizational Structure</a>
         </div>
       </li>
-      <li><a href="#" onclick="showPage('careers'); return false;">Careers</a></li>
+      <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;careers&#39;); return false;">Careers</a></li>
       <li class="nav-item-dropdown" id="nav-culture">
-        <a href="#" class="nav-split-text" onclick="navCultureClick(); return false;">Our Culture</a><button class="nav-split-arrow" onclick="toggleDropdown('nav-culture'); return false;" aria-label="Our Culture menu"><span class="dropdown-arrow">▼</span></button>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="nav-split-text" onclick="navCultureClick(); return false;">Our Culture</a><button class="nav-split-arrow" onclick="toggleDropdown(&#39;nav-culture&#39;); return false;" aria-label="Our Culture menu"><span class="dropdown-arrow">▼</span></button>
         <div class="nav-dropdown">
-          <a href="#" onclick="smartNavigate('culture','culture-wellbeing'); return false;">Well-being</a>
-          <a href="#" onclick="smartNavigate('culture','culture-fun'); return false;">Fun at Work</a>
-          <a href="#" onclick="smartNavigate('culture','culture-stories'); return false;">Our Stories</a>
-          <a href="#" onclick="smartNavigate('culture','culture-toastmasters'); return false;">Toastmasters</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;culture&#39;,&#39;culture-wellbeing&#39;); return false;">Well-being</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;culture&#39;,&#39;culture-fun&#39;); return false;">Fun at Work</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="smartNavigate(&#39;culture&#39;,&#39;culture-stories&#39;); return false;">Our Stories</a>
+          
         </div>
       </li>
-      <li><a href="#" onclick="showPage('gallery'); return false;">Gallery</a></li>
-      <li><a href="#" onclick="scrollToFooter()" class="nav-cta">Contact Us</a></li>
+      <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;gallery&#39;); return false;">Gallery</a></li>
+      <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="scrollToFooter()" class="nav-cta">Contact Us</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -56,28 +81,27 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <!-- Company accordion -->
-  <button class="mob-accordion-btn" id="mob-company-btn" onclick="toggleMobAccordion('mob-company')">
+  <button class="mob-accordion-btn" id="mob-company-btn" onclick="toggleMobAccordion(&#39;mob-company&#39;)">
     Company <span class="mob-arrow">▼</span>
   </button>
   <div class="mob-sub-links" id="mob-company">
-    <a href="#" onclick="showPage('company'); scrollToSection('co-overview'); toggleMobile(); return false;">Overview</a>
-    <a href="#" onclick="showPage('company'); scrollToSection('co-vmp'); toggleMobile(); return false;">VMP &amp; Values</a>
-    <a href="#" onclick="showPage('company'); scrollToSection('co-global'); toggleMobile(); return false;">Global Presence</a>
-    <a href="#" onclick="showPage('company'); scrollToSection('co-org'); toggleMobile(); return false;">Organizational Structure</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;company&#39;); scrollToSection(&#39;co-overview&#39;); toggleMobile(); return false;">Overview</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;company&#39;); scrollToSection(&#39;co-vmp&#39;); toggleMobile(); return false;">VMP &amp; Values</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;company&#39;); scrollToSection(&#39;co-global&#39;); toggleMobile(); return false;">Global Presence</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;company&#39;); scrollToSection(&#39;co-org&#39;); toggleMobile(); return false;">Organizational Structure</a>
   </div>
-  <a href="#" onclick="showPage('careers'); toggleMobile()">Careers</a>
+  <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;careers&#39;); toggleMobile()">Careers</a>
   <!-- Our Culture accordion -->
-  <button class="mob-accordion-btn" id="mob-culture-btn" onclick="toggleMobAccordion('mob-culture')">
+  <button class="mob-accordion-btn" id="mob-culture-btn" onclick="toggleMobAccordion(&#39;mob-culture&#39;)">
     Our Culture <span class="mob-arrow">▼</span>
   </button>
   <div class="mob-sub-links" id="mob-culture">
-    <a href="#" onclick="showPage('culture'); scrollToSection('culture-wellbeing'); toggleMobile(); return false;">Well-being</a>
-    <a href="#" onclick="showPage('culture'); scrollToSection('culture-fun'); toggleMobile(); return false;">Fun at Work</a>
-    <a href="#" onclick="showPage('culture'); scrollToSection('culture-stories'); toggleMobile(); return false;">Our Stories</a>
-    <a href="#" onclick="showPage('culture'); scrollToSection('culture-toastmasters'); toggleMobile(); return false;">Toastmasters</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;culture&#39;); scrollToSection(&#39;culture-wellbeing&#39;); toggleMobile(); return false;">Well-being</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;culture&#39;); scrollToSection(&#39;culture-fun&#39;); toggleMobile(); return false;">Fun at Work</a>
+    <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;culture&#39;); scrollToSection(&#39;culture-stories&#39;); toggleMobile(); return false;">Our Stories</a>
   </div>
-  <a href="#" onclick="showPage('gallery'); toggleMobile()">Gallery</a>
-  <a href="#" onclick="scrollToFooter(); toggleMobile()">Contact Us</a>
+  <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;gallery&#39;); toggleMobile()">Gallery</a>
+  <a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="scrollToFooter(); toggleMobile()">Contact Us</a>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -93,16 +117,16 @@
         <p class="svc-panel__desc">Six centres of excellence powering a Fortune 500 enterprise across North America, Europe and beyond.</p>
       </div>
       <button class="svc-panel__close" onclick="closeServices()" aria-label="Close">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
       </button>
     </div>
     <div class="svc-panel__grid">
-      <div class="svc-card"><div class="svc-card__icon">💻</div><div class="svc-card__title">Technology & Engineering</div><div class="svc-card__desc">Building and maintaining enterprise platforms that power LKQ's global operations — from ERP systems to cloud infrastructure and digital transformation.</div></div>
-      <div class="svc-card"><div class="svc-card__icon">📊</div><div class="svc-card__title">Data & Analytics</div><div class="svc-card__desc">Turning complex data into actionable business intelligence through advanced analytics, BI dashboards, and AI-driven models across global markets.</div></div>
-      <div class="svc-card"><div class="svc-card__icon">💼</div><div class="svc-card__title">Finance & Accounting</div><div class="svc-card__desc">Delivering financial excellence with end-to-end accounting, FP&A, compliance, and reporting for LKQ's North America and Europe operations.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">💻</div><div class="svc-card__title">Technology &amp; Engineering</div><div class="svc-card__desc">Building and maintaining enterprise platforms that power LKQ's global operations — from ERP systems to cloud infrastructure and digital transformation.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">📊</div><div class="svc-card__title">Data &amp; Analytics</div><div class="svc-card__desc">Turning complex data into actionable business intelligence through advanced analytics, BI dashboards, and AI-driven models across global markets.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">💼</div><div class="svc-card__title">Finance &amp; Accounting</div><div class="svc-card__desc">Delivering financial excellence with end-to-end accounting, FP&amp;A, compliance, and reporting for LKQ's North America and Europe operations.</div></div>
       <div class="svc-card"><div class="svc-card__icon">🤝</div><div class="svc-card__title">Shared Services</div><div class="svc-card__desc">Streamlining HR, procurement, and administrative operations to enable consistency and efficiency at global scale.</div></div>
       <div class="svc-card"><div class="svc-card__icon">🛡️</div><div class="svc-card__title">Cybersecurity</div><div class="svc-card__desc">Protecting LKQ's digital assets across 1,400+ global locations with proactive threat detection, compliance, and security operations.</div></div>
-      <div class="svc-card"><div class="svc-card__icon">⚙️</div><div class="svc-card__title">Supply Chain & Operations</div><div class="svc-card__desc">Supporting logistics, supply chain analytics, and operational efficiency programmes that keep LKQ's parts moving globally.</div></div>
+      <div class="svc-card"><div class="svc-card__icon">⚙️</div><div class="svc-card__title">Supply Chain &amp; Operations</div><div class="svc-card__desc">Supporting logistics, supply chain analytics, and operational efficiency programmes that keep LKQ's parts moving globally.</div></div>
     </div>
   </div>
 </div>
@@ -110,16 +134,16 @@
 <!-- ══════════════════════════════════════
      HOME PAGE
 ══════════════════════════════════════ -->
-<div id="home-page" class="page active">
+<div id="home-page" class="page">
 
   <!-- HERO -->
   <section id="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay="" muted="" loop="" playsinline="">
       <source src="./assets/video/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
     <div class="hero-wrapper">
-      <div class="hero-inner">
+      <div class="hero-inner hero-entered">
         <p class="hero-kicker">LKQ GCC · Bengaluru</p>
         <h1 class="hero-title">
           <span class="hero-line">LKQ GCC</span>
@@ -128,42 +152,42 @@
         </h1>
         <p class="hero-sub">A Fortune 500 Global Capability Centre — 1600+ professionals driving excellence across 26+ countries.</p>
         <div class="hero-actions">
-          <a href="#" class="btn-blue" onclick="scrollToSection('company-section'); return false;">Discover LKQ GCC</a>
-          <a href="#" class="btn-ghost" onclick="showPage('careers'); return false;">Explore Careers</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-blue" onclick="scrollToSection(&#39;company-section&#39;); return false;">Discover LKQ GCC</a>
+          <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-ghost" onclick="showPage(&#39;careers&#39;); return false;">Explore Careers</a>
         </div>
       </div>
     </div>
     <div class="hero-double-noodle" aria-hidden="true"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 732.26 1311.32">
   <defs>
     <style>
-      .cls-1 {
+      .hn-cls-1 {
         fill: #085cf0;
       }
 
-      .cls-2 {
+      .hn-cls-2 {
         fill: none;
       }
 
-      .cls-3 {
+      .hn-cls-3 {
         clip-path: url(#clippath-1);
       }
 
-      .cls-4 {
+      .hn-cls-4 {
         fill: #5f9aff;
       }
     </style>
-    <clipPath id="clippath-1">
-      <rect class="cls-2" x="923.24" y="2395.07" width="1920" height="1080"/>
-    </clipPath>
+    <clippath id="clippath-1">
+      <rect class="hn-cls-2" x="923.24" y="2395.07" width="1920" height="1080"></rect>
+    </clippath>
   </defs>
   <g id="Brand_Pattern-2" data-name="Brand Pattern">
-    <g class="cls-3">
-      <path class="cls-4" d="M685.52,3219.37c-31.19,0-62.38-4.93-92.71-14.78-33.01-10.72-64.26-29.87-104.49-64.03-38.26-32.48-81.87-76.09-142.22-136.44l-451.32-451.32c-60.35-60.35-103.96-103.96-136.44-142.22-34.15-40.23-53.3-71.48-64.03-104.49-19.71-60.64-19.71-124.76,0-185.41,10.74-33.02,29.89-64.27,64.03-104.49,32.52-38.31,76.11-81.89,136.44-142.22l478.06-478.06c60.33-60.33,103.91-103.91,142.22-136.43,40.22-34.15,71.47-53.29,104.47-64.03,60.66-19.71,124.78-19.71,185.42,0,33,10.72,64.24,29.87,104.49,64.03,38.21,32.43,81.84,76.06,142.22,136.44l451.32,451.32c60.38,60.38,104.01,104.01,136.44,142.23,34.16,40.24,53.31,71.49,64.03,104.48,19.7,60.65,19.7,124.76,0,185.41-10.72,33.01-29.87,64.26-64.03,104.49-32.48,38.26-76.09,81.87-136.44,142.22l-478.06,478.06c-60.35,60.35-103.96,103.96-142.22,136.44-40.23,34.15-71.48,53.3-104.49,64.03-30.32,9.85-61.51,14.78-92.7,14.78ZM-41.57,1937.62c-58.82,58.82-101.32,101.32-131.47,136.83-25.74,30.32-40.25,53.16-47.05,74.06-13.79,42.44-13.79,87.33,0,129.78,6.79,20.89,21.29,43.73,47.04,74.05,30.1,35.46,72.62,77.98,131.47,136.82l451.32,451.32c58.84,58.84,101.36,101.36,136.82,131.47,30.33,25.75,53.17,40.26,74.05,47.04,42.46,13.79,87.33,13.79,129.79,0,20.89-6.79,43.73-21.29,74.05-47.04,35.46-30.1,77.98-72.62,136.83-131.47l478.06-478.06c58.85-58.85,101.36-101.36,131.47-136.82,25.75-30.33,40.26-53.17,47.04-74.05,13.79-42.46,13.79-87.34,0-129.79-6.78-20.87-21.29-43.71-47.05-74.05-30.06-35.41-72.59-77.95-131.46-136.83l-451.32-451.32c-58.87-58.87-101.41-101.4-136.82-131.46-30.34-25.76-53.18-40.27-74.05-47.05-42.46-13.79-87.34-13.79-129.8,0-20.88,6.79-43.72,21.3-74.05,47.05-35.51,30.15-78.01,72.65-136.83,131.47L-41.57,1937.62Z"/>
+    <g class="hn-cls-3">
+      <path class="hn-cls-4" d="M685.52,3219.37c-31.19,0-62.38-4.93-92.71-14.78-33.01-10.72-64.26-29.87-104.49-64.03-38.26-32.48-81.87-76.09-142.22-136.44l-451.32-451.32c-60.35-60.35-103.96-103.96-136.44-142.22-34.15-40.23-53.3-71.48-64.03-104.49-19.71-60.64-19.71-124.76,0-185.41,10.74-33.02,29.89-64.27,64.03-104.49,32.52-38.31,76.11-81.89,136.44-142.22l478.06-478.06c60.33-60.33,103.91-103.91,142.22-136.43,40.22-34.15,71.47-53.29,104.47-64.03,60.66-19.71,124.78-19.71,185.42,0,33,10.72,64.24,29.87,104.49,64.03,38.21,32.43,81.84,76.06,142.22,136.44l451.32,451.32c60.38,60.38,104.01,104.01,136.44,142.23,34.16,40.24,53.31,71.49,64.03,104.48,19.7,60.65,19.7,124.76,0,185.41-10.72,33.01-29.87,64.26-64.03,104.49-32.48,38.26-76.09,81.87-136.44,142.22l-478.06,478.06c-60.35,60.35-103.96,103.96-142.22,136.44-40.23,34.15-71.48,53.3-104.49,64.03-30.32,9.85-61.51,14.78-92.7,14.78ZM-41.57,1937.62c-58.82,58.82-101.32,101.32-131.47,136.83-25.74,30.32-40.25,53.16-47.05,74.06-13.79,42.44-13.79,87.33,0,129.78,6.79,20.89,21.29,43.73,47.04,74.05,30.1,35.46,72.62,77.98,131.47,136.82l451.32,451.32c58.84,58.84,101.36,101.36,136.82,131.47,30.33,25.75,53.17,40.26,74.05,47.04,42.46,13.79,87.33,13.79,129.79,0,20.89-6.79,43.73-21.29,74.05-47.04,35.46-30.1,77.98-72.62,136.83-131.47l478.06-478.06c58.85-58.85,101.36-101.36,131.47-136.82,25.75-30.33,40.26-53.17,47.04-74.05,13.79-42.46,13.79-87.34,0-129.79-6.78-20.87-21.29-43.71-47.05-74.05-30.06-35.41-72.59-77.95-131.46-136.83l-451.32-451.32c-58.87-58.87-101.41-101.4-136.82-131.46-30.34-25.76-53.18-40.27-74.05-47.05-42.46-13.79-87.34-13.79-129.8,0-20.88,6.79-43.72,21.3-74.05,47.05-35.51,30.15-78.01,72.65-136.83,131.47L-41.57,1937.62Z"></path>
     </g>
   </g>
   <g>
-    <path class="cls-1" d="M733.23,62.2c-37.33,32.14-79.96,74.77-138.19,133l-146.83,146.83c-60.32,60.33-103.91,103.91-136.43,142.22-34.15,40.22-53.3,71.46-64.03,104.47-9.85,30.33-14.78,61.53-14.78,92.72s4.92,62.38,14.78,92.71c10.71,32.99,29.86,64.24,64.03,104.48,17.84,21.02,39.07,43.68,64.61,69.87,18.69,19.16,39.69,40.22,63.37,63.9,2.78,2.78,5.6,5.6,8.45,8.45l146.84,146.83c58.26,58.26,100.92,100.93,138.18,132.99v-122.67c-21.75-21.17-46.27-45.68-74.54-73.96l-146.84-146.83c-2.86-2.86-5.67-5.67-8.45-8.45-23.82-23.83-44.86-44.91-63.37-63.9-23.85-24.48-43.54-45.5-59.64-64.47-25.76-30.34-40.27-53.18-47.05-74.05-13.79-42.46-13.79-87.34,0-129.8,6.79-20.88,21.3-43.72,47.05-74.04,30.14-35.51,72.64-78.01,131.46-136.83l146.83-146.83c28.28-28.28,52.78-52.78,74.55-73.95V62.2Z"/>
-    <path class="cls-4" d="M733.23,596.59c-36.84,31.91-79.03,74.1-136.28,131.35l-478.06,478.06c-39.93,39.93-72.53,72.53-99.43,101.1h125.67c11.66-11.72,24.12-24.18,37.4-37.46l257.23-257.24,63.64-63.64,157.19-157.18c27.46-27.45,51.36-51.35,72.64-72.1v-122.89Z"/>
+    <path class="hn-cls-1" d="M733.23,62.2c-37.33,32.14-79.96,74.77-138.19,133l-146.83,146.83c-60.32,60.33-103.91,103.91-136.43,142.22-34.15,40.22-53.3,71.46-64.03,104.47-9.85,30.33-14.78,61.53-14.78,92.72s4.92,62.38,14.78,92.71c10.71,32.99,29.86,64.24,64.03,104.48,17.84,21.02,39.07,43.68,64.61,69.87,18.69,19.16,39.69,40.22,63.37,63.9,2.78,2.78,5.6,5.6,8.45,8.45l146.84,146.83c58.26,58.26,100.92,100.93,138.18,132.99v-122.67c-21.75-21.17-46.27-45.68-74.54-73.96l-146.84-146.83c-2.86-2.86-5.67-5.67-8.45-8.45-23.82-23.83-44.86-44.91-63.37-63.9-23.85-24.48-43.54-45.5-59.64-64.47-25.76-30.34-40.27-53.18-47.05-74.05-13.79-42.46-13.79-87.34,0-129.8,6.79-20.88,21.3-43.72,47.05-74.04,30.14-35.51,72.64-78.01,131.46-136.83l146.83-146.83c28.28-28.28,52.78-52.78,74.55-73.95V62.2Z"></path>
+    <path class="hn-cls-4" d="M733.23,596.59c-36.84,31.91-79.03,74.1-136.28,131.35l-478.06,478.06c-39.93,39.93-72.53,72.53-99.43,101.1h125.67c11.66-11.72,24.12-24.18,37.4-37.46l257.23-257.24,63.64-63.64,157.19-157.18c27.46-27.45,51.36-51.35,72.64-72.1v-122.89Z"></path>
   </g>
 </svg></div>
   </section>
@@ -171,19 +195,19 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stats-inner">
-      <div class="stat-item reveal">
+      <div class="stat-item reveal visible">
         <div class="stat-num">1600+</div>
         <div class="stat-label">Skilled Professionals</div>
       </div>
-      <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-item reveal reveal-delay-1 visible">
         <div class="stat-num">2008</div>
         <div class="stat-label">Established in Bengaluru</div>
       </div>
-      <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-item reveal reveal-delay-2 visible">
         <div class="stat-num">26+</div>
         <div class="stat-label">Countries Supported</div>
       </div>
-      <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-item reveal reveal-delay-3 visible">
         <div class="stat-num">100%</div>
         <div class="stat-label">LKQ Corporation Subsidiary</div>
       </div>
@@ -192,58 +216,45 @@
 
   <!-- COMPANY SECTION -->
   <section class="photo-section" id="company-section">
-    <div class="photo-section-bg" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format');"></div>
+    <div class="photo-section-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&amp;q=80&amp;auto=format&#39;);"></div>
     <div class="photo-section-overlay"></div>
     <div class="photo-section-wrapper"><div class="photo-section-content">
-      <span class="sec-eyebrow reveal" style="color:#f3ff66;">Overview</span>
-      <h2 class="sec-h2 sec-h2-white reveal">Who we are</h2>
-      <p class="sec-body sec-body-white reveal reveal-delay-1">
+      <span class="sec-eyebrow reveal visible" style="color:#f3ff66;">Overview</span>
+      <h2 class="sec-h2 sec-h2-white reveal visible">Who we are</h2>
+      <p class="sec-body sec-body-white reveal reveal-delay-1 visible">
         LKQ GCC Pvt. Ltd. operates as a fully owned subsidiary of Keystone Automotive Operations Inc., a proud member of the LKQ Corporation family. Established in 2008, our Bengaluru-based operations have grown to a team of 1600+ highly skilled professionals, driving innovation and delivering scalable solutions that support LKQ's global objectives.
       </p>
-      <div class="hero-actions reveal reveal-delay-2">
-        <a href="#" class="btn-blue" onclick="showPage('company'); return false;">Discover More</a>
-        <a href="#" class="btn-outline-white" onclick="openServices(); return false;">What We Do</a>
+      <div class="hero-actions reveal reveal-delay-2 visible">
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-blue" onclick="showPage(&#39;company&#39;); return false;">Discover More</a>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-outline-white" onclick="openServices(); return false;">What We Do</a>
       </div>
     </div></div>
     <div class="noodle-bottom-left" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
-  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
-  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path>
+  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path>
 </svg></div>
   </section>
 
   <!-- CULTURE SECTION -->
   <section class="fullscreen-section" id="culture-section">
-    <div class="fullscreen-bg" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=80&auto=format'); filter: grayscale(60%);"></div>
+    <div class="fullscreen-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&amp;q=80&amp;auto=format&#39;); filter: grayscale(60%);"></div>
     <div class="fullscreen-overlay" style="background: rgba(20, 30, 90, 0.68);"></div>
     <div class="fullscreen-wrapper"><div class="fullscreen-content">
-      <span class="sec-eyebrow reveal" style="color:#f3ff66;">Our Culture</span>
-      <h2 class="sec-h2 sec-h2-white reveal">Life at LKQI</h2>
-      <p class="sec-body sec-body-white reveal reveal-delay-1">
+      <span class="sec-eyebrow reveal visible" style="color:#f3ff66;">Our Culture</span>
+      <h2 class="sec-h2 sec-h2-white reveal visible">Life at LKQI</h2>
+      <p class="sec-body sec-body-white reveal reveal-delay-1 visible">
         Culture is the glue that unites LKQ GCC, defined by a shared passion for our work and mutual trust across all levels. It is this culture that sets us apart and drives our pursuit of excellence as a leading GCC.
       </p>
-      <a href="#" class="btn-blue reveal reveal-delay-2" onclick="showPage('culture')">Discover More Here</a>
+      <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-blue reveal reveal-delay-2 visible" onclick="showPage(&#39;culture&#39;)">Discover More Here</a>
     </div></div>
     <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
-  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
-  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
+  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path>
+  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path>
 </svg></div>
   </section>
 
   <!-- PROUD TO BE RECOGNISED — Home -->
-  <div class="culture-recog-section">
-    <div class="culture-recog-inner">
-      <div class="culture-sec-header" style="text-align:center; align-items:center;">
-        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition & Awards</p>
-        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to culture and people hasn't gone unnoticed. Here's what the world says about LKQ GCC.</p>
-      </div>
-      <div class="culture-recog-grid">
-        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
-      </div>
-    </div>
-  </div>
+  
 
 </div><!-- end home-page -->
 
@@ -256,13 +267,13 @@
   <div class="page-hero" style="min-height:50vh; padding: 120px 0 80px;">
     <div class="page-hero-bg" style="background-image: linear-gradient(135deg, #040e32 0%, #1A44F5 100%);"></div>
     <div class="page-hero-wrapper">
-      <div class="page-hero-content">
-        <span class="page-hero-eyebrow reveal">Gallery</span>
-        <h1 class="page-hero-h1 reveal">Life at LKQ GCC</h1>
-        <p class="page-hero-desc reveal reveal-delay-1">A glimpse into our vibrant workplace — celebrations, collaboration, culture, and community.</p>
+      <div class="page-hero-content hero-entered">
+        <span class="page-hero-eyebrow reveal visible">Gallery</span>
+        <h1 class="page-hero-h1 reveal visible">Life at LKQ GCC</h1>
+        <p class="page-hero-desc reveal reveal-delay-1 visible">A glimpse into our vibrant workplace — celebrations, collaboration, culture, and community.</p>
       </div>
     </div>
-    <div class="page-hero-noodle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path></svg></div>
   </div>
 
   <!-- EXPANDABLE PANEL GALLERY -->
@@ -270,19 +281,19 @@
     <div class="gal-panels" id="gal-panels">
 
       <!-- Panel 1: Culture & Events -->
-      <div class="gal-panel" data-cat="culture" onclick="openGalleryPanel('culture')">
-        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80&auto=format');"></div>
+      <div class="gal-panel" data-cat="culture" onclick="openGalleryPanel(&#39;culture&#39;)">
+        <div class="gal-panel__bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&amp;q=80&amp;auto=format&#39;);"></div>
         <div class="gal-panel__overlay"></div>
         <div class="gal-panel__content">
-          <span class="gal-panel__label">Culture & Events</span>
+          <span class="gal-panel__label">Culture &amp; Events</span>
           <span class="gal-panel__count">15 Photos</span>
           <span class="gal-panel__cta">Explore →</span>
         </div>
       </div>
 
       <!-- Panel 2: Workspace -->
-      <div class="gal-panel" data-cat="workspace" onclick="openGalleryPanel('workspace')">
-        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format');"></div>
+      <div class="gal-panel" data-cat="workspace" onclick="openGalleryPanel(&#39;workspace&#39;)">
+        <div class="gal-panel__bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&amp;q=80&amp;auto=format&#39;);"></div>
         <div class="gal-panel__overlay"></div>
         <div class="gal-panel__content">
           <span class="gal-panel__label">Workspace</span>
@@ -292,19 +303,19 @@
       </div>
 
       <!-- Panel 3: CSR & Community -->
-      <div class="gal-panel" data-cat="csr" onclick="openGalleryPanel('csr')">
-        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80&auto=format');"></div>
+      <div class="gal-panel" data-cat="csr" onclick="openGalleryPanel(&#39;csr&#39;)">
+        <div class="gal-panel__bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&amp;q=80&amp;auto=format&#39;);"></div>
         <div class="gal-panel__overlay"></div>
         <div class="gal-panel__content">
-          <span class="gal-panel__label">CSR & Community</span>
+          <span class="gal-panel__label">CSR &amp; Community</span>
           <span class="gal-panel__count">15 Photos</span>
           <span class="gal-panel__cta">Explore →</span>
         </div>
       </div>
 
       <!-- Panel 4: Milestones -->
-      <div class="gal-panel" data-cat="milestones" onclick="openGalleryPanel('milestones')">
-        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&auto=format');"></div>
+      <div class="gal-panel" data-cat="milestones" onclick="openGalleryPanel(&#39;milestones&#39;)">
+        <div class="gal-panel__bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&amp;q=80&amp;auto=format&#39;);"></div>
         <div class="gal-panel__overlay"></div>
         <div class="gal-panel__content">
           <span class="gal-panel__label">Milestones</span>
@@ -314,11 +325,11 @@
       </div>
 
       <!-- Panel 5: Sports & Fun -->
-      <div class="gal-panel" data-cat="sports" onclick="openGalleryPanel('sports')">
-        <div class="gal-panel__bg" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80&auto=format');"></div>
+      <div class="gal-panel" data-cat="sports" onclick="openGalleryPanel(&#39;sports&#39;)">
+        <div class="gal-panel__bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&amp;q=80&amp;auto=format&#39;);"></div>
         <div class="gal-panel__overlay"></div>
         <div class="gal-panel__content">
-          <span class="gal-panel__label">Sports & Fun</span>
+          <span class="gal-panel__label">Sports &amp; Fun</span>
           <span class="gal-panel__count">15 Photos</span>
           <span class="gal-panel__cta">Explore →</span>
         </div>
@@ -338,7 +349,7 @@
           <p class="svc-panel__desc" id="gal-panel-desc">15 photos</p>
         </div>
         <button class="svc-panel__close" onclick="closeGalleryPanel()" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
         </button>
       </div>
       <div class="gal-photo-grid" id="gal-photo-grid"></div>
@@ -352,16 +363,16 @@
 ══════════════════════════════════════ -->
 <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
   <button class="lightbox__close" onclick="closeLightbox()" aria-label="Close">
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
   </button>
   <button class="lightbox__arrow lightbox__arrow--prev" onclick="lightboxNav(-1)" aria-label="Previous">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
   </button>
   <div class="lightbox__img-wrap">
-    <img id="lightbox-img" class="lightbox__img" src="" alt="">
+    <img id="lightbox-img" class="lightbox__img" src="https://bhavinmanari-ai.github.io/lkq_india/" alt="">
   </div>
   <button class="lightbox__arrow lightbox__arrow--next" onclick="lightboxNav(1)" aria-label="Next">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
   </button>
   <div class="lightbox__footer">
     <div id="lightbox-cap" class="lightbox__cap"></div>
@@ -376,15 +387,15 @@
 
   <!-- OVERVIEW — photo backdrop, first section, no separate hero -->
   <div class="photo-section" id="co-overview" style="min-height:100vh;">
-    <div class="photo-section-bg" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80&auto=format&v=2');"></div>
+    <div class="photo-section-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&amp;q=80&amp;auto=format&amp;v=2&#39;);"></div>
     <div class="photo-section-overlay" style="background:rgba(4,14,50,0.78);"></div>
     <div class="photo-section-wrapper">
       <div class="photo-section-content" style="max-width:680px;">
-        <span class="sec-eyebrow reveal" style="color:#f3ff66;">Overview</span>
-        <h2 class="sec-h2 sec-h2-white reveal">About LKQ GCC</h2>
-        <p class="sec-body sec-body-white reveal reveal-delay-1">LKQ GCC Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
-        <p class="sec-body sec-body-white reveal reveal-delay-2" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
-        <div class="co-journey reveal reveal-delay-3" style="border-top-color:rgba(255,255,255,0.15);">
+        <span class="sec-eyebrow reveal visible" style="color:#f3ff66;">Overview</span>
+        <h2 class="sec-h2 sec-h2-white reveal visible">About LKQ GCC</h2>
+        <p class="sec-body sec-body-white reveal reveal-delay-1 visible">LKQ GCC Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
+        <p class="sec-body sec-body-white reveal reveal-delay-2 visible" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
+        <div class="co-journey reveal reveal-delay-3 visible" style="border-top-color:rgba(255,255,255,0.15);">
           <div class="co-journey-title" style="color:#fff;">Our Journey</div>
           <div class="co-timeline">
             <div class="co-timeline-item">
@@ -407,31 +418,31 @@
         </div>
       </div>
     </div>
-    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
+    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path></svg></div>
   </div>
 
   <!-- VMP & VALUES -->
   <div class="culture-values-section" id="co-vmp" style="background:#f8f9ff; padding-bottom: 60px;">
     <div class="culture-values-inner">
       <div class="culture-sec-header">
-        <p class="culture-sec-eyebrow reveal">VMP &amp; Values</p>
-        <h2 class="culture-sec-title reveal" style="font-size:clamp(32px, 3.5vw, 52px);">Vision, Mission, Purpose &amp; Values</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1">The principles that guide every decision we make, every solution we build, and every relationship we nurture.</p>
+        <p class="culture-sec-eyebrow reveal visible">Our CODE</p>
+        <h2 class="culture-sec-title reveal visible" style="font-size:clamp(32px, 3.5vw, 52px);">Vision, Mission, Purpose</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1 visible">The principles that guide every decision we make, every solution we build, and every relationship we nurture.</p>
       </div>
 
       <!-- Vision / Mission / Purpose trio -->
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:56px;">
-        <div class="culture-recog-card reveal" style="border-top-color:#1A44F5;">
+        <div class="culture-recog-card reveal visible" style="border-top-color:#1A44F5;">
           <div class="culture-recog-badge">🔭</div>
           <div class="culture-recog-title">Vision</div>
           <p class="culture-recog-desc">To be the most trusted and innovative Global Capability Centre, enabling LKQ Corporation to lead in every market it serves.</p>
         </div>
-        <div class="culture-recog-card reveal reveal-delay-1" style="border-top-color:#1A44F5;">
+        <div class="culture-recog-card reveal reveal-delay-1 visible" style="border-top-color:#1A44F5;">
           <div class="culture-recog-badge">🎯</div>
           <div class="culture-recog-title">Mission</div>
           <p class="culture-recog-desc">To attract, develop and retain world-class talent that delivers scalable, high-impact solutions for LKQ's global operations.</p>
         </div>
-        <div class="culture-recog-card reveal reveal-delay-2" style="border-top-color:#1A44F5;">
+        <div class="culture-recog-card reveal reveal-delay-2 visible" style="border-top-color:#1A44F5;">
           <div class="culture-recog-badge">💡</div>
           <div class="culture-recog-title">Purpose</div>
           <p class="culture-recog-desc">Keeping the world moving — by empowering our people to create exceptional value every single day.</p>
@@ -440,58 +451,58 @@
 
       <!-- Values grid — migrated from culture page -->
       <div class="culture-sec-header" style="margin-bottom:32px;">
-        <p class="culture-sec-eyebrow reveal" style="color:#1A44F5;">Our Values</p>
-        <h2 class="culture-sec-title reveal" style="font-size:clamp(32px, 3.5vw, 52px);">What Drives Us</h2>
+        <p class="culture-sec-eyebrow reveal visible" style="color:#1A44F5;">Our Values</p>
+        <h2 class="culture-sec-title reveal visible" style="font-size:clamp(32px, 3.5vw, 52px);">What Drives Us</h2>
       </div>
       <div class="values-grid-5">
-        <div class="value-cell reveal">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14l2.5 7.5H34l-6 4.5 2.5 7.5L24 29l-6.5 4.5 2.5-7.5-6-4.5h7.5L24 14z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-          <div class="value-cell__title">Integrity</div>
+        <div class="value-cell reveal visible">
+          <div class="value-cell__icon"><svg id="dev-l2" data-name="dev-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.29 87.62"> <g id="dev-l1" data-name="dev-l1"> <path fill="#0066b3" d="M32.87,22.65c1.8,1.05,3.85,1.68,6.06,1.68s4.28-.63,6.06-1.68c1.44-.83,2.68-1.92,3.67-3.26,1.51-2.02,2.43-4.5,2.43-7.23s-.92-5.21-2.43-7.23c-1-1.31-2.24-2.43-3.67-3.26-1.8-1.05-3.85-1.68-6.06-1.68s-4.28.63-6.06,1.68c-1.44.83-2.68,1.92-3.67,3.26-1.51,2.02-2.43,4.5-2.43,7.23s.92,5.21,2.43,7.23c1,1.31,2.24,2.43,3.67,3.26M35.28,5.89c1.07-.63,2.31-1.02,3.65-1.02s2.58.39,3.65,1.02c2.17,1.27,3.65,3.6,3.65,6.28s-1.49,5.01-3.65,6.28c-1.07.63-2.31,1.02-3.65,1.02s-2.58-.39-3.65-1.02c-2.17-1.27-3.65-3.6-3.65-6.28s1.49-5.01,3.65-6.28M58.39,38.83v14.67l-4.87,2.12v-16.69c0-2.68-2.19-4.87-4.87-4.87h-19.46c-2.68,0-4.87,2.19-4.87,4.87v9.73h-4.87v-9.83c0-1.75.51-3.36,1.36-4.77,0-.02.02-.07.05-.1.44-.75.97-1.46,1.61-2.07,1.75-1.68,4.11-2.73,6.72-2.73h19.46c2.6,0,4.97,1.05,6.72,2.73.63.61,1.17,1.31,1.61,2.07,0,.02.02.07.05.1.85,1.41,1.36,3.02,1.36,4.77"/> <path fill="#010101" d="M48.66,57.08v.63l.32-.15c-.1-.17-.22-.34-.32-.49"/> <path fill="#001522" d="M4.87,53.29l-4.87,2.12v-16.59c0-1.78.54-3.43,1.41-4.84.44-.75.97-1.46,1.61-2.07,1.75-1.68,4.11-2.73,6.72-2.73h8.66c-.63.71-1.22,1.44-1.7,2.29-.49.83-.88,1.68-1.22,2.58h-5.74c-2.68,0-4.87,2.19-4.87,4.87v14.38ZM19.46,24.33c2.22,0,4.28-.63,6.06-1.68-1-1.27-1.8-2.68-2.41-4.21-1.07.63-2.31,1.02-3.65,1.02-4.01,0-7.3-3.28-7.3-7.3s3.29-7.3,7.3-7.3c1.34,0,2.58.39,3.65,1.02.61-1.51,1.44-2.92,2.41-4.21-1.8-1.05-3.84-1.68-6.06-1.68C12.75,0,7.3,5.45,7.3,12.17s5.45,12.17,12.17,12.17M59.46,29.2c.61.71,1.19,1.44,1.68,2.24.51.83.9,1.73,1.24,2.63h5.74c2.68,0,4.87,2.19,4.87,4.87v14.04c1.78.73,3.41,1.73,4.87,3.02v-17.15c0-1.78-.54-3.43-1.41-4.84-.44-.75-.97-1.46-1.61-2.07-1.75-1.68-4.11-2.73-6.72-2.73h-8.66ZM58.39,19.46c-1.34,0-2.58-.39-3.65-1.02-.61,1.51-1.44,2.92-2.41,4.21,1.8,1.05,3.85,1.68,6.06,1.68,6.72,0,12.17-5.45,12.17-12.17S65.11,0,58.39,0c-2.21,0-4.28.63-6.06,1.68,1,1.27,1.83,2.68,2.41,4.21,1.07-.63,2.31-1.02,3.65-1.02,4.02,0,7.3,3.29,7.3,7.3s-3.29,7.3-7.3,7.3M77.91,64.14c-.12-.32-.32-.58-.49-.88-1.92-3.65-5.43-6.04-9.29-6.6-1.61-.24-3.24-.15-4.87.27-.63.17-1.24.32-1.87.58l-6.38,2.77-1.27.56-3.5,1.51s.02-.19.02-.29c0-.41-.07-.83-.12-1.22-.17-1.17-.56-2.26-1.17-3.24l-.32.15v-.63c-1.56-2.14-4.06-3.55-6.89-3.55h-25.25l-6.79,2.95-4.87,2.12-4.87,2.12v5.31l.75-.32,8.98-3.92,7.81-3.38h24.23c1.05,0,2,.46,2.65,1.17.61.66,1,1.53,1,2.48,0,1.44-.85,2.68-2.07,3.26-.49.24-1.02.39-1.58.39h-17.42v4.87h17.42c1.27,0,2.46-.29,3.53-.78l9.32-4.04,8.71-3.77c1.58-.68,3.26-.75,4.82-.39,1.19.29,2.31.85,3.24,1.65.85.75,1.58,1.66,2.07,2.78l.49,1.17-35.5,15.52H0v4.87h39.44l40.85-17.86-2.39-5.6v-.02Z"/> </g> </svg></div>
+          <div class="value-cell__title">Development</div>
           <div class="value-cell__desc">We act with honesty and transparency in everything we do.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-1">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="24" cy="24" r="8" stroke="#1A44F5" stroke-width="1.5"/><path d="M24 16v-4M24 36v-4M16 24h-4M36 24h-4" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Innovation</div>
+        <div class="value-cell reveal reveal-delay-1 visible">
+          <div class="value-cell__icon"><svg id="exc-l2" data-name="exc-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.48 87.49"> <g id="exc-l1" data-name="exc-l1"> <path fill="#001522" d="M32.24,0C14.47,0,0,14.46,0,32.24c0,9.52,4.17,18.05,10.75,23.96,1.33,1.2,2.77,2.3,4.3,3.27,4.98,3.16,10.87,5.01,17.19,5.01,4.58,0,8.94-.97,12.9-2.71v-4.77c-3.87,2.02-8.25,3.18-12.9,3.18-15.41,0-27.94-12.53-27.94-27.94S16.83,4.3,32.24,4.3s27.94,12.53,27.94,27.94c0,8.92-4.21,16.85-10.75,21.99v25.96l-17.19-9.54-17.19,9.54v-15.71c-1.51-.82-2.92-1.74-4.3-2.73v25.75l21.49-11.95,21.49,11.95v-31.27c6.58-5.91,10.75-14.44,10.75-23.96C64.48,14.49,50.01.02,32.24.02v-.02Z"/> <path fill="#0066b3" d="M50.85,29.29l2.41-1.74-1.27-3.89h-13.52l-4.17-12.87h-4.08l-4.17,12.87h-13.52l-1.27,3.89,2.88,2.08,8.06,5.87-4.19,12.88,3.31,2.41,2.73-1.98,8.23-5.97,8.43,6.12,2.52,1.83,3.31-2.41-4.19-12.88,8.53-6.21h-.02ZM37.27,33.85l.47,1.48,2.62,8.06-8.12-5.91-8.12,5.91,2.62-8.06.47-1.48-8.12-5.91h10.04l.47-1.48,2.62-8.06,2.62,8.06.47,1.48h10.04l-8.12,5.91h.04Z"/> </g> </svg></div>
+          <div class="value-cell__title">Excellence</div>
           <div class="value-cell__desc">We challenge the status quo to create smarter solutions.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-2">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M17 24c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/><path d="M24 31v4M20 33h8" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Excellence</div>
+        <div class="value-cell reveal reveal-delay-2 visible">
+          <div class="value-cell__icon"><svg id="lead-l2" data-name="lead-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.58 82.25"> <g id="lead-l1" data-name="lead-l1"> <path fill="#0066b3" d="M43.29,58.44c5.97,0,10.82-4.85,10.82-10.82s-4.85-10.82-10.82-10.82-10.82,4.85-10.82,10.82,4.85,10.82,10.82,10.82M43.29,41.12c3.57,0,6.49,2.92,6.49,6.49s-2.92,6.49-6.49,6.49-6.49-2.92-6.49-6.49,2.92-6.49,6.49-6.49"/> <path fill="#0066b3" d="M25.97,71.43v10.82h4.33v-10.82c0-2.38,1.95-4.33,4.33-4.33h17.31c2.38,0,4.33,1.95,4.33,4.33v6.49h-21.64v4.33h25.97v-10.91c0-1.58-.48-3.05-1.26-4.31-.39-.67-.87-1.3-1.43-1.84-1.56-1.49-3.66-2.42-5.97-2.42h-17.31c-2.32,0-4.42.93-5.97,2.42-.56.54-1.04,1.17-1.43,1.84-.78,1.28-1.25,2.73-1.25,4.31v.09Z"/> <path fill="#001522" d="M28.14,47.62c0-5.97-4.85-10.82-10.82-10.82s-10.82,4.85-10.82,10.82,4.85,10.82,10.82,10.82,10.82-4.85,10.82-10.82M23.81,47.62c0,3.57-2.92,6.49-6.49,6.49s-6.49-2.92-6.49-6.49,2.92-6.49,6.49-6.49,6.49,2.92,6.49,6.49"/> <rect fill="#0066b3" x="41.12" width="4.33" height="28.14"/> <rect fill="#0066b3" x="49.21" y="12.72" width="29.85" height="4.33" transform="translate(8.26 49.71) rotate(-45)"/> <rect fill="#0066b3" x="60.6" y="28.14" width="23.81" height="4.33"/> <rect fill="#0066b3" x="20.38" y="-.05" width="4.33" height="29.85" transform="translate(-3.92 20.3) rotate(-45)"/> <rect fill="#0066b3" x="2.17" y="28.14" width="23.81" height="4.33"/> <path fill="#001522" d="M21.64,77.92H4.33v-6.49c0-2.38,1.95-4.33,4.33-4.33h13.76c.3-.8.65-1.6,1.11-2.34.43-.71.95-1.36,1.49-1.99H8.66c-2.32,0-4.41.93-5.97,2.42-.56.54-1.04,1.17-1.43,1.84-.78,1.28-1.26,2.73-1.26,4.31v10.91h21.64v-4.33Z"/> <path fill="#001522" d="M69.26,58.44c5.97,0,10.82-4.85,10.82-10.82s-4.85-10.82-10.82-10.82-10.82,4.85-10.82,10.82,4.85,10.82,10.82,10.82M69.26,41.12c3.57,0,6.49,2.92,6.49,6.49s-2.92,6.49-6.49,6.49-6.49-2.92-6.49-6.49,2.92-6.49,6.49-6.49"/> <path fill="#001522" d="M64.93,77.92h17.31v-6.49c0-2.38-1.95-4.33-4.33-4.33h-13.76c-.3-.8-.65-1.6-1.11-2.34-.43-.71-.95-1.36-1.49-1.99h16.36c2.32,0,4.41.93,5.97,2.42.56.54,1.04,1.17,1.43,1.84.78,1.28,1.26,2.73,1.26,4.31v10.91h-21.64v-4.33Z"/> </g> </svg></div>
+          <div class="value-cell__title">Leadership</div>
           <div class="value-cell__desc">We set high standards and consistently deliver beyond expectations.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-3">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M16 24l5.5 5.5L32 18" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="value-cell__title">Accountability</div>
+        <div class="value-cell reveal reveal-delay-3 visible">
+          <div class="value-cell__icon"><svg id="integ-l2" data-name="integ-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.78 76.22"> <g id="integ-l1" data-name="integ-l1"> <path fill="#001522" d="M82.45,23.62L61.13,2.29c-3-3-7.9-3-10.9,0l-4.13,4.13,3.18,3.18,4.13-4.13c1.24-1.24,3.27-1.24,4.51,0l21.33,21.32c2.64,2.64,2.64,6.93,0,9.57l-19.14,19.14-15.16,15.16c-1.29,1.29-3.5,1.29-4.78,0-1.29-1.29-1.31-3.48,0-4.78l11.96-11.96-3.18-3.18-11.96,11.96c-1.29,1.29-3.5,1.29-4.78,0-1.29-1.29-1.31-3.48,0-4.78l1.6-1.6,8.78-8.78,1.6-1.6-3.18-3.18-1.6,1.6-8.78,8.78-1.6,1.6c-1.33,1.31-3.47,1.31-4.78,0-.63-.63-.99-1.49-.99-2.39s.36-1.76.99-2.39l1.6-1.6,8.78-8.78,1.6-1.6-3.18-3.18-10.38,10.38-1.6,1.6c-1.31,1.31-3.48,1.31-4.78,0-.63-.63-.99-1.49-.99-2.39s.36-1.76.99-2.39l15.16-15.17-3.18-3.18-15.16,15.17c-1.49,1.49-2.32,3.48-2.32,5.57s.81,4.08,2.32,5.57c1.51,1.49,3.56,2.3,5.57,2.3h.09v.09c0,2.12.81,4.08,2.32,5.57,1.53,1.53,3.57,2.3,5.57,2.3h.09c-.02,2.05.75,4.11,2.3,5.69,1.49,1.49,3.48,2.32,5.57,2.32h.09c-.02,2.05.75,4.11,2.3,5.66,1.56,1.56,3.47,2.32,5.57,2.32s4.08-.81,5.57-2.32l15.03-15.03,19.29-19.29c4.4-4.4,4.4-11.55,0-15.95h-.02Z"/> <path fill="#0066b3" d="M54.88,21.56l-10.36-10.36-8.98-8.98c-2.96-2.98-7.78-2.96-10.74,0L3.23,23.78c-2.08,2.08-3.23,4.85-3.23,7.81s1.15,5.73,3.23,7.81l1.76,1.76,3.18-3.18-1.76-1.76c-1.24-1.24-1.92-2.87-1.92-4.63s.68-3.38,1.92-4.62L27.96,5.41c1.19-1.2,3.16-1.2,4.38,0l8.98,8.98,10.36,10.36,3.99,3.99-3.18,3.18c-.88.88-2.3.88-3.21,0l-14.74-14.74-3.18,3.18,14.74,14.74c1.31,1.31,3.05,1.99,4.78,1.99s3.48-.65,4.78-1.99l6.39-6.39-7.2-7.2.02.05Z"/> </g> </svg></div>
+          <div class="value-cell__title">Integrity &amp; Trust</div>
           <div class="value-cell__desc">We own our outcomes and take responsibility for our actions.</div>
         </div>
-        <div class="value-cell reveal">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><circle cx="19" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><circle cx="29" cy="21" r="4" stroke="#1A44F5" stroke-width="1.5"/><path d="M13 33c0-3.31 2.69-6 6-6h10c3.31 0 6 2.69 6 6" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Collaboration</div>
+        <div class="value-cell reveal visible">
+          <div class="value-cell__icon"><svg id="vadd-l2" data-name="vadd-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.07 80.2"> <g id="vadd-l1" data-name="vadd-l1"> <polygon fill="#0066b3" points="47.14 48.59 39.08 40.53 24.26 55.34 27.01 58.12 39.08 46.07 47.14 54.13 61.95 39.3 59.19 36.54 47.14 48.59"/> <path fill="#001522" d="M12.3,30.32c-1.68,4.05-2.52,8.31-2.52,12.7h3.91c0-3.85.74-7.63,2.23-11.19,1.49-3.56,3.62-6.77,6.34-9.49l-2.76-2.76c-3.09,3.09-5.52,6.71-7.2,10.76v-.02Z"/> <path fill="#001522" d="M72.38,43.01h3.91c0-4.38-.84-8.65-2.52-12.7-1.68-4.05-4.09-7.67-7.2-10.76l-2.76,2.76c2.74,2.74,4.87,5.93,6.34,9.49,1.49,3.58,2.23,7.33,2.23,11.19v.02Z"/> <path fill="#001522" d="M55.73,73.75l-1.51-3.62c-3.56,1.49-7.32,2.25-11.19,2.25h-.08c-3.83,0-7.57-.74-11.13-2.19l-1.49,3.62c4.03,1.66,8.28,2.5,12.62,2.5h.08c4.38,0,8.65-.86,12.68-2.54l.02-.02Z"/> <path fill="#001522" d="M43.03,15.65c4.32,0,7.82-3.5,7.82-7.83s-3.5-7.82-7.82-7.82-7.83,3.5-7.83,7.82,3.5,7.83,7.83,7.83M43.03,3.91c2.15,0,3.91,1.76,3.91,3.91s-1.76,3.91-3.91,3.91-3.91-1.76-3.91-3.91,1.76-3.91,3.91-3.91"/> <path fill="#001522" d="M31.3,23.75v7.55h3.91v-7.55c0-1.23,1-2.23,2.23-2.23h11.17c1.23,0,2.23,1,2.23,2.23v3.64h-11.74v3.91h15.65v-7.55c0-3.38-2.76-6.14-6.14-6.14h-11.17c-3.38,0-6.14,2.76-6.14,6.14"/> <path fill="#001522" d="M11.74,64.55c4.32,0,7.83-3.5,7.83-7.83s-3.5-7.82-7.83-7.82-7.83,3.5-7.83,7.82,3.5,7.83,7.83,7.83M11.74,52.81c2.15,0,3.91,1.76,3.91,3.91s-1.76,3.91-3.91,3.91-3.91-1.76-3.91-3.91,1.76-3.91,3.91-3.91"/> <path fill="#001522" d="M0,72.65v7.55h3.91v-7.55c0-1.23,1-2.23,2.23-2.23h11.19c1.23,0,2.23,1,2.23,2.23v3.64H7.83v3.91h15.65v-7.55c0-3.38-2.76-6.14-6.14-6.14H6.14c-3.38,0-6.14,2.76-6.14,6.14"/> <path fill="#001522" d="M74.33,64.55c4.32,0,7.82-3.5,7.82-7.83s-3.5-7.82-7.82-7.82-7.83,3.5-7.83,7.82,3.5,7.83,7.83,7.83M74.33,52.81c2.15,0,3.91,1.76,3.91,3.91s-1.76,3.91-3.91,3.91-3.91-1.76-3.91-3.91,1.76-3.91,3.91-3.91"/> <path fill="#001522" d="M79.93,66.51h-11.19c-3.38,0-6.14,2.76-6.14,6.14v7.55h3.91v-7.55c0-1.23,1-2.23,2.23-2.23h11.19c1.23,0,2.23,1,2.23,2.23v3.64h-11.74v3.91h15.65v-7.55c0-3.38-2.76-6.14-6.14-6.14"/> </g> </svg></div>
+          <div class="value-cell__title">Value-added</div>
           <div class="value-cell__desc">We win together, leveraging diverse talents as one team.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-1">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><rect x="15" y="15" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><rect x="25" y="25" width="8" height="8" rx="2" stroke="#1A44F5" stroke-width="1.5"/><path d="M23 19h2a4 4 0 014 4v2" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Agility</div>
+        <div class="value-cell reveal reveal-delay-1 visible">
+          <div class="value-cell__icon"><svg id="emb-l2" data-name="emb-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.15 79.32"> <g id="emb-l1" data-name="emb-l1"> <path fill="#001522" d="M80.55,0l-5.6,9.67h3.39v29.99c0,19.43-15.82,35.25-35.25,35.25-14.76,0-27.41-9.12-32.65-22.03h-4.69c5.46,15.38,20.12,26.44,37.35,26.44,21.86,0,39.66-17.8,39.66-39.66V9.67h3.39l-5.6-9.67Z"/> <path fill="#001522" d="M11.17,39.66h-3.33C7.84,20.23,23.66,4.41,43.1,4.41c13.26,0,24.83,7.38,30.85,18.22v-7.84C66.67,5.77,55.55,0,43.1,0,21.24,0,3.44,17.8,3.44,39.66H0l4.12,7.12,1.48,2.56,2.66-4.6,2.93-5.07h-.02Z"/> <path fill="#0066b3" d="M43.1,37.46c6.08,0,11.02-4.93,11.02-11.01s-4.94-11.02-11.02-11.02-11.02,4.94-11.02,11.02,4.94,11.01,11.02,11.01M43.1,19.83c3.64,0,6.61,2.97,6.61,6.61s-2.97,6.61-6.61,6.61-6.61-2.97-6.61-6.61,2.97-6.61,6.61-6.61"/> <path fill="#0066b3" d="M57.99,44.33c-1.59-1.52-3.72-2.47-6.08-2.47h-17.63c-2.36,0-4.5.95-6.08,2.47-.57.55-1.06,1.19-1.46,1.87-.79,1.3-1.28,2.78-1.28,4.39v8.9h4.41v-8.81c0-2.42,1.98-4.41,4.41-4.41h17.63c2.42,0,4.41,1.98,4.41,4.41v4.41h-22.03v4.41h26.44v-8.9c0-1.61-.48-3.11-1.28-4.39-.4-.68-.88-1.32-1.45-1.87"/> </g> </svg></div>
+          <div class="value-cell__title">Embracing Change</div>
           <div class="value-cell__desc">We adapt swiftly to change and embrace new challenges.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-2">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15c-5 0-9 4-9 9 0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8 0-5-4-9-9-9z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-          <div class="value-cell__title">Customer Focus</div>
+        <div class="value-cell reveal reveal-delay-2 visible">
+          <div class="value-cell__icon"><svg id="res-l2" data-name="res-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.14 85.14"> <g id="res-l1" data-name="res-l1"> <path fill="#001522" d="M57.13,0c-15.44,0-28.01,12.57-28.01,28.01v40.33c0,6.79-5.53,12.32-12.32,12.32s-12.32-5.53-12.32-12.32,5.53-12.32,12.32-12.32h7.84v-4.48h-8.96v.07c-8.74.58-15.68,7.86-15.68,16.74s7.53,16.8,16.8,16.8,16.18-6.95,16.74-15.68h.07V28.01c0-12.97,10.55-23.53,23.53-23.53s23.53,10.55,23.53,23.53-10.55,23.53-23.53,23.53h-19.04v4.48h20.17v-.07c14.92-.6,26.89-12.88,26.89-27.94S72.57,0,57.13,0"/> <path fill="#0066b3" d="M8.96,68.34c0,4.32,3.52,7.84,7.84,7.84s7.84-3.52,7.84-7.84-3.52-7.84-7.84-7.84-7.84,3.52-7.84,7.84M20.17,68.34c0,1.86-1.5,3.36-3.36,3.36s-3.36-1.5-3.36-3.36,1.5-3.36,3.36-3.36,3.36,1.5,3.36,3.36"/> <path fill="#001522" d="M38.31,32.38l5.36,1.21-2.94,4.64,6.18,6.18,4.64-2.94,1.21,5.36h8.74l1.21-5.36,4.64,2.94,6.18-6.18-2.94-4.64,5.36-1.21v-8.74l-5.36-1.21,2.94-4.64-6.18-6.18-4.64,2.94-1.21-5.36h-8.74l-1.21,5.36-4.64-2.94-6.18,6.18,2.94,4.64-5.36,1.21v8.74ZM42.8,27.22l4.32-.99.38-1.23c.18-.56.4-1.12.69-1.68l.61-1.14-2.37-3.76,1.12-1.12,3.76,2.37,1.14-.6c.56-.29,1.12-.54,1.68-.7l1.23-.38.99-4.33h1.57l.99,4.33,1.23.38c.56.18,1.12.4,1.68.7l1.14.6,3.76-2.37,1.12,1.12-2.37,3.76.6,1.14c.29.56.54,1.12.7,1.68l.38,1.23,4.33.99v1.57l-4.33.99-.38,1.23c-.18.56-.4,1.12-.7,1.68l-.6,1.14,2.37,3.76-1.12,1.12-3.76-2.37-1.14.61c-.56.29-1.12.54-1.68.69l-1.23.38-.99,4.32h-1.57l-.99-4.32-1.23-.38c-.56-.18-1.12-.4-1.68-.69l-1.14-.61-3.76,2.37-1.12-1.12,2.37-3.76-.61-1.14c-.29-.56-.54-1.12-.69-1.68l-.38-1.23-4.32-.99v-1.57Z"/> <path fill="#001522" d="M57.13,35.85c4.32,0,7.84-3.52,7.84-7.84s-3.52-7.84-7.84-7.84-7.84,3.52-7.84,7.84,3.52,7.84,7.84,7.84M57.13,24.65c1.86,0,3.36,1.5,3.36,3.36s-1.5,3.36-3.36,3.36-3.36-1.5-3.36-3.36,1.5-3.36,3.36-3.36"/> </g> </svg></div>
+          <div class="value-cell__title">Resourceful</div>
           <div class="value-cell__desc">We place our stakeholders at the centre of every decision.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-3">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M18 32V22M24 32V18M30 32V25" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Growth Mindset</div>
+        <div class="value-cell reveal reveal-delay-3 visible">
+          <div class="value-cell__icon"><svg id="sust-l2" data-name="sust-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.2 84.17"> <g id="sust-l1" data-name="sust-l1"> <path fill="#001522" d="M70.91,29.06h0C67.2,9.66,48.47-3.07,29.06.64,9.66,4.35-3.06,23.08.64,42.49c3.71,19.4,22.44,32.13,41.85,28.42,1.51-.29,3-.67,4.46-1.15l-1.31-4c-11.67,3.84-24.51.55-32.91-8.42l4.42-6.63-4.52-9.13v-4.21l-2.9-5.81h-5.2C6.63,15.92,19.98,4.23,35.77,4.21h2.1v2.1h-4.71l-5.81,2.9v9.72h9.66l2.97,2.97v1.24h-15.36l-7.78,5.18v10.52l3.41,3.09,7.58,1.94,1.64,5.03,2.57,10.01h12.16v-7.83l6.5-10.86-2.1-6.31,3.05-4.46h19.34l-.06-.4ZM7.12,35.77l1.3,2.61v4.21l3.89,7.76-2.36,3.51c-3.73-5.3-5.74-11.61-5.74-18.09h2.9ZM49.36,25.25l-5.39,8.1,2.1,6.31-6.1,10.25v4.8h-4.67l-1.64-6.98-2.46-7.39-8.81-2.27-1.35-1.12v-6.31l4.84-3.28h18.31v-7.17l-5.45-5.45h-7.17v-2.9l2.61-1.3h7.91v-5.66c10.85,2.21,19.74,9.95,23.44,20.39h-16.16Z"/> <path fill="#0066b3" d="M83.09,54.58c-2.59-7.55-9.19-14.73-13.15-19.08l-2.61-2.86-2.59,2.86c-3.95,4.31-10.52,11.53-13.17,19.08-1.99,5.52-1.21,11.67,2.1,16.52,2.68,3.83,6.9,6.3,11.55,6.75v6.31h4.21v-6.31c4.63-.44,8.85-2.86,11.55-6.65,3.35-4.87,4.14-11.07,2.1-16.62M77.56,68.66c-1.92,2.66-4.86,4.41-8.12,4.82v-4.04l6.82-6.82-2.99-2.99-3.83,3.85v-8.27l3.83-3.85-2.97-2.97-2.97,2.97-2.99-2.97-2.97,2.97,3.85,3.85v8.27l-3.83-3.85-2.99,2.99,6.82,6.82v4.04c-3.25-.41-6.19-2.16-8.1-4.82-2.5-3.72-3.09-8.4-1.58-12.62,2.21-6.44,8.01-12.94,11.78-17.06,3.77,4.21,9.57,10.63,11.78,17.06,1.53,4.22.95,8.91-1.56,12.62"/> </g> </svg></div>
+          <div class="value-cell__title">Sustainability</div>
           <div class="value-cell__desc">We invest in continuous learning and personal development.</div>
         </div>
-        <div class="value-cell reveal">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 14v20M14 24h20" stroke="#1A44F5" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="value-cell__title">Inclusion</div>
+        <div class="value-cell reveal visible">
+          <div class="value-cell__icon"><svg id="team-l2" data-name="team-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.8 85.8"> <g id="team-l1" data-name="team-l1"> <path fill="#001522" d="M81.28,13.4v13.07l-6.45,10.75c-.21.35-.32.75-.32,1.16v11.29h4.52v-10.66l6.45-10.75c.21-.35.32-.75.32-1.16v-13.69c0-3.16-2.53-5.73-5.65-5.73-.56,0-1.1.11-1.62.27-.88-2.01-2.85-3.42-5.16-3.42-.42,0-.84.06-1.23.15-.5-2.65-2.79-4.66-5.54-4.66-1.28,0-2.44.45-3.39,1.18-.95-.73-2.11-1.18-3.39-1.18-3.11,0-5.65,2.57-5.65,5.73v16.85h-2.2c-1.58-.04-2.82.11-3.7.97-.87.85-.87,1.88-.87,2.33v6.67l9.03,9.03v1.32h4.51v-3.19l-9.03-9.03v-3.58h6.77V5.73c0-.67.51-1.22,1.13-1.22s1.13.54,1.13,1.22v10.07h4.52V5.73c0-.67.51-1.22,1.13-1.22s1.13.54,1.13,1.22v10.07h4.51v-5.56c0-.67.51-1.21,1.13-1.21s1.13.54,1.13,1.21v5.56h4.52v-2.41c0-.67.51-1.22,1.13-1.22s1.13.55,1.13,1.22"/> <path fill="#0066b3" d="M5.73,31.61h16.85v2.2c-.04,1.58.11,2.82.97,3.7.85.87,1.88.87,2.33.87h6.67l9.03-9.03h1.32v-4.52h-3.19l-9.03,9.03h-3.58v-6.77H5.73c-.67,0-1.21-.51-1.21-1.13s.54-1.13,1.21-1.13h10.08v-4.52H5.73c-.67,0-1.21-.51-1.21-1.13s.54-1.13,1.21-1.13h10.08v-4.52h-5.56c-.67,0-1.22-.51-1.22-1.13s.55-1.13,1.22-1.13h5.56v-4.51h-2.41c-.67,0-1.22-.51-1.22-1.13s.55-1.13,1.22-1.13h13.07l10.75,6.45c.35.21.75.32,1.16.32h11.29v-4.51h-10.66L28.26.32c-.35-.21-.75-.32-1.16-.32h-13.7C10.24,0,7.67,2.53,7.67,5.65c0,.56.11,1.1.27,1.62-2.01.88-3.42,2.85-3.42,5.16,0,.43.06.84.15,1.24C2.01,14.15,0,16.44,0,19.19c0,1.28.45,2.44,1.18,3.39C.45,23.53,0,24.69,0,25.97,0,29.08,2.57,31.61,5.73,31.61"/> <path fill="#001522" d="M38.38,59.92v-6.67l-9.03-9.03v-1.32h-4.51v3.19l9.03,9.03v3.58h-6.77v21.36c0,.67-.51,1.22-1.13,1.22s-1.13-.54-1.13-1.22v-10.07h-4.52v10.07c0,.67-.51,1.22-1.13,1.22s-1.13-.54-1.13-1.22v-10.07h-4.51v5.56c0,.67-.51,1.21-1.13,1.21s-1.13-.54-1.13-1.21v-5.56h-4.51v2.41c0,.67-.51,1.22-1.13,1.22s-1.13-.55-1.13-1.22v-13.07l6.45-10.76c.21-.35.32-.75.32-1.16v-11.29h-4.51v10.66L.32,57.54c-.21.35-.32.75-.32,1.16v13.69c0,3.16,2.53,5.73,5.65,5.73.56,0,1.1-.11,1.62-.27.88,2.01,2.85,3.42,5.16,3.42.43,0,.84-.06,1.23-.15.5,2.65,2.79,4.66,5.54,4.66,1.28,0,2.44-.45,3.39-1.17.95.73,2.11,1.17,3.39,1.17,3.11,0,5.65-2.57,5.65-5.73v-16.85h2.2c1.58.04,2.82-.11,3.7-.97.87-.85.87-1.88.87-2.33"/> <path fill="#0066b3" d="M85.8,59.83c0-3.11-2.57-5.64-5.73-5.64h-16.85v-2.2c.04-1.59-.11-2.82-.97-3.71-.85-.87-1.88-.87-2.33-.87h-6.67l-9.03,9.03h-1.32v4.52h3.19l9.03-9.03h3.58v6.77h21.36c.67,0,1.21.51,1.21,1.13s-.54,1.13-1.21,1.13h-10.08v4.51h10.08c.67,0,1.21.51,1.21,1.13s-.54,1.13-1.21,1.13h-10.08v4.52h5.56c.67,0,1.21.51,1.21,1.13s-.54,1.13-1.21,1.13h-5.56v4.52h2.41c.67,0,1.22.51,1.22,1.13s-.55,1.13-1.22,1.13h-13.07l-10.75-6.45c-.35-.21-.75-.32-1.16-.32h-11.29v4.52h10.66l10.76,6.45c.35.21.75.32,1.16.32h13.69c3.16,0,5.73-2.53,5.73-5.64,0-.57-.11-1.1-.27-1.62,2.01-.88,3.42-2.85,3.42-5.16,0-.42-.06-.84-.15-1.23,2.65-.49,4.66-2.79,4.66-5.54,0-1.28-.45-2.44-1.18-3.39.73-.95,1.18-2.11,1.18-3.39"/> </g> </svg></div>
+          <div class="value-cell__title">Teamwork</div>
           <div class="value-cell__desc">We celebrate diversity and create a sense of belonging for all.</div>
         </div>
-        <div class="value-cell reveal reveal-delay-1">
-          <div class="value-cell__icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#EEF1FF"/><path d="M24 15l1.8 5.4h5.7l-4.6 3.3 1.8 5.4L24 26l-4.7 3.1 1.8-5.4-4.6-3.3h5.7L24 15z" stroke="#1A44F5" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-          <div class="value-cell__title">Impact</div>
+        <div class="value-cell reveal reveal-delay-1 visible">
+          <div class="value-cell__icon"><svg id="fun-l2" data-name="fun-l2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.38 85.9"> <g id="fun-l1" data-name="fun-l1"> <path fill="#0066b3" d="M71.57,34.25c-4.51,0-8.18,3.67-8.18,8.18v.7c0,.15-.08.27-.13.32-.24.25-.77.04-.77-.32v-20.46l8.14-6c1.8-1.34,2.19-3.9.86-5.73-1.34-1.81-3.91-2.2-5.71-.86l-5.7,4.21c-.11.08-.22.17-.37.27-2.36,1.61-5.64,1.63-8.07-.03-.11-.07-.23-.15-.36-.25l-5.67-4.19c-1.81-1.34-4.37-.96-5.72.87-1.33,1.82-.94,4.38.87,5.72l8.26,6.09v20.37c0,.24-.21.45-.45.45-.15,0-.27-.08-.32-.13-.09-.08-.13-.19-.13-.32v-.7c0-4.51-3.67-8.18-8.18-8.18s-8.16,3.67-8.16,8.18v5.5h3.57v-5.5c0-2.54,2.06-4.61,4.59-4.61s4.61,2.07,4.61,4.61v.7c0,1.08.42,2.09,1.19,2.86.76.75,1.77,1.16,2.83,1.16,2.22,0,4.02-1.8,4.02-4.02v-22.17l-9.7-7.15c-.24-.17-.29-.5-.12-.73.17-.23.5-.28.72-.11l5.65,4.17c.18.14.38.28.53.38,3.54,2.42,8.54,2.4,12.02.02.19-.12.39-.26.54-.38l5.67-4.19c.22-.16.56-.11.71.1.18.24.13.57-.1.74l-9.58,7.07v22.26c0,2.22,1.8,4.02,4.02,4.02,1.06,0,2.1-.43,2.86-1.19.75-.77,1.16-1.77,1.16-2.82v-.7c0-2.54,2.07-4.61,4.61-4.61s4.6,2.07,4.6,4.61v5.5h3.57v-5.5c0-4.51-3.66-8.18-8.17-8.18"/> <path fill="#0066b3" d="M55.69,15.23c4.2,0,7.62-3.42,7.62-7.62s-3.42-7.62-7.62-7.62-7.62,3.42-7.62,7.62,3.42,7.62,7.62,7.62M55.69,3.57c2.23,0,4.05,1.82,4.05,4.05s-1.82,4.05-4.05,4.05-4.05-1.82-4.05-4.05,1.82-4.05,4.05-4.05"/> <path fill="#0a67b2" d="M39.93,33.45c3.48,0,6.31-2.83,6.31-6.31s-2.83-6.31-6.31-6.31-6.31,2.83-6.31,6.31,2.83,6.31,6.31,6.31M39.93,24.41c1.51,0,2.74,1.23,2.74,2.74s-1.23,2.74-2.74,2.74-2.74-1.23-2.74-2.74,1.23-2.74,2.74-2.74"/> <path fill="#0a67b2" d="M65.26,27.14c0,3.48,2.83,6.31,6.31,6.31s6.31-2.83,6.31-6.31-2.83-6.31-6.31-6.31-6.31,2.83-6.31,6.31M74.3,27.14c0,1.51-1.23,2.74-2.74,2.74s-2.74-1.23-2.74-2.74,1.23-2.74,2.74-2.74,2.74,1.23,2.74,2.74"/> <rect fill="#0066b3" x="53.9" y="32.97" width="3.57" height="11.37"/> <path fill="#001522" d="M77.12,55.82l-14.12,6.29c-.26-3.12-2.72-4.98-6.75-4.98h-14.7l-10.99-7.31c-.29-.19-.62-.29-.95-.29h-13.49v-5.06H0v36.32h16.12s0-5.06,0-5.06h4.24l18.77,8.74c2.48.99,4.47,1.43,6.29,1.43,3.4,0,6.22-1.56,10.42-4.07l26.6-15.16c1.85-.99,3.19-2.55,3.71-4.28.44-1.48.27-2.98-.49-4.38-1.7-3.15-5.17-4.01-8.54-2.19ZM12.68,77.35H3.44v-29.44h9.24v29.44ZM82.86,61.4c-.26.86-1,1.68-2.09,2.25l-26.66,15.2c-6.26,3.75-8.14,4.63-13.61,2.45l-19.02-8.85h-.03c-.12-.04-.23-.06-.36-.09-.1-.03-.21-.06-.32-.06h-4.66v-19.34h12.98l10.99,7.31c.29.19.62.29.95.29h15.21c3.35,0,3.35,1.46,3.35,2.08s0,2.08-3.35,2.08h-10.14c-.47,0-.93.2-1.26.54l-4.58,4.93c-.65.7-.62,1.78.09,2.43.33.32.75.46,1.18.46.46,0,.92-.19,1.26-.54l4.08-4.37h9.4c2.16,0,3.88-.54,5.06-1.53l17.32-7.72c1.05-.56,2.95-1.21,4.01.76.32.57.39,1.15.22,1.73Z"/> </g> </svg></div>
+          <div class="value-cell__title">Fun</div>
           <div class="value-cell__desc">We measure our success by the difference we make globally.</div>
         </div>
       </div>
@@ -502,29 +513,29 @@
   <div class="co-global" id="co-global">
     <div class="co-global-inner">
       <div class="co-global-header">
-        <span class="sec-eyebrow reveal">Global Presence</span>
-        <h2 class="sec-h2 reveal">LKQ Around the World</h2>
-        <p class="sec-body reveal reveal-delay-1">From Bengaluru, we support a global enterprise spanning North America, Europe and beyond — delivering excellence across every time zone.</p>
+        <span class="sec-eyebrow reveal visible">Global Presence</span>
+        <h2 class="sec-h2 reveal visible">LKQ Around the World</h2>
+        <p class="sec-body reveal reveal-delay-1 visible">From Bengaluru, we support a global enterprise spanning North America, Europe and beyond — delivering excellence across every time zone.</p>
       </div>
       <div class="co-global-grid">
-        <div class="co-global-card reveal">
-          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&q=80&auto=format');"></div>
+        <div class="co-global-card reveal visible">
+          <div class="co-global-card-top" style="background-image: url(&#39;https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="co-global-card-body">
             <span class="co-global-tag">Headquarters</span>
             <h3>LKQ Corporation</h3>
             <p>Fortune 500 company headquartered in Nashville, Tennessee. A global leader in alternative and specialty automotive parts serving 1,400+ locations worldwide.</p>
           </div>
         </div>
-        <div class="co-global-card reveal reveal-delay-1">
-          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600&q=80&auto=format');"></div>
+        <div class="co-global-card reveal reveal-delay-1 visible">
+          <div class="co-global-card-top" style="background-image: url(&#39;https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="co-global-card-body">
             <span class="co-global-tag">Europe</span>
             <h3>LKQ Europe</h3>
             <p>Europe's leading distributor of vehicle parts and accessories. Operating across 20+ European countries with a network of thousands of distribution points.</p>
           </div>
         </div>
-        <div class="co-global-card reveal reveal-delay-2">
-          <div class="co-global-card-top" style="background-image: url('https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80&auto=format');"></div>
+        <div class="co-global-card reveal reveal-delay-2 visible">
+          <div class="co-global-card-top" style="background-image: url(&#39;https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="co-global-card-body">
             <span class="co-global-tag">India · GCC</span>
             <h3>LKQ GCC</h3>
@@ -539,48 +550,23 @@
   <div class="co-org" id="co-org">
     <div class="co-org-inner">
       <div class="co-org-header">
-        <span class="sec-eyebrow reveal">Organizational Structure</span>
-        <h2 class="sec-h2 reveal">Leadership &amp; Structure</h2>
-        <p class="sec-body reveal reveal-delay-1">Guided by experienced leadership and built on a high-performance operating model that connects every function to LKQ's global strategy.</p>
+        <span class="sec-eyebrow reveal visible">Organizational Structure</span>
+        <h2 class="sec-h2 reveal visible">Leadership &amp; Structure</h2>
+        <p class="sec-body reveal reveal-delay-1 visible">Guided by experienced leadership and built on a high-performance operating model that connects every function to LKQ's global strategy.</p>
       </div>
       <div class="co-org-body">
-        <div class="co-leader-card reveal">
+        <div class="co-leader-card reveal visible">
           <div class="co-leader-quote">
             We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
           </div>
-          <div class="co-leader-name">GCC Leader, LKQ GCC</div>
-          <div class="co-leader-role">Managing Director &amp; VP — Global Capability Centre</div>
+          <div class="co-leader-name">Kishore Kumar</div>
+          <div class="co-leader-role">Leader — Global Competency Centre</div>
         </div>
-        <div class="co-pl-structure reveal reveal-delay-1">
-          <div class="co-pl-title">Practice Areas</div>
-          <ul class="co-pl-list">
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Technology &amp; Engineering</span><span class="co-pl-sub">320+ members</span></li>
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Data &amp; Analytics</span><span class="co-pl-sub">180+ members</span></li>
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Finance &amp; Accounting</span><span class="co-pl-sub">280+ members</span></li>
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Shared Services</span><span class="co-pl-sub">240+ members</span></li>
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Cybersecurity</span><span class="co-pl-sub">120+ members</span></li>
-            <li><span class="co-pl-dot"></span><span class="co-pl-label">Supply Chain &amp; Operations</span><span class="co-pl-sub">160+ members</span></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </div>
 
-  <!-- RECOGNITION STRIP (reused) -->
-  <div class="culture-recog-section">
-    <div class="culture-recog-inner">
-      <div class="culture-sec-header" style="text-align:center; align-items:center;">
-        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition &amp; Awards</p>
-        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to excellence hasn't gone unnoticed.</p>
-      </div>
-      <div class="culture-recog-grid">
-        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
-      </div>
-    </div>
-  </div>
 
 </div><!-- end company-page -->
 
@@ -590,59 +576,43 @@
 <div id="careers-page" class="page">
 
   <div class="page-hero">
-    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80&auto=format');"></div>
+    <div class="page-hero-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&amp;q=80&amp;auto=format&#39;);"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-wrapper">
-      <div class="page-hero-content">
-        <span class="page-hero-eyebrow reveal">Careers</span>
-        <h1 class="page-hero-h1 reveal">Build a Global<br>Career from India</h1>
-        <p class="page-hero-desc reveal reveal-delay-1">At LKQ GCC, you're shaping the future of a Fortune 500 global enterprise. Join 1600+ professionals who deliver world-class results every day.</p>
-        <a href="#jobs-list" class="btn-white reveal reveal-delay-2">Explore Open Roles</a>
+      <div class="page-hero-content hero-entered">
+        <span class="page-hero-eyebrow reveal visible">Careers</span>
+        <h1 class="page-hero-h1 reveal visible">Build a Global<br>Career from India</h1>
+        <p class="page-hero-desc reveal reveal-delay-1 visible">At LKQ GCC, you're shaping the future of a Fortune 500 global enterprise. Join 1600+ professionals who deliver world-class results every day.</p>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#jobs-list" class="btn-white reveal reveal-delay-2 visible">Explore Open Roles</a>
       </div>
     </div>
-    <div class="page-hero-noodle" aria-hidden="true"><svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #0043b8;
-      }
-
-      .cls-2 {
-        fill: #5f9aff;
-      }
-    </style>
-  </defs>
-  <g id="Layer_1-2" data-name="Layer 1">
-    <path class="cls-2" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
-    <path class="cls-1" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
-  </g>
-</svg></div>
+    <div class="page-hero-noodle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
   </div>
 
   <!-- WHY LKQ -->
   <div class="careers-why">
     <div class="careers-why-inner">
       <div class="careers-why-header">
-        <div class="careers-why-eyebrow reveal">Why LKQ GCC</div>
-        <h2 class="careers-why-title reveal">A Place to Thrive</h2>
+        <div class="careers-why-eyebrow reveal visible">Why LKQ GCC</div>
+        <h2 class="careers-why-title reveal visible">A Place to Thrive</h2>
       </div>
       <div class="perks-grid">
-        <div class="perk-card reveal">
+        <div class="perk-card reveal visible">
           <div class="perk-icon">🌍</div>
           <div class="perk-title">Global Exposure</div>
           <div class="perk-desc">Work directly with teams across North America and Europe, gaining international experience without leaving home.</div>
         </div>
-        <div class="perk-card reveal reveal-delay-1">
+        <div class="perk-card reveal reveal-delay-1 visible">
           <div class="perk-icon">📚</div>
-          <div class="perk-title">Learning & Growth</div>
-          <div class="perk-desc">Structured L&D programmes, certification support, and clear career progression pathways at every level.</div>
+          <div class="perk-title">Learning &amp; Growth</div>
+          <div class="perk-desc">Structured L&amp;D programmes, certification support, and clear career progression pathways at every level.</div>
         </div>
-        <div class="perk-card reveal reveal-delay-2">
+        <div class="perk-card reveal reveal-delay-2 visible">
           <div class="perk-icon">🏥</div>
-          <div class="perk-title">Health & Wellness</div>
+          <div class="perk-title">Health &amp; Wellness</div>
           <div class="perk-desc">Comprehensive medical cover for you and your family, mental wellness support, and employee assistance programmes.</div>
         </div>
-        <div class="perk-card reveal reveal-delay-3">
+        <div class="perk-card reveal reveal-delay-3 visible">
           <div class="perk-icon">⚡</div>
           <div class="perk-title">Flexible Work</div>
           <div class="perk-desc">Hybrid work models designed for modern productivity — balance your professional and personal life effectively.</div>
@@ -655,11 +625,11 @@
   <div class="jobs-section" id="jobs-list">
     <div class="jobs-inner">
       <div class="jobs-header">
-        <h2 class="jobs-title reveal">Open Positions</h2>
-        <a href="#" class="btn-blue" style="font-size:13px; padding:12px 24px;">All Departments</a>
+        <h2 class="jobs-title reveal visible">Open Positions</h2>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-blue" style="font-size:13px; padding:12px 24px;">All Departments</a>
       </div>
       <div class="jobs-list">
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
             <div class="job-title">Senior Software Engineer — Java / Microservices</div>
             <div class="job-meta">
@@ -671,7 +641,7 @@
           <span class="job-dept">Technology</span>
           <span class="job-arrow">→</span>
         </div>
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
             <div class="job-title">Data Scientist — Supply Chain Analytics</div>
             <div class="job-meta">
@@ -683,9 +653,9 @@
           <span class="job-dept">Analytics</span>
           <span class="job-arrow">→</span>
         </div>
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
-            <div class="job-title">Finance Manager — FP&A & Global Reporting</div>
+            <div class="job-title">Finance Manager — FP&amp;A &amp; Global Reporting</div>
             <div class="job-meta">
               <span class="job-tag">📍 Bengaluru</span>
               <span class="job-tag">🕐 Full-time</span>
@@ -695,7 +665,7 @@
           <span class="job-dept">Finance</span>
           <span class="job-arrow">→</span>
         </div>
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
             <div class="job-title">Cloud Infrastructure Engineer — AWS/Azure</div>
             <div class="job-meta">
@@ -707,7 +677,7 @@
           <span class="job-dept">Technology</span>
           <span class="job-arrow">→</span>
         </div>
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
             <div class="job-title">HR Business Partner — GCC Operations</div>
             <div class="job-meta">
@@ -719,7 +689,7 @@
           <span class="job-dept">Shared Services</span>
           <span class="job-arrow">→</span>
         </div>
-        <div class="job-card reveal">
+        <div class="job-card reveal visible">
           <div class="job-info">
             <div class="job-title">Cybersecurity Analyst — SOC Operations</div>
             <div class="job-meta">
@@ -736,20 +706,7 @@
   </div>
 
   <!-- PROUD TO BE RECOGNISED — Careers -->
-  <div class="culture-recog-section">
-    <div class="culture-recog-inner">
-      <div class="culture-sec-header" style="text-align:center; align-items:center;">
-        <p class="culture-sec-eyebrow reveal" style="color:var(--blue);">Recognition & Awards</p>
-        <h2 class="culture-sec-title reveal" style="color:#111;">Proud to Be Recognised</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1" style="max-width:540px; margin:0 auto;">Our commitment to culture and people hasn't gone unnoticed. Here's what the world says about LKQ GCC.</p>
-      </div>
-      <div class="culture-recog-grid">
-        <div class="culture-recog-card reveal"><div class="culture-recog-badge">🏆</div><div class="culture-recog-title">Great Place to Work®</div><p class="culture-recog-desc">Certified for two consecutive years — recognising our outstanding workplace culture and employee satisfaction scores.</p><div class="culture-recog-year">2023 &amp; 2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-1"><div class="culture-recog-badge">⭐</div><div class="culture-recog-title">Top GCC Employer</div><p class="culture-recog-desc">Recognised among India's top Global Capability Centres for employee engagement and leadership development programmes.</p><div class="culture-recog-year">2024</div></div>
-        <div class="culture-recog-card reveal reveal-delay-2"><div class="culture-recog-badge">🌍</div><div class="culture-recog-title">D&amp;I Excellence</div><p class="culture-recog-desc">Awarded for outstanding commitment to diversity, equity and inclusion across all levels of the organisation.</p><div class="culture-recog-year">2024</div></div>
-      </div>
-    </div>
-  </div>
+  
 
 </div><!-- end careers-page -->
 
@@ -757,75 +714,100 @@
 <!-- ══════════════════════════════════════
      CULTURE PAGE
 ══════════════════════════════════════ -->
-<div id="culture-page" class="page">
+<div id="culture-page" class="page active">
 
   <!-- VALUES SECTION — removed from Culture, now lives in Company → VMP & Values -->
 
   <!-- WELL-BEING — photo backdrop using proven fullscreen-section pattern -->
   <div class="fullscreen-section" id="culture-wellbeing" style="height:auto; min-height:100vh; padding:0;">
-    <div class="fullscreen-bg" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80&auto=format');"></div>
+    <div class="fullscreen-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&amp;q=80&amp;auto=format&#39;);"></div>
     <div class="fullscreen-overlay" style="background:rgba(4,14,50,0.80);"></div>
     <div class="fullscreen-wrapper" style="align-items:flex-start; padding: 120px clamp(28px,4vw,72px) 100px;">
       <div style="width:100%; max-width:1320px; margin:0 auto;">
         <div class="culture-sub-header">
-          <span class="culture-sec-eyebrow reveal" style="color:#f3ff66;">Well-being</span>
-          <h2 class="culture-sec-title reveal" style="color:#fff;">Caring for Every Individual</h2>
-          <p class="culture-sec-desc reveal reveal-delay-1" style="color:rgba(255,255,255,0.85);">At LKQ GCC, well-being isn't a policy — it's a practice. From mental wellness programmes to physical health initiatives, we invest deeply in our people.</p>
+          <span class="culture-sec-eyebrow reveal visible" style="color:#f3ff66;">Well-being</span>
+          <h2 class="culture-sec-title reveal visible" style="color:#fff;">Member Benefits</h2>
+          <p class="culture-sec-desc reveal reveal-delay-1 visible" style="color:rgba(255,255,255,0.85);">At LKQ GCC, well-being isn't a policy — it's a practice. From mental wellness programmes to physical health initiatives, we invest deeply in our people.</p>
         </div>
         <div class="wellbeing-grid">
-          <div class="wellbeing-card wellbeing-card--glass reveal">
+          <div class="wellbeing-card wellbeing-card--glass reveal visible">
             <div class="wellbeing-icon">🧠</div>
-            <h3>Mental Wellness</h3>
+            <h3>Career Progression</h3>
             <p>Access to confidential counselling, mindfulness workshops, and an Employee Assistance Programme available 24/7 for all team members and their families.</p>
           </div>
-          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1">
+          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1 visible">
             <div class="wellbeing-icon">🏃</div>
-            <h3>Physical Health</h3>
+            <h3>Professional Development Reimbursement</h3>
             <p>On-site fitness facilities, yoga sessions, running clubs, and annual health check-ups — because a healthy body powers a healthy mind.</p>
           </div>
-          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2">
+          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2 visible">
             <div class="wellbeing-icon">⚖️</div>
-            <h3>Work-Life Balance</h3>
+            <h3>Reimbursement for Micro-Learning</h3>
             <p>Flexible work hours, hybrid models, and generous leave policies designed to help our people thrive both at work and at home.</p>
           </div>
-          <div class="wellbeing-card wellbeing-card--glass reveal">
+          <div class="wellbeing-card wellbeing-card--glass reveal visible">
             <div class="wellbeing-icon">💊</div>
-            <h3>Medical Cover</h3>
+            <h3>Loyalty Bonus</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div>
-          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1">
+          <div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Long Service Award</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Rewards &amp; Recognitions</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Referral Bonus
+</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Night Shift Allowance</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Free Transport for UK/US Shifts</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
+            <div class="wellbeing-icon">💊</div>
+            <h3>Member Assistance Program (MAP)</h3>
+            <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
+          </div><div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1 visible">
             <div class="wellbeing-icon">🌿</div>
-            <h3>Nutrition &amp; Wellness</h3>
+            <h3>Online Doctor Consultation &amp; Wellness</h3>
             <p>Healthy cafeteria options, nutrition workshops, and regular wellness days that encourage mindful eating and sustainable lifestyle habits.</p>
           </div>
-          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2">
+          <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2 visible">
             <div class="wellbeing-icon">🤝</div>
             <h3>Community Support</h3>
             <p>Peer support networks, manager well-being training, and open-door policies that ensure no one navigates challenges alone.</p>
           </div>
         </div>
-        <div class="wellbeing-impact reveal" style="margin-top:60px;">
-          <div><div class="wi-num">95%</div><div class="wi-label">Employee Satisfaction with Well-being Programmes</div></div>
-          <div><div class="wi-num">3,200+</div><div class="wi-label">Wellness Sessions Conducted Annually</div></div>
-          <div><div class="wi-num">100%</div><div class="wi-label">Health Insurance Coverage</div></div>
-          <div><div class="wi-num">24/7</div><div class="wi-label">EAP Support Available</div></div>
+        <div class="wellbeing-impact reveal visible" style="margin-top:60px;">
+          <div><div class="wi-num">46,000+</div><div class="wi-label">Global Employees</div></div>
+          <div><div class="wi-num">1,400+</div><div class="wi-label">Locations</div></div>
+          <div><div class="wi-num">25+</div><div class="wi-label">Countries</div></div>
+          <div><div class="wi-num">170</div><div class="wi-label">Million Miles Driven Anually</div></div>
         </div>
       </div>
     </div>
-    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="rgba(95,154,255,0.35)" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/><path fill="rgba(0,67,184,0.35)" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/></svg></div>
+    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5"><path fill="rgba(95,154,255,0.35)" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path><path fill="rgba(0,67,184,0.35)" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path></svg></div>
   </div>
 
   <!-- FUN AT WORK -->
   <div class="culture-sub culture-sub--alt" id="culture-fun">
     <div class="culture-sub-inner">
       <div class="culture-sub-header">
-        <span class="culture-sec-eyebrow reveal">Fun at Work</span>
-        <h2 class="culture-sec-title reveal">Work Hard, Celebrate Harder</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1">From Funkey Fridays to Keyludus — we believe joy is a core part of the LKQ GCC experience. Here's how we keep the energy alive.</p>
+        <span class="culture-sec-eyebrow reveal visible">Fun at Work</span>
+        <h2 class="culture-sec-title reveal visible">Work Hard, Celebrate Harder</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1 visible">From Funkey Fridays to Keyludus — we believe joy is a core part of the LKQ GCC experience. Here's how we keep the energy alive.</p>
       </div>
       <div class="fun-grid">
-        <div class="fun-card reveal">
-          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80&auto=format');"></div>
+        <div class="fun-card reveal visible">
+          <div class="fun-card-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="fun-card-overlay"></div>
           <div class="fun-card-content">
             <span class="fun-card-label">Monthly</span>
@@ -833,8 +815,8 @@
             <div class="fun-card-desc">Theme-based Fridays where teams come together for creative challenges, music, games, and team bonding activities that break the routine.</div>
           </div>
         </div>
-        <div class="fun-card reveal reveal-delay-1">
-          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80&auto=format');"></div>
+        <div class="fun-card reveal reveal-delay-1 visible">
+          <div class="fun-card-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="fun-card-overlay"></div>
           <div class="fun-card-content">
             <span class="fun-card-label">Annual</span>
@@ -842,8 +824,8 @@
             <div class="fun-card-desc">Our signature inter-department sports extravaganza — cricket, football, badminton, chess and more. Healthy competition, team spirit, and unforgettable memories.</div>
           </div>
         </div>
-        <div class="fun-card reveal">
-          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80&auto=format');"></div>
+        <div class="fun-card reveal visible">
+          <div class="fun-card-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="fun-card-overlay"></div>
           <div class="fun-card-content">
             <span class="fun-card-label">Festivals</span>
@@ -851,8 +833,8 @@
             <div class="fun-card-desc">Diwali, Holi, Christmas, Eid, Onam — every festival is a reason to celebrate together. Decorations, food, music, and cultural performances make each one special.</div>
           </div>
         </div>
-        <div class="fun-card reveal reveal-delay-1">
-          <div class="fun-card-bg" style="background-image: url('https://images.unsplash.com/photo-1540479859555-17af45c78602?w=800&q=80&auto=format');"></div>
+        <div class="fun-card reveal reveal-delay-1 visible">
+          <div class="fun-card-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1540479859555-17af45c78602?w=800&amp;q=80&amp;auto=format&#39;);"></div>
           <div class="fun-card-overlay"></div>
           <div class="fun-card-content">
             <span class="fun-card-label">Innovation</span>
@@ -868,12 +850,12 @@
   <div class="culture-sub" id="culture-stories">
     <div class="culture-sub-inner">
       <div class="culture-sub-header">
-        <span class="culture-sec-eyebrow reveal">Our Stories</span>
-        <h2 class="culture-sec-title reveal">Voices of LKQ GCC</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1">Real stories from real people — the journeys, transformations, and moments that define what it means to be part of our team.</p>
+        <span class="culture-sec-eyebrow reveal visible">Our Stories</span>
+        <h2 class="culture-sec-title reveal visible">Voices of LKQ GCC</h2>
+        <p class="culture-sec-desc reveal reveal-delay-1 visible">Real stories from real people — the journeys, transformations, and moments that define what it means to be part of our team.</p>
       </div>
       <div class="stories-grid">
-        <div class="story-card reveal">
+        <div class="story-card reveal visible">
           <div class="story-quote-mark">"</div>
           <p class="story-text">Joining LKQ GCC was a turning point in my career. The global exposure and the trust my managers placed in me helped me grow from a junior analyst to leading a team of 12 within three years.</p>
           <div class="story-author">
@@ -884,7 +866,7 @@
             </div>
           </div>
         </div>
-        <div class="story-card reveal reveal-delay-1">
+        <div class="story-card reveal reveal-delay-1 visible">
           <div class="story-quote-mark">"</div>
           <p class="story-text">What I love most is that my work directly impacts LKQ's global operations. When I fix a critical system here in Bengaluru, thousands of customers across North America benefit. That sense of purpose keeps me going.</p>
           <div class="story-author">
@@ -895,7 +877,7 @@
             </div>
           </div>
         </div>
-        <div class="story-card reveal reveal-delay-2">
+        <div class="story-card reveal reveal-delay-2 visible">
           <div class="story-quote-mark">"</div>
           <p class="story-text">The culture here is unlike anything I've experienced before. Everyone genuinely cares — about the work, about each other, and about growing together. LKQ GCC feels like a family that challenges you to be your best.</p>
           <div class="story-author">
@@ -906,141 +888,38 @@
             </div>
           </div>
         </div>
-        <div class="story-card reveal">
-          <div class="story-quote-mark">"</div>
-          <p class="story-text">I started as a fresher with limited experience. The structured L&amp;D programmes, mentoring from senior leaders, and the freedom to try new things gave me the confidence to grow into a cybersecurity specialist.</p>
-          <div class="story-author">
-            <div class="story-avatar">VN</div>
-            <div>
-              <div class="story-name">Vikram Nair</div>
-              <div class="story-role">Cybersecurity Analyst · 3 years at LKQI</div>
-            </div>
-          </div>
-        </div>
-        <div class="story-card reveal reveal-delay-1">
-          <div class="story-quote-mark">"</div>
-          <p class="story-text">Being recognised as a Great Place to Work isn't just an award for us — it's a reflection of the intentional culture-building our leadership and HR team do every single day. I'm proud to be part of that story.</p>
-          <div class="story-author">
-            <div class="story-avatar">SM</div>
-            <div>
-              <div class="story-name">Sunita Menon</div>
-              <div class="story-role">HR Business Partner · 7 years at LKQI</div>
-            </div>
-          </div>
-        </div>
-        <div class="story-card reveal reveal-delay-2">
-          <div class="story-quote-mark">"</div>
-          <p class="story-text">The hybrid work model at LKQ GCC gave me the flexibility to be present for my family during a difficult time, while still delivering high-impact work. That kind of trust and empathy is rare in the corporate world.</p>
-          <div class="story-author">
-            <div class="story-avatar">KR</div>
-            <div>
-              <div class="story-name">Karthik Rajan</div>
-              <div class="story-role">Supply Chain Analyst · 4 years at LKQI</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- TOASTMASTERS -->
-  <div class="culture-sub culture-sub--alt" id="culture-toastmasters">
-    <div class="culture-sub-inner">
-      <div class="culture-sub-header">
-        <span class="culture-sec-eyebrow reveal">Toastmasters</span>
-        <h2 class="culture-sec-title reveal">Find Your Voice at LKQ GCC</h2>
-        <p class="culture-sec-desc reveal reveal-delay-1">Our Toastmasters club empowers every employee to become a confident communicator and inspiring leader — one speech at a time.</p>
-      </div>
-      <div class="toast-hero-strip reveal">
-        <div class="toast-strip-left">
-          <h3>LKQ GCC Toastmasters Club</h3>
-          <p>Chartered in 2016, our club has grown into one of Bengaluru's most active corporate Toastmasters chapters — helping hundreds of members conquer the fear of public speaking, sharpen their leadership skills, and build lasting confidence.</p>
-        </div>
-        <div class="toast-why-grid">
-          <div class="toast-why-item">
-            <h4>What?</h4>
-            <p>A structured programme of prepared speeches, impromptu speaking (Table Topics), and evaluation that builds communication skills progressively.</p>
-          </div>
-          <div class="toast-why-item">
-            <h4>Why?</h4>
-            <p>Because strong communicators make stronger teams. Our members report greater confidence in meetings, presentations, and leadership roles.</p>
-          </div>
-          <div class="toast-why-item">
-            <h4>How?</h4>
-            <p>Weekly meetings every Wednesday, open to all LKQ GCC employees. No experience required — just the willingness to grow.</p>
-          </div>
-          <div class="toast-why-item">
-            <h4>Impact</h4>
-            <p>200+ members, 15+ District-level award winners, and countless personal breakthroughs since our founding in 2016.</p>
-          </div>
-        </div>
-      </div>
-      <div class="culture-sub-header" style="margin-top:56px; margin-bottom:32px;">
-        <p class="culture-sec-eyebrow reveal" style="color:#1A44F5;">The Team</p>
-        <h2 class="culture-sec-title reveal">Club Leadership</h2>
-      </div>
-      <div class="toast-team-grid">
-        <div class="toast-team-card reveal">
-          <div class="toast-team-avatar">PD</div>
-          <div class="toast-team-name">Pavithra D.</div>
-          <div class="toast-team-role">Club President</div>
-        </div>
-        <div class="toast-team-card reveal reveal-delay-1">
-          <div class="toast-team-avatar">MK</div>
-          <div class="toast-team-name">Manoj Kumar</div>
-          <div class="toast-team-role">VP Education</div>
-        </div>
-        <div class="toast-team-card reveal reveal-delay-2">
-          <div class="toast-team-avatar">SR</div>
-          <div class="toast-team-name">Sneha Rao</div>
-          <div class="toast-team-role">VP Membership</div>
-        </div>
-        <div class="toast-team-card reveal reveal-delay-3">
-          <div class="toast-team-avatar">AJ</div>
-          <div class="toast-team-name">Arjun Joseph</div>
-          <div class="toast-team-role">Sergeant at Arms</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LIFE AT LKQ SECTION (full-screen style matching home) -->
   <!-- LIFE AT LKQ SECTION -->
   <div class="culture-life-section">
     <div class="culture-life-bg"></div>
     <div class="culture-life-overlay"></div>
     <div class="culture-life-wrapper">
       <div class="culture-life-content">
-        <p class="section-eyebrow reveal">People & Community</p>
-        <h2 class="culture-life-title reveal">More than a Workplace</h2>
-        <p class="section-body-text reveal reveal-delay-1">At LKQ GCC, we celebrate every festival, milestone, and achievement together. From Diwali to Annual Days, cricket tournaments to hackathons — our people bring energy, creativity, and joy to everything they do.</p>
-        <a href="#" class="btn-blue reveal reveal-delay-2" onclick="showPage('gallery')">See the Gallery</a>
+        <p class="section-eyebrow reveal visible">People &amp; Community</p>
+        <h2 class="culture-life-title reveal visible">More than a Workplace</h2>
+        <p class="section-body-text reveal reveal-delay-1 visible">At LKQ GCC, we celebrate every festival, milestone, and achievement together. From Diwali to Annual Days, cricket tournaments to hackathons — our people bring energy, creativity, and joy to everything they do.</p>
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-blue reveal reveal-delay-2 visible" onclick="showPage(&#39;gallery&#39;)">See the Gallery</a>
       </div>
     </div>
-    <div class="noodle-bottom-right" aria-hidden="true"><svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
-  <defs>
-    <style>
-      .cls-1 { fill: #0043b8; }
-      .cls-2 { fill: #5f9aff; }
-    </style>
-  </defs>
-  <g id="Layer_1-2" data-name="Layer 1">
-    <path class="cls-2" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"/>
-    <path class="cls-1" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"/>
-  </g>
+    <div class="noodle-bottom-right" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1133.77 443.5">
+  <path fill="#5f9aff" d="M1133.77,443.5h-126.5l-164.62-164.62c-58.84-58.85-101.36-101.36-136.82-131.47-30.33-25.75-53.17-40.26-74.05-47.04-21.23-6.9-43.07-10.35-64.9-10.35s-43.67,3.45-64.89,10.35c-20.89,6.78-43.73,21.29-74.06,47.04-35.47,30.11-77.98,72.63-136.82,131.47l-164.62,164.62H0c22.95-23.74,49.58-50.37,80.64-81.43l146.83-146.83c60.35-60.35,103.95-103.95,142.22-136.44,40.23-34.15,71.48-53.3,104.49-64.03,25.11-8.16,50.82-12.94,76.63-14.34h32.15c25.81,1.4,51.51,6.18,76.63,14.34,33,10.73,64.25,29.88,104.48,64.03,38.27,32.48,81.87,76.09,142.22,136.44l146.83,146.83c31.07,31.06,57.69,57.69,80.65,81.43Z"></path>
+  <path fill="#0043b8" d="M1053.12,362.07l-146.83-146.83c-60.35-60.35-103.95-103.96-142.22-136.44-40.23-34.15-71.48-53.3-104.48-64.03-25.12-8.16-50.82-12.94-76.63-14.34-10.71-.58-21.44-.58-32.15,0-25.81,1.4-51.52,6.18-76.63,14.34-33.01,10.73-64.26,29.88-104.49,64.03-38.27,32.49-81.87,76.09-142.22,136.44l-146.83,146.83c-31.06,31.06-57.69,57.69-80.64,81.43h126.49l164.62-164.62c58.84-58.84,101.35-101.36,136.82-131.47,30.33-25.75,53.17-40.26,74.06-47.04,21.22-6.9,43.06-10.35,64.89-10.35s43.67,3.45,64.9,10.35c20.88,6.78,43.72,21.29,74.05,47.04,35.46,30.11,77.98,72.62,136.82,131.47l164.62,164.62h126.5c-22.96-23.74-49.58-50.37-80.65-81.43Z"></path>
 </svg></div>
   </div>
 
   <!-- EMPOWERED STRIP -->
   <div class="blue-strip culture-strip">
     <div class="blue-strip-inner">
-      <div class="culture-strip-left reveal">
+      <div class="culture-strip-left reveal visible">
         <p class="culture-strip-label">Join the Team</p>
         <h3 class="culture-strip-title">Be Part of <span>What's Next</span></h3>
         <p class="culture-strip-desc">Our team is 1600+ strong — and growing. If you're driven, curious, and ready to make a global impact, there's a place for you at LKQ GCC.</p>
       </div>
-      <div class="culture-strip-right reveal reveal-delay-2">
-        <a href="#" class="btn-white" onclick="showPage('careers')">Explore Careers →</a>
+      <div class="culture-strip-right reveal reveal-delay-2 visible">
+        <a href="https://bhavinmanari-ai.github.io/lkq_india/#" class="btn-white" onclick="showPage(&#39;careers&#39;)">Explore Careers →</a>
       </div>
     </div>
   </div>
@@ -1054,7 +933,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <img src="./logo.png" alt="LKQ GCC" class="footer-logo-img">
+        <img src="./index_files/logo.png" alt="LKQ GCC" class="footer-logo-img">
         <div class="footer-address">
           7th Floor, Primeco Towers,<br>
           Arekere Gate Junction,<br>
@@ -1072,35 +951,35 @@
       <div>
         <div class="footer-col-title">LKQ Global</div>
         <ul class="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">LKQ North America</a></li>
-          <li><a href="#">LKQ Europe</a></li>
-          <li><a href="#">LKQ Specialty</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">About Us</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">LKQ North America</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">LKQ Europe</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">LKQ Specialty</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Services & Details</div>
+        <div class="footer-col-title">Services &amp; Details</div>
         <ul class="footer-links">
-          <li><a href="#">Company History</a></li>
-          <li><a href="#">Cultural Engagement</a></li>
-          <li><a href="#">Code of Ethics</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">Company History</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">Cultural Engagement</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">Code of Ethics</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Corporate Information</div>
         <ul class="footer-links">
-          <li><a href="#">Quarterly Results</a></li>
-          <li><a href="#" onclick="showPage('careers')">Careers</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#">Quarterly Results</a></li>
+          <li><a href="https://bhavinmanari-ai.github.io/lkq_india/#" onclick="showPage(&#39;careers&#39;)">Careers</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2025 LKQ Corporation. All rights reserved. LKQ GCC Pvt. Ltd.</div>
-      <div class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+      <div class="scroll-top" onclick="window.scrollTo({top:0,behavior:&#39;smooth&#39;})">↑</div>
     </div>
   </div>
 </footer>
 
-<script src="./main.js"></script>
-</body>
-</html>
+<script src="./index_files/main.js.download"></script>
+
+</body></html>
