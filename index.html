@@ -97,12 +97,10 @@
     justify-content: center;
   }
   .co-leader-quote-mark {
-    font-family: Georgia, serif;
-    font-size: 100px;
-    line-height: 0.45;
-    color: #1A44F5;
-    opacity: 0.10;
+    display: block;
     margin-bottom: 28px;
+  }
+  .co-leader-quote-mark svg {
     display: block;
   }
   .co-leader-quote {
@@ -288,6 +286,96 @@
     .co-chart-horiz-wrap { display: none; }
     .co-chart-vert { height: 20px; }
     .co-chart-child { margin-top: 0; }
+  }
+
+  /* ── Horizontal Journey Timeline ── */
+  .co-journey {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .co-journey-title {
+    font-family: 'SharpGrotesk', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .co-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    gap: 0;
+  }
+  /* Horizontal connecting line through dots */
+  .co-timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: calc(12.5% - 1px);
+    right: calc(12.5% - 1px);
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+    z-index: 0;
+  }
+  .co-timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px 0 0;
+    position: relative;
+  }
+  .co-timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #C8F000;
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .co-timeline-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 24px 22px;
+    width: 100%;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+  }
+  .co-timeline-item:hover .co-timeline-card {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(200,240,0,0.45);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  }
+  .co-timeline-item:hover .co-timeline-dot {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 4px rgba(200,240,0,0.25);
+  }
+  .co-timeline-year {
+    font-family: 'SharpGrotesk', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #C8F000;
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .co-timeline-text {
+    font-family: 'Campton', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+  }
+  @media (max-width: 900px) {
+    .co-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .co-timeline::before { display: none; }
+  }
+  @media (max-width: 540px) {
+    .co-timeline { grid-template-columns: 1fr; gap: 16px; }
   }
 
   /* ── Values icon: enlarged to 64px ── */
@@ -671,24 +759,36 @@
         <h2 class="sec-h2 sec-h2-white reveal visible">About LKQ GCC</h2>
         <p class="sec-body sec-body-white reveal reveal-delay-1 visible">LKQ GCC Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
         <p class="sec-body sec-body-white reveal reveal-delay-2 visible" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
-        <div class="co-journey reveal reveal-delay-3 visible" style="border-top-color:rgba(255,255,255,0.15);">
-          <div class="co-journey-title" style="color:#fff;">Our Journey</div>
+        <div class="co-journey reveal reveal-delay-3 visible">
+          <div class="co-journey-title">Our Journey</div>
           <div class="co-timeline">
             <div class="co-timeline-item">
-              <div class="co-timeline-year" style="color:#f3ff66;">2008</div>
-              <div class="co-timeline-text" style="color:rgba(255,255,255,0.80);">LKQ GCC established in Bengaluru as a Global Capability Centre to support LKQ Corporation's growing international operations.</div>
+              <div class="co-timeline-dot"></div>
+              <div class="co-timeline-card">
+                <div class="co-timeline-year">2008</div>
+                <div class="co-timeline-text">LKQ GCC established in Bengaluru as a Global Capability Centre to support LKQ Corporation's growing international operations.</div>
+              </div>
             </div>
             <div class="co-timeline-item">
-              <div class="co-timeline-year" style="color:#f3ff66;">2012</div>
-              <div class="co-timeline-text" style="color:rgba(255,255,255,0.80);">Expanded to 500+ employees across Technology, Finance, and Shared Services functions.</div>
+              <div class="co-timeline-dot"></div>
+              <div class="co-timeline-card">
+                <div class="co-timeline-year">2012</div>
+                <div class="co-timeline-text">Expanded to 500+ employees across Technology, Finance, and Shared Services functions.</div>
+              </div>
             </div>
             <div class="co-timeline-item">
-              <div class="co-timeline-year" style="color:#f3ff66;">2018</div>
-              <div class="co-timeline-text" style="color:rgba(255,255,255,0.80);">Crossed the 1000-employee milestone. Recognised as a Top GCC Employer in India.</div>
+              <div class="co-timeline-dot"></div>
+              <div class="co-timeline-card">
+                <div class="co-timeline-year">2018</div>
+                <div class="co-timeline-text">Crossed the 1000-employee milestone. Recognised as a Top GCC Employer in India.</div>
+              </div>
             </div>
             <div class="co-timeline-item">
-              <div class="co-timeline-year" style="color:#f3ff66;">2023–24</div>
-              <div class="co-timeline-text" style="color:rgba(255,255,255,0.80);">Certified Great Place to Work® for two consecutive years. Team grows to 1600+ professionals.</div>
+              <div class="co-timeline-dot"></div>
+              <div class="co-timeline-card">
+                <div class="co-timeline-year">2023–24</div>
+                <div class="co-timeline-text">Certified Great Place to Work® for two consecutive years. Team grows to 1600+ professionals.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -844,7 +944,14 @@
             </div>
             <div class="co-leader-divider"></div>
             <div class="co-leader-quote-col">
-              <div class="co-leader-quote-mark">"</div>
+              <div class="co-leader-quote-mark">
+                <svg width="56" height="44" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 40 L0 18 Q0 0 18 0 L18 8 Q8 8 8 18 L8 18 L16 18 L16 40 Z" fill="#1A44F5" opacity="0.12"/>
+                  <path d="M0 40 L0 18 Q0 0 18 0 L18 8 Q8 8 8 18 L8 18 L16 18 L16 40 Z" stroke="#1A44F5" stroke-width="1.5" fill="none" opacity="0.45"/>
+                  <path d="M28 40 L28 18 Q28 0 46 0 L46 8 Q36 8 36 18 L36 18 L44 18 L44 40 Z" fill="#1A44F5" opacity="0.12"/>
+                  <path d="M28 40 L28 18 Q28 0 46 0 L46 8 Q36 8 36 18 L36 18 L44 18 L44 40 Z" stroke="#1A44F5" stroke-width="1.5" fill="none" opacity="0.45"/>
+                </svg>
+              </div>
               <div class="co-leader-quote">
                 We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
               </div>
