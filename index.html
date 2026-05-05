@@ -25,39 +25,37 @@
   }
   .co-org-header { margin-bottom: 64px; }
 
-  /* ── Leader card: photo + quote combined ── */
-  .co-leader-row {
-    margin-bottom: 64px;
-  }
+  /* ── Leader card: full-width photo + quote combined ── */
   .co-leader-card {
     background: #f8f9ff;
     border-left: 4px solid #1A44F5;
     border-radius: 0 12px 12px 0;
-    padding: 0;
     overflow: hidden;
+    margin-bottom: 64px;
   }
   .co-leader-card-inner {
     display: flex;
     align-items: stretch;
-    min-height: 260px;
+    min-height: 280px;
   }
   .co-leader-photo-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 40px 44px;
+    gap: 16px;
+    padding: 48px 52px;
     flex-shrink: 0;
-    width: 240px;
-    background: #eef2ff;
+    width: 260px;
+    background: #e8edfc;
+    border-right: 1px solid rgba(26,68,245,0.1);
   }
   .co-leader-photo {
-    width: 120px;
-    height: 140px;
+    width: 130px;
+    height: 154px;
     border-radius: 10px;
-    background: #dde4fb;
-    border: 1.5px solid rgba(26,68,245,0.15);
+    background: #d4dcf8;
+    border: 1.5px solid rgba(26,68,245,0.18);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +63,7 @@
   .co-leader-photo svg { opacity: 0.45; }
   .co-leader-photo-name {
     font-family: 'SharpGrotesk', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     color: #0d1b3e;
     text-align: center;
@@ -76,36 +74,33 @@
     color: #64748b;
     text-align: center;
     letter-spacing: 0.2px;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-top: -6px;
   }
-  .co-leader-divider {
-    width: 1px;
-    background: rgba(26,68,245,0.1);
-    flex-shrink: 0;
-  }
+  .co-leader-divider { display: none; }
   .co-leader-quote-col {
     flex: 1;
-    padding: 48px 56px;
+    padding: 52px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .co-leader-quote-mark {
     font-family: Georgia, serif;
-    font-size: 96px;
-    line-height: 0.5;
+    font-size: 100px;
+    line-height: 0.45;
     color: #1A44F5;
-    opacity: 0.12;
-    margin-bottom: 24px;
+    opacity: 0.10;
+    margin-bottom: 28px;
     display: block;
   }
   .co-leader-quote {
     font-family: 'SharpGrotesk', sans-serif;
     font-weight: 500;
-    font-size: clamp(20px, 2vw, 28px);
+    font-size: clamp(20px, 2.2vw, 30px);
     color: #0d1b3e;
     line-height: 1.5;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.3px;
   }
 
   /* ── Flat structure note ── */
@@ -214,7 +209,7 @@
   }
   .co-chart-horiz-wrap {
     position: relative;
-    width: 340px;
+    width: 440px;
     height: 36px;
   }
   .co-chart-horiz-wrap::before {
@@ -244,7 +239,7 @@
   /* Children */
   .co-chart-children {
     display: flex;
-    gap: 80px;
+    gap: 120px;
     align-items: flex-start;
   }
   .co-chart-child {
@@ -265,8 +260,10 @@
   /* Responsive */
   @media (max-width: 860px) {
     .co-leader-card-inner { flex-direction: column; }
-    .co-leader-photo-col { width: 100%; flex-direction: row; padding: 28px 32px; }
-    .co-leader-quote-col { padding: 32px; }
+    .co-leader-photo-col { width: 100%; flex-direction: row; justify-content: flex-start; padding: 28px 32px; border-right: none; border-bottom: 1px solid rgba(26,68,245,0.1); }
+    .co-leader-quote-col { padding: 36px 40px; }
+    .co-chart-horiz-wrap { width: 240px; }
+    .co-chart-children { gap: 40px; }
     .co-chart-horiz-wrap { width: 240px; }
     .co-chart-children { gap: 40px; }
     .co-chart-node--primary, .co-chart-node--secondary { min-width: unset; }
@@ -820,23 +817,21 @@
       </div>
       <div class="co-org-body">
 
-        <!-- Leader quote + photo — combined card -->
-        <div class="co-leader-row reveal visible">
-          <div class="co-leader-card">
-            <div class="co-leader-card-inner">
-              <div class="co-leader-photo-col">
-                <div class="co-leader-photo">
-                  <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="9" fill="#c8d4f8"/><ellipse cx="20" cy="34" rx="14" ry="8" fill="#c8d4f8"/></svg>
-                </div>
-                <div class="co-leader-photo-name">Kishore Kumar</div>
-                <div class="co-leader-photo-role">Leader — Global Competency Centre</div>
+        <!-- Leader quote + photo — full-width combined card -->
+        <div class="co-leader-card reveal visible">
+          <div class="co-leader-card-inner">
+            <div class="co-leader-photo-col">
+              <div class="co-leader-photo">
+                <svg width="56" height="56" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="9" fill="#c8d4f8"/><ellipse cx="20" cy="34" rx="14" ry="8" fill="#c8d4f8"/></svg>
               </div>
-              <div class="co-leader-divider"></div>
-              <div class="co-leader-quote-col">
-                <div class="co-leader-quote-mark">"</div>
-                <div class="co-leader-quote">
-                  We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
-                </div>
+              <div class="co-leader-photo-name">Kishore Kumar</div>
+              <div class="co-leader-photo-role">Leader — Global Competency Centre</div>
+            </div>
+            <div class="co-leader-divider"></div>
+            <div class="co-leader-quote-col">
+              <div class="co-leader-quote-mark">"</div>
+              <div class="co-leader-quote">
+                We are not just a support centre — we are an integral part of LKQ's global growth engine. Every person here plays a critical role in keeping the world moving.
               </div>
             </div>
           </div>
