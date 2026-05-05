@@ -321,34 +321,33 @@
     position: relative;
     gap: 20px;
   }
-  /* Horizontal connecting line through dots */
-  .co-timeline::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: calc(12.5% - 1px);
-    right: calc(12.5% - 1px);
-    height: 2px;
-    background: rgba(255,255,255,0.2);
-    z-index: 0;
-  }
   .co-timeline-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 16px 0 0;
     position: relative;
   }
+  /* Horizontal line behind all dots */
+  .co-timeline::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    height: 1.5px;
+    background: rgba(255,255,255,0.22);
+    z-index: 0;
+  }
+  /* Single yellow dot above each card */
   .co-timeline-dot {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    background: #C8F000;
-    border: 2px solid rgba(255,255,255,0.3);
+    background: #f3ff66;
     flex-shrink: 0;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .co-timeline-card {
@@ -357,24 +356,25 @@
     border-radius: 10px;
     padding: 24px 22px;
     width: 100%;
+    box-sizing: border-box;
     transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     cursor: default;
   }
   .co-timeline-item:hover .co-timeline-card {
     transform: translateY(-6px);
     background: rgba(255,255,255,0.10);
-    border-color: rgba(200,240,0,0.45);
+    border-color: rgba(243,255,102,0.45);
     box-shadow: 0 16px 40px rgba(0,0,0,0.25);
   }
   .co-timeline-item:hover .co-timeline-dot {
-    transform: scale(1.35);
-    box-shadow: 0 0 0 4px rgba(200,240,0,0.25);
+    transform: scale(1.4);
+    box-shadow: 0 0 0 4px rgba(243,255,102,0.3);
   }
   .co-timeline-year {
     font-family: 'SharpGrotesk', sans-serif;
     font-weight: 500;
     font-size: 18px;
-    color: #C8F000;
+    color: #f3ff66;
     margin-bottom: 10px;
     letter-spacing: -0.2px;
   }
@@ -386,7 +386,7 @@
   }
   @media (max-width: 900px) {
     .co-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .co-timeline::before { display: none; }
+    .co-timeline-dot::before { display: none; }
   }
   @media (max-width: 540px) {
     .co-timeline { grid-template-columns: 1fr; gap: 16px; }
