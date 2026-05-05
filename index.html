@@ -289,16 +289,22 @@
   }
 
   /* ── Horizontal Journey Timeline ── */
-  .co-journey-wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 0 clamp(24px, 5vw, 96px) 80px;
-    max-width: 1320px;
-    margin: 0 auto;
-    box-sizing: border-box;
+  /* Override co-overview photo-section to stack vertically */
+  #co-overview.photo-section {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 0 80px;
+  }
+  .co-overview-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 1320px !important;
+    gap: 0;
   }
   .co-journey {
+    width: 100%;
     padding-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.15);
   }
@@ -761,15 +767,13 @@
   <div class="photo-section" id="co-overview" style="min-height:100vh;">
     <div class="photo-section-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&amp;q=80&amp;auto=format&amp;v=2&#39;);"></div>
     <div class="photo-section-overlay" style="background:rgba(4,14,50,0.78);"></div>
-    <div class="photo-section-wrapper">
+    <div class="photo-section-wrapper co-overview-wrapper">
       <div class="photo-section-content" style="max-width:680px;">
         <span class="sec-eyebrow reveal visible" style="color:#f3ff66;">Overview</span>
         <h2 class="sec-h2 sec-h2-white reveal visible">About LKQ GCC</h2>
         <p class="sec-body sec-body-white reveal reveal-delay-1 visible">LKQ GCC Pvt. Ltd. is a fully owned subsidiary of Keystone Automotive Operations Inc., part of the LKQ Corporation family — a Fortune 500 global leader in alternative and specialty parts for automobiles and other vehicles.</p>
         <p class="sec-body sec-body-white reveal reveal-delay-2 visible" style="margin-top:16px;">Established in Bengaluru in 2008, we have grown into a team of 1600+ highly skilled professionals across Technology, Finance, Analytics, Shared Services, Cybersecurity, and Supply Chain — delivering world-class solutions that power LKQ's global objectives across North America, Europe and beyond.</p>
       </div>
-    </div>
-    <div class="co-journey-wrapper">
       <div class="co-journey reveal reveal-delay-3 visible">
         <div class="co-journey-title">Our Journey</div>
         <div class="co-timeline">
