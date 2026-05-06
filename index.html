@@ -338,6 +338,11 @@
   #co-overview .noodle-bottom-right {
     display: none;
   }
+  /* Kill the gradient on co-overview overlay — it creates a blue vertical band */
+  #co-overview .photo-section-overlay {
+    background: rgba(4,14,50,0.85) !important;
+    background-image: none !important;
+  }
   .co-overview-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -844,7 +849,7 @@
   <!-- OVERVIEW — photo backdrop, first section, no separate hero -->
   <div class="photo-section" id="co-overview" style="min-height:100vh;">
     <div class="photo-section-bg" style="background-image: url(&#39;https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&amp;q=80&amp;auto=format&amp;v=2&#39;);"></div>
-    <div class="photo-section-overlay" style="background:rgba(4,14,50,0.85) !important; background-image:none !important;"></div>
+    <div class="photo-section-overlay"></div>
     <div class="photo-section-wrapper co-overview-wrapper">
       <div class="photo-section-content" style="max-width:680px;">
         <span class="sec-eyebrow reveal visible" style="color:#f3ff66;">Overview</span>
