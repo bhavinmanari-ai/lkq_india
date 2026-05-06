@@ -26,6 +26,51 @@
     padding: 0 clamp(24px, 5vw, 96px);
   }
   .co-org-header { margin-bottom: 64px; }
+  /* ══════════════════════════════════════
+     GLOBAL ALIGNMENT — consistent 1320px max-width + clamp padding
+     Overrides the 1440px @media (min-width:1400px) rule in style.css
+  ══════════════════════════════════════ */
+  .culture-values-inner,
+  .co-org-inner,
+  .co-global-inner,
+  .careers-why-inner,
+  .jobs-inner,
+  .fullscreen-wrapper,
+  .photo-section-wrapper,
+  .page-hero-wrapper,
+  .culture-life-wrapper,
+  .blue-strip-inner,
+  .footer-inner {
+    max-width: 1320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding-left: clamp(24px, 5vw, 96px) !important;
+    padding-right: clamp(24px, 5vw, 96px) !important;
+  }
+
+  /* culture-sub-inner — Fun at Work section, had no CSS at all */
+  .culture-sub-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 5vw, 96px);
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* stats-inner — reduce the wide clamp(40px,8vw,160px) to match standard */
+  .stats-inner {
+    padding-left: clamp(24px, 5vw, 96px) !important;
+    padding-right: clamp(24px, 5vw, 96px) !important;
+  }
+
+  /* Wellbeing section inline wrapper — was 1320px max-width but with different padding */
+  #culture-wellbeing .fullscreen-wrapper > div {
+    max-width: 1320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
   .co-org-body {
     display: flex;
     flex-direction: column;
@@ -99,6 +144,12 @@
   .co-leader-quote-mark {
     display: block;
     margin-bottom: 28px;
+    line-height: 0;
+  }
+  .co-leader-quote-mark::before,
+  .co-leader-quote-mark::after {
+    display: none !important;
+    content: none !important;
   }
   .co-leader-quote-mark svg {
     display: block;
@@ -296,6 +347,9 @@
     justify-content: flex-start;
     padding: 100px 0 80px;
   }
+  #co-overview .noodle-bottom-right {
+    display: none;
+  }
   .co-overview-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -303,6 +357,8 @@
     max-width: 1320px !important;
     gap: 0;
     border: none !important;
+    position: relative;
+    z-index: 3;
   }
   .co-timeline,
   .co-timeline-item {
@@ -1223,57 +1279,56 @@
         </div>
         <div class="wellbeing-grid">
           <div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">🧠</div>
+            <div class="wellbeing-icon">📈</div>
             <h3>Career Progression</h3>
             <p>Access to confidential counselling, mindfulness workshops, and an Employee Assistance Programme available 24/7 for all team members and their families.</p>
           </div>
           <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1 visible">
-            <div class="wellbeing-icon">🏃</div>
+            <div class="wellbeing-icon">🎓</div>
             <h3>Professional Development Reimbursement</h3>
             <p>On-site fitness facilities, yoga sessions, running clubs, and annual health check-ups — because a healthy body powers a healthy mind.</p>
           </div>
           <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2 visible">
-            <div class="wellbeing-icon">⚖️</div>
+            <div class="wellbeing-icon">💡</div>
             <h3>Reimbursement for Micro-Learning</h3>
             <p>Flexible work hours, hybrid models, and generous leave policies designed to help our people thrive both at work and at home.</p>
           </div>
           <div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">🏅</div>
             <h3>Loyalty Bonus</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div>
           <div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">🏆</div>
             <h3>Long Service Award</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">⭐</div>
             <h3>Rewards &amp; Recognitions</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
-            <h3>Referral Bonus
-</h3>
+            <div class="wellbeing-icon">🔗</div>
+            <h3>Referral Bonus</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">🌙</div>
             <h3>Night Shift Allowance</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">🚌</div>
             <h3>Free Transport for UK/US Shifts</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal visible">
-            <div class="wellbeing-icon">💊</div>
+            <div class="wellbeing-icon">🤝</div>
             <h3>Member Assistance Program (MAP)</h3>
             <p>Comprehensive health insurance covering employees and their families, including specialist consultations, hospitalisation, and preventive care.</p>
           </div><div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-1 visible">
-            <div class="wellbeing-icon">🌿</div>
+            <div class="wellbeing-icon">🩺</div>
             <h3>Online Doctor Consultation &amp; Wellness</h3>
             <p>Healthy cafeteria options, nutrition workshops, and regular wellness days that encourage mindful eating and sustainable lifestyle habits.</p>
           </div>
           <div class="wellbeing-card wellbeing-card--glass reveal reveal-delay-2 visible">
-            <div class="wellbeing-icon">🤝</div>
+            <div class="wellbeing-icon">🌿</div>
             <h3>Community Support</h3>
             <p>Peer support networks, manager well-being training, and open-door policies that ensure no one navigates challenges alone.</p>
           </div>
