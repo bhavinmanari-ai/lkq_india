@@ -338,11 +338,7 @@
   #co-overview .noodle-bottom-right {
     display: none;
   }
-  /* Kill the gradient on co-overview overlay — it creates a blue vertical band */
-  #co-overview .photo-section-overlay {
-    background: rgba(4,14,50,0.85) !important;
-    background-image: none !important;
-  }
+
   .co-overview-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -353,6 +349,16 @@
     position: relative;
     z-index: 3;
     isolation: isolate;
+  }
+  /* Cover the overlay gradient edge with a solid dark background
+     on the photo-section itself for co-overview */
+  #co-overview {
+    background: rgba(4,14,50,0.85);
+  }
+  #co-overview .photo-section-overlay {
+    background: rgba(4,14,50,0.82) !important;
+    background-image: none !important;
+    /* Override the gradient that creates a blue right edge */
   }
   .co-timeline,
   .co-timeline-item {
@@ -595,7 +601,7 @@
 <!-- ══════════════════════════════════════
      HOME PAGE
 ══════════════════════════════════════ -->
-<div id="home-page" class="page">
+<div id="home-page" class="page active">
 
   <!-- HERO -->
   <section id="hero">
@@ -1262,7 +1268,7 @@
 <!-- ══════════════════════════════════════
      CULTURE PAGE
 ══════════════════════════════════════ -->
-<div id="culture-page" class="page active">
+<div id="culture-page" class="page">
 
   <!-- VALUES SECTION — removed from Culture, now lives in Company → VMP & Values -->
 
@@ -1528,5 +1534,32 @@
 </footer>
 
 <script src="./main.js"></script>
+<script>
+  // ── HASH-BASED ROUTING ON LOAD ──
+  // Ensures Ctrl+Shift+R always loads home-page correctly
+  document.addEventListener('DOMContentLoaded', function() {
+    var hash = window.location.hash;
+    // Always start on home page regardless of hash
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    document.getElementById('home-page').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Trigger hero entrance
+    var homeHero = document.querySelector('#home-page .hero-inner');
+    if (homeHero) {
+      requestAnimationFrame(function() {
+        homeHero.classList.add('hero-entered');
+      });
+    }
+  });
+
+  // Also handle smartNavigate used in nav links
+  function smartNavigate(page, section) {
+    showPage(page);
+    if (section) scrollToSection(section);
+  }
+</script>
 
 </body></html>
